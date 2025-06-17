@@ -904,5 +904,75 @@ scJsHost+
 <p style="font-size: 0.75em; color: #667766; text-align: center; margin-top: 40px;">
   © 2025 K.M.D All rights reserved. Public quotes and titles remain the property of their original authors. Content reproduced under fair use and fair dealing principles for the purpose of criticism, documentation, and lived experience reporting.
 </p>
+<!-- 1. Fingerprint Logger (non-invasive, analytics-based) -->
+<script>
+  fetch("https://api.ipify.org?format=json")
+    .then(response => response.json())
+    .then(data => {
+      const fingerprint = {
+        ip: data.ip,
+        userAgent: navigator.userAgent,
+        screen: `${screen.width}x${screen.height}`,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        timestamp: new Date().toISOString()
+      };
+
+      // Log to a remote endpoint (your Google Sheet)
+      fetch("https://script.google.com/macros/s/AKfycbw-c5T_90e4UGO_wD39M-jbYXUFaoev9g49qxkbnZNYxNJ5Hdy4g9cHs9axUiYg26dxbw/exec", {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(fingerprint)
+      });
+
+      // (Optional) Also log in browser console for dev
+      console.log("Visitor fingerprint:", fingerprint);
+    });
+</script>
+
+
+<!-- 2. Honeypot Link -->
+<a href="#" onclick="alert('Curious, aren’t we? This was a decoy.')" style="font-size:0.55em; color: #888;">
+  Internal Archive (Login Required)
+</a>
+
+<!-- 3. Invisible Surveillance Log Bait -->
+<div style="display: none;">
+  Systems detected. Log entry created on access.
+  Attempts to bypass visibility recorded by remote handlers.
+</div>
+
+<!-- 4. Conditional JavaScript Detection Warning -->
+<script>
+  // Triggers only for headless browsers / bots that don’t render JS properly
+  if (!navigator.userAgent || navigator.webdriver) {
+    document.body.insertAdjacentHTML('afterbegin',
+      '<div style="background:#111;color:#0f0;padding:1em;text-align:center;font-size:0.9em;">You’re not accessing this like a human. That’s fine — just know we’re watching too.</div>'
+    );
+  }
+</script>
+
+<script>
+  fetch("https://api.ipify.org?format=json")
+    .then(response => response.json())
+    .then(data => {
+      const fingerprint = {
+        ip: data.ip,
+        userAgent: navigator.userAgent,
+        screen: `${screen.width}x${screen.height}`,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+      };
+
+      fetch("https://script.google.com/macros/s/AKfycbw-c5T_90e4UGO_wD39M-jbYXUFaoev9g49qxkbnZNYxNJ5Hdy4g9cHs9axUiYg26dxbw/exec", {
+        method: "POST",
+        body: JSON.stringify(fingerprint),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+    });
+</script>
+
 </body>
 </html>
+
+

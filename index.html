@@ -441,6 +441,7 @@ This is about what is being done to me <strong>right now</strong> — today.</p>
   </p>
 
 
+<!-- Full Responsive Thumbnail Gallery with Lightbox Preview -->
 <style>
 .gallery {
   display: flex;
@@ -464,6 +465,7 @@ This is about what is being done to me <strong>right now</strong> — today.</p>
   text-align: center;
   font-size: 0.75rem;
   margin-top: 0.3rem;
+  color: #ccc;
 }
 .lightbox-overlay {
   display: none;
@@ -483,59 +485,44 @@ This is about what is being done to me <strong>right now</strong> — today.</p>
 </style>
 
 <div class="gallery">
-  <div>
-    <img src="https://i.imgur.com/igbOGgm.jpeg" class="thumbnail" onclick="openLightbox(this.src)" alt="Rabia">
-    <div class="caption">Rabia Siddique – Viewed</div>
-  </div>
-  <div>
-    <img src="https://i.imgur.com/10G2a15.jpeg" class="thumbnail" onclick="openLightbox(this.src)" alt="Duc & Sandy">
-    <div class="caption">Pham & Chong – Viewed</div>
-  </div>
-  <div>
-    <img src="https://i.imgur.com/kok1Ypz.jpeg" class="thumbnail" onclick="openLightbox(this.src)" alt="Lesley">
-    <div class="caption">Lesley – Connected</div>
-  </div>
-  <div>
-    <img src="https://i.imgur.com/blfQF1p.jpeg" class="thumbnail" onclick="openLightbox(this.src)" alt="Sneak 1">
-    <div class="caption">Sneak View – 30 May</div>
-  </div>
-  <div>
-    <img src="https://i.imgur.com/7PWJqf5.jpeg" class="thumbnail" onclick="openLightbox(this.src)" alt="Sneak 2">
-    <div class="caption">Sneak View – 14 June</div>
-  </div>
-  <div>
-    <img src="https://i.imgur.com/qZDy0Kh.jpeg" class="thumbnail" onclick="openLightbox(this.src)" alt="Search Sneak">
-    <div class="caption">Searching – LinkedIn</div>
-  </div>
-  <div>
-    <img src="https://i.imgur.com/nqxeSZd.jpeg" class="thumbnail" onclick="openLightbox(this.src)" alt="Carrd trail">
-    <div class="caption">Internal Trail</div>
-  </div>
-  <div>
-    <img src="https://i.imgur.com/cm1ArVp.jpeg" class="thumbnail" onclick="openLightbox(this.src)" alt="Meridian">
-    <div class="caption">Meridian Lawyer</div>
-  </div>
-  <div>
-    <img src="https://i.imgur.com/URlQNdk.jpeg" class="thumbnail" onclick="openLightbox(this.src)" alt="Public Views">
-    <div class="caption">Public Viewers</div>
-  </div>
-  <div>
-    <img src="https://i.imgur.com/SXYp0xn.png" class="thumbnail" onclick="openLightbox(this.src)" alt="Scrub 1">
-    <div class="caption">Scrubbing Starts</div>
-  </div>
-  <div>
-    <img src="https://i.imgur.com/HfsoABY.png" class="thumbnail" onclick="openLightbox(this.src)" alt="Scrub 2">
-    <div class="caption">Scrubbing Confirmed</div>
-  </div>
-  <div>
-    <img src="https://i.imgur.com/8lqWjlJ.jpeg" class="thumbnail" onclick="openLightbox(this.src)" alt="Sheila">
-    <div class="caption">Sheila Disconnected</div>
-  </div>
-  <div>
-    <img src="https://i.imgur.com/ojUwbil.jpeg" class="thumbnail" onclick="openLightbox(this.src)" alt="Duc Blocked">
-    <div class="caption">Duc Blocked</div>
-  </div>
-  <!-- Add more images similarly -->
+  <script>
+    const images = [
+      ["https://i.imgur.com/igbOGgm.jpeg", "Rabia — Viewed"],
+      ["https://i.imgur.com/10G2a15.jpeg", "Pham & Chong — Viewed"],
+      ["https://i.imgur.com/kok1Ypz.jpeg", "Lesley — Connected"],
+      ["https://i.imgur.com/blfQF1p.jpeg", "Sneak View — 30 May"],
+      ["https://i.imgur.com/7PWJqf5.jpeg", "Sneak View — 14 June"],
+      ["https://i.imgur.com/qZDy0Kh.jpeg", "Searching — LinkedIn"],
+      ["https://i.imgur.com/nqxeSZd.jpeg", "Carrd Trail"],
+      ["https://i.imgur.com/cm1ArVp.jpeg", "Meridian Lawyer"],
+      ["https://i.imgur.com/URlQNdk.jpeg", "Public Views"],
+      ["https://i.imgur.com/8qTCuQ5.jpeg", "Google Analytics"],
+      ["https://i.imgur.com/4WJXiWk.jpeg", "7am Spike"],
+      ["https://i.imgur.com/uxRNdl6.jpeg", "8am Switch to Desktop"],
+      ["https://i.imgur.com/xakqSGJ.jpeg", "Perth > Albany"],
+      ["https://i.imgur.com/SO7yH7N.jpeg", "XYZ Site Surge"],
+      ["https://i.imgur.com/R5bLNIq.png", "VPN Pattern Question"],
+      ["https://i.imgur.com/MPOt5OK.jpeg", "Views Surge @ Noon"],
+      ["https://i.imgur.com/5A1XKZR.jpeg", "Still Using Carrd"],
+      ["https://i.imgur.com/xM0x1eU.jpeg", "Cache Not Sneaky"],
+      ["https://i.imgur.com/23ORi60.jpeg", "Refresh Triggers"],
+      ["https://i.imgur.com/VosPpNj.jpeg", "Carrd Reloaded"],
+      ["https://i.imgur.com/ex8Fyu7.jpeg", "Carrd Trail Again"],
+      ["https://i.imgur.com/8lqWjlJ.jpeg", "Sheila Blocked"],
+      ["https://i.imgur.com/GwrNzyM.jpeg", "Carrd Trail Still"],
+      ["https://i.imgur.com/2FBwX3e.jpeg", "Two Workers Viewed"],
+      ["https://i.imgur.com/D929PoP.jpeg", "Peer Connected"],
+      ["https://i.imgur.com/b1AXoiq.jpeg", "LinkedIn Growth"],
+      ["https://i.imgur.com/eYaPivY.jpeg", "Ranii Re-Connect"],
+      ["https://i.imgur.com/SXYp0xn.png", "Scrub Begins"],
+      ["https://i.imgur.com/HfsoABY.png", "Scrub Confirmed"],
+      ["https://i.imgur.com/ZXU4gdj.jpeg", "Carrd Cache 10:49am"],
+      ["https://i.imgur.com/ojUwbil.jpeg", "Duc Blocks"],
+    ];
+    images.forEach(([src, caption]) => {
+      document.write(`<div><img src='${src}' class='thumbnail' onclick='openLightbox("${src}")'><div class='caption'>${caption}</div></div>`);
+    });
+  </script>
 </div>
 
 <div id="lightbox" class="lightbox-overlay" onclick="closeLightbox()">
@@ -551,7 +538,6 @@ function closeLightbox() {
   document.getElementById('lightbox').style.display = 'none';
 }
 </script>
-
 
   
   <h2>🧩 Internal Link Trail Confirmed</h2>

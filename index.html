@@ -169,7 +169,34 @@
   – And Debra replied on <strong>the exact anniversary</strong> — with a cold, evasive delay.<br><br>
 
   <strong>PDF Release:</strong><br>
-  <iframe src="https://free.timeanddate.com/countdown/i9xzanxe/n196/cf111/cm1/cu5/ct0/cs1/ca0/co0/cr0/ss0/cac000/cpc000/pct/tc900/fn3/fs100/szw320/szh135/iso2025-06-19T17:00:00" allowtransparency="true" frameborder="0" width="320" height="135"></iframe>
+  <!-- Countdown Timer -->
+<div id="countdown" style="font-size: 1.2rem; margin-top: 1rem; color: #fff;"></div>
+
+<script>
+// Set the date we're counting down to (Year, Month (0-indexed), Day, Hour, Minute, Second)
+var countDownDate = new Date("June 19, 2025 17:00:00").getTime();
+
+var countdownFunction = setInterval(function () {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+
+  if (distance < 0) {
+    clearInterval(countdownFunction);
+    document.getElementById("countdown").innerHTML = "🧨 Released.";
+    return;
+  }
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+    "⏳ PDF drops in " +
+    days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+}, 1000);
+</script>
+
 <br>
 🔗 <em><a href="" download>Download my original settlement offer sent 3rd June 2025</a></em><br><br>
 

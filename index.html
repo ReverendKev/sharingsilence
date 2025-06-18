@@ -169,18 +169,9 @@
   – And Debra replied on <strong>the exact anniversary</strong> — with a cold, evasive delay.<br><br>
 
   <strong>PDF Release:</strong><br>
-<!-- Timer & Controlled PDF Leak -->
-<div style="text-align: left;">
-  <div style="display: flex; justify-content: flex-start;">
-    <iframe 
-      id="countdownTimer"
-      src="https://free.timeanddate.com/countdown/i9xzbyq7/n196/cf111/cm1/cu5/ct0/cs1/ca0/co0/cr0/ss0/cac000/cpc000/pct/tc900/fn3/fs100/szw256/szh108/iso2025-06-19T17:00:00" 
-      allowtransparency="true" 
-      frameborder="0" 
-      width="256" 
-      height="108">
-    </iframe>
-  </div>
+<!-- Countdown Leak Block -->
+<div style="text-align: left; font-family: monospace; color: #f33; font-size: 1.2rem;">
+  <div id="millisecondCountdown"></div>
 
   <div id="pdfLink" style="margin-top: 1rem; display: none;">
     🔗 <a href="https://dl.dropboxusercontent.com/scl/fi/gzxfu2o3rhdpiafftvy6a/Settlement_By_KMD_Tuesday_-3_June-2025.pdf?rlkey=3l47cqragl4v3jnwmrnmyty6b&st=ph71b1sb" download>
@@ -190,19 +181,26 @@
 </div>
 
 <script>
-  // Release at 5pm AWST (UTC+8) on 19 June 2025
-  const releaseTime = new Date("2025-06-19T17:00:00+08:00").getTime();
-  const now = new Date().getTime();
+  const countdownEl = document.getElementById("millisecondCountdown");
+  const linkEl = document.getElementById("pdfLink");
 
-  if (now > releaseTime) {
-    document.getElementById("pdfLink").style.display = "block";
-  } else {
-    const wait = releaseTime - now;
-    setTimeout(() => {
-      document.getElementById("pdfLink").style.display = "block";
-    }, wait);
-  }
+  // Set target time: 5:00 PM AWST (UTC+8) on June 19, 2025
+  const target = new Date("2025-06-19T17:00:00+08:00").getTime();
+
+  const interval = setInterval(() => {
+    const now = new Date().getTime();
+    const diff = target - now;
+
+    if (diff <= 0) {
+      clearInterval(interval);
+      countdownEl.innerHTML = "🧨 0 Millisecond(s)";
+      linkEl.style.display = "block";
+    } else {
+      countdownEl.innerHTML = `${diff.toLocaleString()} Millisecond(s)`;
+    }
+  }, 50);
 </script>
+
 
 
 

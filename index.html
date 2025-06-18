@@ -169,7 +169,7 @@
   – And Debra replied on <strong>the exact anniversary</strong> — with a cold, evasive delay.<br><br>
 
   <strong>PDF Release:</strong><br>
-<!-- Countdown Leak Block -->
+<!-- Countdown Leak Block with Glitch -->
 <div style="text-align: left; font-family: monospace; color: #8c0d0d; font-size: 1.2rem;">
   <div id="millisecondCountdown"></div>
 
@@ -192,12 +192,26 @@
 
     if (diff <= 0) {
       clearInterval(interval);
-      countdownEl.innerHTML = "🧨 0";
-      linkEl.style.display = "block";
+      glitchOut();
     } else {
       countdownEl.innerHTML = diff.toLocaleString();
     }
   }, 50);
+
+  function glitchOut() {
+    let count = 0;
+    const glitchInterval = setInterval(() => {
+      if (count >= 20) {
+        clearInterval(glitchInterval);
+        countdownEl.innerHTML = "🧨 0";
+        linkEl.style.display = "block";
+        return;
+      }
+      const glitchNum = Math.floor(Math.random() * 9999999).toLocaleString();
+      countdownEl.innerHTML = glitchNum;
+      count++;
+    }, 75);
+  }
 </script>
 
 <br><br>

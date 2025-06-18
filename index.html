@@ -545,12 +545,18 @@ This is about what is being done to me <strong>right now</strong> — today.</p>
   gap: 0.75rem;
   padding: 1rem 0;
 }
-.thumbnail {
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   max-width: 150px;
-  cursor: pointer;
+}
+.thumbnail {
+  width: 100%;
   border: 1px solid #444;
   border-radius: 8px;
+  cursor: pointer;
   transition: transform 0.2s ease;
 }
 .thumbnail:hover {
@@ -558,9 +564,10 @@ This is about what is being done to me <strong>right now</strong> — today.</p>
 }
 .caption {
   text-align: center;
-  font-size: 0.75rem;
-  margin-top: 0.3rem;
+  font-size: 0.7rem;
   color: #ccc;
+  margin-top: 0.3rem;
+  line-height: 1.2;
 }
 .lightbox-overlay {
   display: none;
@@ -579,59 +586,69 @@ This is about what is being done to me <strong>right now</strong> — today.</p>
 }
 </style>
 
-<div class="gallery">
-  <script>
-    const images = [
-      ["https://i.imgur.com/igbOGgm.jpeg", "Rabia — Viewed"],
-      ["https://i.imgur.com/10G2a15.jpeg", "Pham & Chong — Viewed"],
-      ["https://i.imgur.com/kok1Ypz.jpeg", "Lesley — Connected"],
-      ["https://i.imgur.com/blfQF1p.jpeg", "Sneak View — 30 May"],
-      ["https://i.imgur.com/7PWJqf5.jpeg", "Sneak View — 14 June"],
-      ["https://i.imgur.com/qZDy0Kh.jpeg", "Searching — LinkedIn"],
-      ["https://i.imgur.com/nqxeSZd.jpeg", "Carrd Trail"],
-      ["https://i.imgur.com/cm1ArVp.jpeg", "Meridian Lawyer"],
-      ["https://i.imgur.com/URlQNdk.jpeg", "Public Views"],
-      ["https://i.imgur.com/8qTCuQ5.jpeg", "Google Analytics"],
-      ["https://i.imgur.com/4WJXiWk.jpeg", "7am Spike"],
-      ["https://i.imgur.com/uxRNdl6.jpeg", "8am Switch to Desktop"],
-      ["https://i.imgur.com/xakqSGJ.jpeg", "Perth > Albany"],
-      ["https://i.imgur.com/SO7yH7N.jpeg", "XYZ Site Surge"],
-      ["https://i.imgur.com/R5bLNIq.png", "VPN Pattern Question"],
-      ["https://i.imgur.com/MPOt5OK.jpeg", "Views Surge @ Noon"],
-      ["https://i.imgur.com/5A1XKZR.jpeg", "Still Using Carrd"],
-      ["https://i.imgur.com/xM0x1eU.jpeg", "Cache Not Sneaky"],
-      ["https://i.imgur.com/23ORi60.jpeg", "Refresh Triggers"],
-      ["https://i.imgur.com/VosPpNj.jpeg", "Carrd Reloaded"],
-      ["https://i.imgur.com/ex8Fyu7.jpeg", "Carrd Trail Again"],
-      ["https://i.imgur.com/8lqWjlJ.jpeg", "Sheila Blocked"],
-      ["https://i.imgur.com/GwrNzyM.jpeg", "Carrd Trail Still"],
-      ["https://i.imgur.com/2FBwX3e.jpeg", "Two Workers Viewed"],
-      ["https://i.imgur.com/D929PoP.jpeg", "Peer Connected"],
-      ["https://i.imgur.com/b1AXoiq.jpeg", "LinkedIn Growth"],
-      ["https://i.imgur.com/eYaPivY.jpeg", "Ranii Re-Connect"],
-      ["https://i.imgur.com/SXYp0xn.png", "Scrub Begins"],
-      ["https://i.imgur.com/HfsoABY.png", "Scrub Confirmed"],
-      ["https://i.imgur.com/ZXU4gdj.jpeg", "Carrd Cache 10:49am"],
-      ["https://i.imgur.com/ojUwbil.jpeg", "Duc Blocks"],
-       ["https://i.imgur.com/KHRDmQc.jpeg", "Internal Staff Still Sharing 18th June"],
-       ["https://i.imgur.com/bK1RrrS.jpeg", "Rabia - Inhuman Humanitarian? #1"],       
-       ["https://i.imgur.com/bK1RrrS.jpeg", "Rabia - Inhuman Humanitarian? #2"],       
-       ["https://i.imgur.com/kci6vYB.jpeg", "Rabia - Inhuman Humanitarian? #3"],       
-       ["https://i.imgur.com/MmOiBIT.jpeg", "Rabia - Inhuman Humanitarian? #4"],       
-       ["https://i.imgur.com/2FojjqR.jpeg", "Rabia - Inhuman Humanitarian? #5"],       
-       ["https://i.imgur.com/vRXYbT3.jpeg", "Rabia - Inhuman Humanitarian? #6"],       
-       ["https://i.imgur.com/2x5RnB5.jpeg", "Rabia - $$ & Optics over Humanitarianism?"],
-      
-    ];
-    images.forEach(([src, caption]) => {
-      document.write(`<div><img src='${src}' class='thumbnail' onclick='openLightbox("${src}")'><div class='caption'>${caption}</div></div>`);
-    });
-  </script>
+<div class="gallery" id="gallery">
+  <!-- Populated by script -->
 </div>
 
 <div id="lightbox" class="lightbox-overlay" onclick="closeLightbox()">
   <img id="lightbox-img" src="" alt="Expanded view" />
 </div>
+
+<script>
+const images = [
+  ["https://i.imgur.com/igbOGgm.jpeg", "Rabia — Viewed"],
+  ["https://i.imgur.com/10G2a15.jpeg", "Pham & Chong — Viewed"],
+  ["https://i.imgur.com/kok1Ypz.jpeg", "Lesley — Connected"],
+  ["https://i.imgur.com/blfQF1p.jpeg", "Sneak View — 30 May"],
+  ["https://i.imgur.com/7PWJqf5.jpeg", "Sneak View — 14 June"],
+  ["https://i.imgur.com/qZDy0Kh.jpeg", "Searching LinkedIn"],
+  ["https://i.imgur.com/nqxeSZd.jpeg", "Carrd Trail"],
+  ["https://i.imgur.com/cm1ArVp.jpeg", "Meridian Lawyer"],
+  ["https://i.imgur.com/URlQNdk.jpeg", "Public Views Log"],
+  ["https://i.imgur.com/8qTCuQ5.jpeg", "Google Analytics Spike"],
+  ["https://i.imgur.com/4WJXiWk.jpeg", "7am Activity Peak"],
+  ["https://i.imgur.com/uxRNdl6.jpeg", "Desktop Switch @ 8am"],
+  ["https://i.imgur.com/xakqSGJ.jpeg", "Perth → Albany Route"],
+  ["https://i.imgur.com/SO7yH7N.jpeg", "XYZ Site Surge"],
+  ["https://i.imgur.com/R5bLNIq.png", "VPN Patterns?"],
+  ["https://i.imgur.com/MPOt5OK.jpeg", "Noon Surge Begins"],
+  ["https://i.imgur.com/5A1XKZR.jpeg", "Carrd Use Ongoing"],
+  ["https://i.imgur.com/xM0x1eU.jpeg", "Cache Missed Again"],
+  ["https://i.imgur.com/23ORi60.jpeg", "Trigger on Refresh"],
+  ["https://i.imgur.com/VosPpNj.jpeg", "Carrd Reloaded"],
+  ["https://i.imgur.com/ex8Fyu7.jpeg", "Carrd Trail (Re)"],
+  ["https://i.imgur.com/8lqWjlJ.jpeg", "Sheila Blocked"],
+  ["https://i.imgur.com/GwrNzyM.jpeg", "Carrd Trail — Ongoing"],
+  ["https://i.imgur.com/2FBwX3e.jpeg", "Two Workers Viewed"],
+  ["https://i.imgur.com/D929PoP.jpeg", "Peer Connection"],
+  ["https://i.imgur.com/b1AXoiq.jpeg", "LinkedIn View Growth"],
+  ["https://i.imgur.com/eYaPivY.jpeg", "Ranii Returns"],
+  ["https://i.imgur.com/SXYp0xn.png", "Scrub Start"],
+  ["https://i.imgur.com/HfsoABY.png", "Scrub Confirmed"],
+  ["https://i.imgur.com/ZXU4gdj.jpeg", "10:49am Cache Hit"],
+  ["https://i.imgur.com/ojUwbil.jpeg", "Duc Blocks"],
+  ["https://i.imgur.com/KHRDmQc.jpeg", "Still Shared — 18 June"],
+  ["https://i.imgur.com/bK1RrrS.jpeg", "Rabia — Humanitarian? #1"],
+  ["https://i.imgur.com/bK1RrrS.jpeg", "Rabia — Humanitarian? #2"],
+  ["https://i.imgur.com/kci6vYB.jpeg", "Rabia — Humanitarian? #3"],
+  ["https://i.imgur.com/MmOiBIT.jpeg", "Rabia — Humanitarian? #4"],
+  ["https://i.imgur.com/2FojjqR.jpeg", "Rabia — Humanitarian? #5"],
+  ["https://i.imgur.com/vRXYbT3.jpeg", "Rabia — Humanitarian? #6"],
+  ["https://i.imgur.com/2x5RnB5.jpeg", "Rabia — Optics Over Aid?"],
+];
+
+const gallery = document.getElementById("gallery");
+
+images.forEach(([src, caption]) => {
+  const wrapper = document.createElement("div");
+  wrapper.className = "gallery-item";
+  wrapper.innerHTML = `
+    <img src="${src}" class="thumbnail" onclick="openLightbox('${src}')">
+    <div class="caption">${caption}</div>
+  `;
+  gallery.appendChild(wrapper);
+});
+</script>
 
 <script>
 function openLightbox(src) {
@@ -642,6 +659,7 @@ function closeLightbox() {
   document.getElementById('lightbox').style.display = 'none';
 }
 </script>
+
 
   
   <h2>🧩 Internal Link Trail Confirmed</h2>

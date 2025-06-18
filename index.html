@@ -170,7 +170,7 @@
 
   <strong>PDF Release:</strong><br>
 <!-- Countdown Leak Block -->
-<div style="text-align: left; font-family: monospace; color: #f33; font-size: 1.2rem;">
+<div style="text-align: left; font-family: monospace; color: #8c0d0d; font-size: 1.2rem;">
   <div id="millisecondCountdown"></div>
 
   <div id="pdfLink" style="margin-top: 1rem; display: none;">
@@ -184,7 +184,6 @@
   const countdownEl = document.getElementById("millisecondCountdown");
   const linkEl = document.getElementById("pdfLink");
 
-  // Set target time: 5:00 PM AWST (UTC+8) on June 19, 2025
   const target = new Date("2025-06-19T17:00:00+08:00").getTime();
 
   const interval = setInterval(() => {
@@ -193,17 +192,15 @@
 
     if (diff <= 0) {
       clearInterval(interval);
-      countdownEl.innerHTML = "🧨 0 Millisecond(s)";
+      countdownEl.innerHTML = "🧨 0";
       linkEl.style.display = "block";
     } else {
-      countdownEl.innerHTML = `${diff.toLocaleString()} Millisecond(s)`;
+      countdownEl.innerHTML = diff.toLocaleString();
     }
   }, 50);
 </script>
 
-
-
-
+<br><br>
   Their silence was not just inaction. It was timed.<br>
   The one date that mattered to me — they chose to ignore it.<br>
   And now, the offer they buried… will speak louder than they ever did.

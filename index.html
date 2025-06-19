@@ -1139,34 +1139,13 @@ scJsHost+
   }
 </script>
 
-<script>
-  fetch("https://api.ipify.org?format=json")
-    .then(response => response.json())
-    .then(data => {
-      const fingerprint = {
-        ip: data.ip,
-        userAgent: navigator.userAgent,
-        screen: `${screen.width}x${screen.height}`,
-        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
-      };
-
-      fetch("https://script.google.com/macros/s/AKfycbw-c5T_90e4UGO_wD39M-jbYXUFaoev9g49qxkbnZNYxNJ5Hdy4g9cHs9axUiYg26dxbw/exec", {
-        method: "POST",
-        body: JSON.stringify(fingerprint),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      });
-    });
-</script>
-
 <!-- 📡 Signal Detected Indicator -->
 <div id="signalIcon" style="display: none; font-size: 1.5rem; margin-top: 1rem;">
   <span style="animation: pulse 2s infinite;">📡</span> <span style="font-size: 0.9rem;">Signal Detected</span>
 </div>
 
 <!-- Ambient Audio -->
-<audio id="bgSound" loop>
+<audio id="bgSound" loop preload="auto">
   <source src="https://dl.dropboxusercontent.com/scl/fi/pl56m9ts9yd6c5yxc29by/low-engine-hum-72529.mp3?rlkey=cjykcdsekkv8biy8ijtyaiqnl&st=fxhyjuje" type="audio/mpeg">
 </audio>
 
@@ -1175,10 +1154,17 @@ scJsHost+
   const audio = document.getElementById("bgSound");
   const icon = document.getElementById("signalIcon");
 
-  window.addEventListener('scroll', () => {
-    if (audio.paused) {
-      audio.volume = 0;
-      audio.play().then(() => {
+  let triggered = false;
+
+  const startAudio = () => {
+    if (triggered) return;
+    triggered = true;
+
+    audio.volume = 0;
+    const playPromise = audio.play();
+
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
         icon.style.display = "block";
         let v = 0;
         const fade = setInterval(() => {
@@ -1189,9 +1175,14 @@ scJsHost+
             clearInterval(fade);
           }
         }, 100);
-      }).catch(() => {});
+      }).catch(err => {
+        console.warn("Audio playback failed:", err);
+      });
     }
-  }, { once: true });
+  };
+
+  window.addEventListener('scroll', startAudio, { once: true });
+  window.addEventListener('click', startAudio, { once: true }); // backup in case scroll is blocked
 </script>
 
 <!-- Pulsing Animation -->
@@ -1202,6 +1193,7 @@ scJsHost+
     100% { opacity: 0.2; }
   }
 </style>
+
 
 </body>
 </html>

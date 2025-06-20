@@ -62,6 +62,46 @@
       text-align: center;
     }
     iframe { display: block; margin: 30px auto; }
+
+    /* Fix link hover color for all required links */
+    a {
+      color: #88c0d0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #4da6ff;
+      text-decoration: underline;
+    }
+
+    /* Specific link styling overrides for PDF download and directors links */
+    .pdf-download, .board-link {
+      color: #88c0d0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .pdf-download:hover, .pdf-download:focus,
+    .board-link:hover, .board-link:focus {
+      color: #4da6ff;
+      text-decoration: underline;
+    }
+
+    /* Shannon Mony section text size adjusted to match site */
+    #shannon-mony h2 {
+      font-size: 1.4em !important;
+      color: #c3f0c8;
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+    #shannon-mony div, 
+    #shannon-mony p,
+    #shannon-mony ul,
+    #shannon-mony li {
+      font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 1.05em !important;
+      line-height: 1.7 !important;
+      color: #c3f0c8 !important;
+    }
   </style>
 </head>
 <body>
@@ -207,7 +247,9 @@ For context: Shannon and I have a professional/personal history.
 
   <a href="https://www.linkedin.com/posts/rev-k-m-d-b19953b6_sharingsilence-ruahruinslives-noshenanigans-activity-7341685308796641280-wQYD?utm_source=share&utm_medium=member_desktop&rcm=ACoAABize4UBFZ8nQ9SK6MGhZfeRzKL7aNI2Azo" 
      target="_blank" 
-     style="color: #88c0d0; text-decoration: underline;">🔗 View original on LinkedIn</a><br><br>
+     style="color: #88c0d0; text-decoration: none;" 
+     onmouseover="this.style.color='#4da6ff'" 
+     onmouseout="this.style.color='#88c0d0'">🔗 View original on LinkedIn</a><br><br>
 
   <em style="color:;">This isn’t speculation. It’s documented.</em>
 </div>
@@ -244,13 +286,14 @@ For context: Shannon and I have a professional/personal history.
   <div style="margin-right: 1rem;">
     <strong style="display: block; margin-bottom: 0.4rem;">📡 20th June 2025 - Morning Stats</strong>
     <img src="https://i.imgur.com/vprT7RU.jpeg" 
-         Ruah legal exposure letter by Kay Dee – institutional abandonment case 
+         alt="Ruah legal exposure letter by Kay Dee – institutional abandonment case" 
          style="width: 160px; height: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: block; margin-bottom: 0.3rem;" />
     <div>
       Carrd path still being walked, LinkedIn being shared, and people googling!
     </div>
   </div>
 </div>
+
 
 
 
@@ -272,9 +315,9 @@ For context: Shannon and I have a professional/personal history.
 
   Their silence is documented. Their faces are preserved. The truth cannot be erased.<br><br>
 
-  <a href="https://ruah.org.au/about-ruah/meet-the-team/board-of-directors/" target="_blank" style="color: #88c0d0;">📁 Directors</a><br>
-  <a href="https://ruah.org.au/about-ruah/meet-the-team/executive-team/" target="_blank" style="color: #88c0d0;">📁 Executive Team</a><br>
-  <a href="https://ruah.org.au/about-ruah/meet-the-team/ambassadors/" target="_blank" style="color: #88c0d0;">📁 Ambassadors</a><br>
+  <a href="https://ruah.org.au/about-ruah/meet-the-team/board-of-directors/" class="board-link" target="_blank">📁 Directors</a><br>
+  <a href="https://ruah.org.au/about-ruah/meet-the-team/executive-team/" class="board-link" target="_blank">📁 Executive Team</a><br>
+  <a href="https://ruah.org.au/about-ruah/meet-the-team/ambassadors/" class="board-link" target="_blank">📁 Ambassadors</a><br>
   </p>
 </div>
 
@@ -319,7 +362,7 @@ For context: Shannon and I have a professional/personal history.
 <!-- PDF Leak -->
 <div style="font-family: sans-serif; font-size: 0.7rem; line-height: 1.4; padding: 1rem 0;">
   <strong>PDF Release:</strong><br>
-  🔗 <a href="https://dl.dropboxusercontent.com/scl/fi/gzxfu2o3rhdpiafftvy6a/Settlement_By_KMD_Tuesday_-3_June-2025.pdf?rlkey=3l47cqragl4v3jnwmrnmyty6b&st=ph71b1sb" download style="color: #88c0d0; text-decoration: none;">
+  🔗 <a href="https://dl.dropboxusercontent.com/scl/fi/gzxfu2o3rhdpiafftvy6a/Settlement_By_KMD_Tuesday_-3_June-2025.pdf?rlkey=3l47cqragl4v3jnwmrnmyty6b&st=ph71b1sb" class="pdf-download" download>
     Download my original settlement offer sent 3rd June 2025
   </a>
   <br><br>
@@ -346,7 +389,7 @@ For context: Shannon and I have a professional/personal history.
                                            <!-- RUAH -->
 <!-- Elsie -->
 <h2>
-  <a href="https://www.linkedin.com/in/elsie-blay-ems/" target="_blank" style="color: #88c0d0; text-decoration: none;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">
+  <a href="https://www.linkedin.com/in/elsie-blay-ems/" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">
     <span style="text-decoration: underline; font-weight: bold;">Elsie Blay — LinkedIn</span>
   </a>
 </h2>
@@ -371,7 +414,7 @@ It is documented fact.<br>
 It is a matter of public record.</p>
 
 <p style="font-size: 0.8em;">
-  <a href="https://www.youtube.com/@SharingSilence81" target="_blank" style="color: #88c0d0; text-decoration: none;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">[MORE TO COME]</a>
+  <a href="https://www.youtube.com/@SharingSilence81" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">[MORE TO COME]</a>
 </p>
 
 <hr>
@@ -379,7 +422,7 @@ It is a matter of public record.</p>
 <!-- Deb -->
 
 <h2>
-  <a href="https://www.linkedin.com/in/debra-zanella-816a2211a/" target="_blank" style="color: #88c0d0; text-decoration: none;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">
+  <a href="https://www.linkedin.com/in/debra-zanella-816a2211a/" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">
     <span style="text-decoration: underline; font-weight: bold;">Debra Zanella — LinkedIn</span>
   </a>
 </h2>
@@ -418,19 +461,19 @@ It is testimony.<br>
 <strong>It is the truth behind the image.</strong></p>
 
 <p style="font-size: 0.8em;">
-  <a href="https://x.com/AHuman88539392" target="_blank" style="color: #88c0d0; text-decoration: none;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">[MORE TO COME]</a>
+  <a href="https://x.com/AHuman88539392" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">[MORE TO COME]</a>
 </p>
 
 <hr>
   
 <!-- Shannon -->
 <section id="shannon-mony" style="margin-top: 4rem;">
-  <h2 style="font-family: sans-serif; font-size: 1.8rem; color: #c3f0c8; margin-bottom: 1rem; position: relative;">
+  <h2 style="font-family: sans-serif; font-size: 1.4em; color: #c3f0c8; margin-bottom: 0.5rem; position: relative;">
     🔎 <a href="https://au.linkedin.com/in/shannon-mony-71bb4b88" target="_blank" style="color: #88c0d0 !important; text-decoration: underline;">Shannon Mony</a> – The Advocate Who Went Quiet
     <span style="position: absolute; margin-left: 0.5rem; font-size: 1.2rem; top: 0.1rem;" title="poke">👉</span>
   </h2>
 
-  <div style="display: flex; align-items: flex-start; gap: 1rem; margin: 2rem 0; font-family: sans-serif; font-size: 0.95rem; line-height: 1.6; color: #c3f0c8;">
+  <div style="display: flex; align-items: flex-start; gap: 1rem; margin: 2rem 0; font-family: sans-serif; font-size: 1.05em; line-height: 1.7; color: #c3f0c8;">
     <img src="https://i.imgur.com/CLzARe9.jpeg" alt="Shannon Mony at Two Peoples Bay Nature Reserve" style="width: 150px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.2); flex-shrink: 0;">
     <div>
       <p style="font-style: italic; margin: 0 0 0.8rem 0;">
@@ -484,7 +527,7 @@ It is testimony.<br>
 <hr>
 <!-- Grey -->
 <h2>
-  <a href="https://www.linkedin.com/in/grahamdonnelly17/" target="_blank" style="color: #88c0d0; text-decoration: none;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">
+  <a href="https://www.linkedin.com/in/grahamdonnelly17/" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">
     <span style="text-decoration: underline; font-weight: bold;">Graham Donnelly — LinkedIn</span>
   </a>
 </h2>
@@ -510,7 +553,7 @@ The priorities set.</p>
 <strong>It is a direct look at the consequences of financial governance.</strong></p>
 
 <p style="font-size: 0.8em;">
-  <a href="https://www.linkedin.com/in/rev-k-m-d-b19953b6/" target="_blank" style="color: #88c0d0; text-decoration: none;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">[MORE TO COME]</a>
+  <a href="https://www.linkedin.com/in/rev-k-m-d-b19953b6/" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">[MORE TO COME]</a>
 </p>
 
 
@@ -1209,27 +1252,38 @@ because <em>we are different.</em></p>
   </a>
 </div>
 
-                                            <!-- fake links section  -->
-<div style="text-align: center; margin-top: 10px;">
-  <a href="https://staffmemo.sharingsilence.xyz/StaffBrief-May2025.pdf" target="_blank" style="color:#7FCF7F; font-style: italic; text-decoration: none;">
+<!-- fake links section  -->
+<style>
+  .fake-links a {
+    color: #7FCF7F;
+    font-style: italic;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .fake-links a:hover {
+    color: #4da6ff;
+    text-decoration: underline;
+  }
+</style>
+
+<div class="fake-links" style="text-align: center; margin-top: 10px;">
+  <a href="https://staffmemo.sharingsilence.xyz/StaffBrief-May2025.pdf" target="_blank">
     🔒📄 Internal Brief: Staff_Memo—May_2025.pdf 📡
   </a>
 </div>
 
-<div style="text-align: center; margin-top: 5px;">
-  <a href="https://emaildump.sharingsilence.xyz/emaildumpmayjune2025.zip" target="_blank" style="color:#7FCF7F; font-style: italic; text-decoration: none;">
+<div class="fake-links" style="text-align: center; margin-top: 5px;">
+  <a href="https://emaildump.sharingsilence.xyz/emaildumpmayjune2025.zip" target="_blank">
     🔒🗃️ Full_Email_Dump—May/June_2025.zip 📡
   </a>
 </div>
 
-<div style="text-align: center; margin-top: 5px;">
-  <a href="https://Tracedump.sharingsilence.xyz/tracelog2025.zip" target="_blank" style="color:#7FCF7F; font-style: italic; text-decoration: none;">
+<div class="fake-links" style="text-align: center; margin-top: 5px;">
+  <a href="https://Tracedump.sharingsilence.xyz/tracelog2025.zip" target="_blank">
     🔒🛰️TraceLog/DNS_June_2025.zip 📡
-
   </a>
 </div>
 
-<hr>
 
                                             <!-- email section  -->
 <div style="text-align: center; max-width: 600px; margin: 0 auto;">
@@ -1365,11 +1419,9 @@ scJsHost+
   }
 </script>
 
-
-
 <!-- 📡 Signal Detected Indicator -->
 <div id="signalIcon" style="display: none; font-size: 1.5rem; margin-top: 1rem;">
-  <span style="animation: pulse 2s infinite;">📡</span> <span style="font-size: 0.9rem;">Signal Detected</span>
+  <span style="animation: pulse 2s infinite;">📡</span> <span style="font-size: 0.9rem;">We See You!</span>
 </div>
 
 <!-- Ambient Audio -->
@@ -1408,7 +1460,7 @@ scJsHost+
 
           let v = 0;
           const fade = setInterval(() => {
-            if (v < 0.3) {
+            if (v < 0.65) {
               v += 0.01;
               audio.volume = v;
             } else {
@@ -1427,7 +1479,6 @@ scJsHost+
     );
   });
 </script>
-
 
 <!-- SEO Booster Pack -->
 <meta name="keywords" content="Ruah Community Services, Ruah neglect, autistic man Perth, NDIS abuse, Western Australia mental health failure, disability legal action, Access Housing complaint, neurodivergent discrimination WA, legal case Ruah, institutional abandonment" />

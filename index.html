@@ -94,6 +94,80 @@
   </p>
 </div><br>
 
+  <!-- Ruah email leak -->
+
+<style>
+  @keyframes pulse {
+    0% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.3); }
+    50% { box-shadow: 0 0 15px rgba(0, 255, 0, 0.6); }
+    100% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.3); }
+  }
+
+  @keyframes floatHeart {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-50px) scale(1.5); opacity: 0; }
+  }
+
+  .poke-img {
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .poke-img.pulse-hover:hover {
+    animation: pulse 1.5s infinite;
+  }
+
+  .heart {
+    position: absolute;
+    font-size: 1.2rem;
+    animation: floatHeart 1.5s forwards;
+    pointer-events: none;
+  }
+
+  .poke-caption {
+    clear: both;
+    font-size: 0.65rem;
+    color: #ccc;
+    padding-top: 0.3rem;
+  }
+</style>
+
+<div style="position: relative; display: inline-block;">
+  <img src="https://i.imgur.com/nDPDzTR.jpeg"
+       alt="Ruah's chosen legal representative, has not replied since Friday 13th with a cold refusal to negotiate"
+       class="poke-img pulse-hover" onmouseover="spawnMultipleHearts(this)">
+
+  <div class="poke-caption">
+    🫳👈💥<br><br>
+  </div>
+</div>
+
+<script>
+  const heartVariants = ['💚', '💖', '💜', '💙', '🧡'];
+
+  function spawnMultipleHearts(el) {
+    const container = el.closest('div');
+    for (let i = 0; i < 8; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerText = heartVariants[Math.floor(Math.random() * heartVariants.length)];
+      heart.style.left = `${50 + (Math.random() * 20 - 10)}%`;
+      heart.style.top = `${Math.random() * 10}px`;
+      heart.style.transform = 'translateX(-50%)';
+      container.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 1500);
+    }
+  }
+</script>
+
 <!-- Ruah email leak -->
 
   <img src="" alt="Centered Image" style="max-width: 50%; height: auto;">

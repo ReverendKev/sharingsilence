@@ -1377,42 +1377,6 @@ scJsHost+
   <source src="https://dl.dropboxusercontent.com/scl/fi/pl56m9ts9yd6c5yxc29by/low-engine-hum-72529.mp3?rlkey=cjykcdsekkv8biy8ijtyaiqnl&st=fxhyjuje" type="audio/mpeg">
 </audio>
 
-<!-- Activation Script -->
-<script>
-  const audio = document.getElementById("bgSound");
-  const icon = document.getElementById("signalIcon");
-
-  let triggered = false;
-
-  const startAudio = () => {
-    if (triggered) return;
-    triggered = true;
-
-    audio.volume = 0;
-    const playPromise = audio.play();
-
-    if (playPromise !== undefined) {
-      playPromise.then(() => {
-        icon.style.display = "block";
-        let v = 0;
-        const fade = setInterval(() => {
-          if (v < 0.3) {
-            v += 0.01;
-            audio.volume = v;
-          } else {
-            clearInterval(fade);
-          }
-        }, 100);
-      }).catch(err => {
-        console.warn("Audio playback failed:", err);
-      });
-    }
-  };
-
-  window.addEventListener('scroll', startAudio, { once: true });
-  window.addEventListener('click', startAudio, { once: true }); // backup in case scroll is blocked
-</script>
-
 <!-- Pulsing Animation -->
 <style>
   @keyframes pulse {
@@ -1421,6 +1385,49 @@ scJsHost+
     100% { opacity: 0.2; }
   }
 </style>
+
+<!-- Activation Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("bgSound");
+    const icon = document.getElementById("signalIcon");
+
+    let triggered = false;
+
+    const startAudio = () => {
+      if (triggered) return;
+      triggered = true;
+
+      audio.volume = 0;
+
+      const playPromise = audio.play();
+
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          icon.style.display = "block";
+
+          let v = 0;
+          const fade = setInterval(() => {
+            if (v < 0.3) {
+              v += 0.01;
+              audio.volume = v;
+            } else {
+              clearInterval(fade);
+            }
+          }, 100);
+        }).catch(err => {
+          console.warn("Audio playback failed:", err);
+        });
+      }
+    };
+
+    // Trigger audio on any of these gestures
+    ["click", "scroll", "keydown"].forEach(evt =>
+      window.addEventListener(evt, startAudio, { once: true })
+    );
+  });
+</script>
+
 
 <!-- SEO Booster Pack -->
 <meta name="keywords" content="Ruah Community Services, Ruah neglect, autistic man Perth, NDIS abuse, Western Australia mental health failure, disability legal action, Access Housing complaint, neurodivergent discrimination WA, legal case Ruah, institutional abandonment" />

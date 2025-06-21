@@ -188,21 +188,22 @@
 <script>
   const heartVariants = ['💚', '💖', '💜', '💙', '🧡'];
 
-  function spawnMultipleHearts(el) {
-    const container = el.closest('div');
-    for (let i = 0; i < 8; i++) {
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.innerText = heartVariants[Math.floor(Math.random() * heartVariants.length)];
-      heart.style.left = ${50 + (Math.random() * 20 - 10)}%;
-      heart.style.top = ${Math.random() * 10}px;
-      heart.style.transform = 'translateX(-50%)';
-      container.appendChild(heart);
-      setTimeout(() => {
-        heart.remove();
-      }, 1500);
-    }
+function spawnMultipleHearts(el) {
+  const container = el.closest('div');
+  for (let i = 0; i < 8; i++) {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerText = heartVariants[Math.floor(Math.random() * heartVariants.length)];
+    heart.style.left = `${50 + (Math.random() * 20 - 10)}%`;
+    heart.style.top = `${Math.random() * 10}px`;
+    heart.style.transform = 'translateX(-50%)';
+    container.appendChild(heart);
+    setTimeout(() => {
+      heart.remove();
+    }, 1500);
   }
+}
+
 </script><br><br>
 
 
@@ -1637,35 +1638,32 @@ scJsHost+
 
     let triggered = false;
 
-    const startAudio = () => {
+    function startAudio() {
       if (triggered) return;
       triggered = true;
 
       audio.volume = 0;
+      audio.muted = false; // ensure not muted
 
-      const playPromise = audio.play();
-
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
+      const promise = audio.play();
+      if (promise !== undefined) {
+        promise.then(() => {
           icon.style.display = "block";
 
           let v = 0;
-          const fade = setInterval(() => {
-            if (v < 0.65) {
-              v += 0.01;
-              audio.volume = v;
-            } else {
-              clearInterval(fade);
-            }
+          const fadeIn = setInterval(() => {
+            v += 0.01;
+            audio.volume = v;
+            if (v >= 0.65) clearInterval(fadeIn);
           }, 100);
         }).catch(err => {
           console.warn("Audio playback failed:", err);
         });
       }
-    };
+    }
 
-    // Trigger audio on any of these gestures
-    ["click", "scroll", "keydown"].forEach(evt =>
+    // User interaction required to start
+    ["click", "scroll", "keydown", "mousemove"].forEach(evt =>
       window.addEventListener(evt, startAudio, { once: true })
     );
   });

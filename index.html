@@ -1901,92 +1901,72 @@ scJsHost+
 
 
 
-<!-- 📡 Signal Detected Indicator -->
-
-<div id="signalIcon" style="display: none; font-size: 1rem; margin-top: 1rem; text-align: center;">
-  <span style="animation: pulse 4s infinite;">📡</span>
-  <span style="font-size: 0.7rem;">We See You</span>
-</div>
-
-<!-- Ambient Audio -->
-
+<!-- AUDIO -->
 <audio id="bgSound" loop preload="auto">
   <source src="https://dl.dropboxusercontent.com/scl/fi/pl56m9ts9yd6c5yxc29by/low-engine-hum-72529.mp3?rlkey=cjykcdsekkv8biy8ijtyaiqnl&st=fxhyjuje" type="audio/mpeg">
 </audio>
 
-<!-- Pulse Animation -->
+<!-- FULLSCREEN OVERLAY -->
+<div id="entryOverlay" style="
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #000;
+  color: #7FCF7F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 2rem;
+  z-index: 9999;
+  cursor: pointer;
+  transition: opacity 1.2s ease;
+">
+  <div>📡 Tap to Enter</div>
+</div>
 
+<!-- FAINT GLOW PULSE -->
+<div id="signalPulse" style="
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle, rgba(127,207,127,0.08) 0%, rgba(0,0,0,0) 70%);
+  opacity: 0;
+  pointer-events: none;
+  animation: pulse 6s infinite ease-in-out;
+  z-index: 0;
+"></div>
+
+<!-- PULSE ANIMATION -->
 <style>
   @keyframes pulse {
-    0%   { opacity: 0.2; }
-    50%  { opacity: 1; }
-    100% { opacity: 0.2; }
+    0%, 100% { opacity: 0.02; }
+    50% { opacity: 0.09; }
   }
 </style>
 
-<!-- Direct Activation Script -->
-
+<!-- ACTIVATION LOGIC -->
 <script>
+  const overlay = document.getElementById("entryOverlay");
+  const pulse = document.getElementById("signalPulse");
   const audio = document.getElementById("bgSound");
-  const icon = document.getElementById("signalIcon");
 
-  let played = false;
-
-  function unlockAudio() {
-    if (played) return;
-    played = true;
-
-    audio.volume = 0.001; // quiet start
-    const p = audio.play();
-    
-    if (p && p.then) {
-      p.then(() => {
-        icon.style.display = "block";
-        let vol = 0.01;
-        const fade = setInterval(() => {
-          vol += 0.01;
-          audio.volume = Math.min(vol, 0.3);
-          if (vol >= 0.3) clearInterval(fade);
-        }, 100);
-      }).catch((e) => {
-        console.warn("Playback blocked:", e);
-      });
-    }
+  function unlockExperience() {
+    audio.volume = 0.3;
+    audio.play().then(() => {
+      overlay.style.opacity = "0";
+      setTimeout(() => {
+        overlay.style.display = "none";
+        pulse.style.opacity = "1";
+      }, 1200);
+    }).catch(err => {
+      overlay.innerHTML = "<div>⚠️ Tap again to unlock sound</div>";
+      console.warn("Audio play failed:", err);
+    });
   }
 
-  // Direct binding without wrapping
-  document.body.addEventListener("touchstart", unlockAudio, { once: true });
-  document.body.addEventListener("click", unlockAudio, { once: true });
-  document.body.addEventListener("keydown", unlockAudio, { once: true });
-</script>
-
-
-
-<!-- END -->
-
-
-
-<!-- SEO Booster Pack -->
-
-
-
-<meta name="keywords" content="Ruah Community Services, Ruah neglect, autistic man Perth, NDIS abuse, Western Australia mental health failure, disability legal action, Access Housing complaint, neurodivergent discrimination WA, legal case Ruah, institutional abandonment" />
-<meta name="robots" content="index, follow" />
-<title>Sharing Silence — Ruah Neglect of Autistic Man in WA | Legal Memoir</title>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "#SharingSilence — A Memoir",
-  "description": "Public legal and personal record of an older autistic man abandoned by Ruah Community Services for 8 years. Includes legal action, systemic failures, and direct documentation.",
-  "author": {
-    "@type": "Person",
-    "name": "K.M.D. (Kev)"
-  },
-  "datePublished": "2025-06-01",
-  "keywords": ["Ruah", "NDIS", "autism", "neglect", "legal complaint", "Perth", "mental health"]
-}
+  overlay.addEventListener("click", unlockExperience);
+  overlay.addEventListener("touchstart", unlockExperience);
 </script>
 
 

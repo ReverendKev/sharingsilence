@@ -1927,17 +1927,16 @@ scJsHost+
   const icon = document.getElementById("signalIcon");
   let triggered = false;
 
-  function activateSound() {
+  function activateAudio() {
     if (triggered) return;
     triggered = true;
 
-    // Try to play directly inside the gesture callback
+    // Direct play on first gesture
     audio.muted = true;
     audio.volume = 0;
     audio.play().then(() => {
       icon.style.display = "block";
 
-      // After play succeeds, safely unmute + fade volume
       setTimeout(() => {
         audio.muted = false;
         let v = 0.01;
@@ -1946,19 +1945,17 @@ scJsHost+
           audio.volume = Math.min(v, 0.3);
           if (v >= 0.3) clearInterval(fade);
         }, 100);
-      }, 200);
+      }, 100);
     }).catch(err => {
-      console.warn("Audio blocked:", err);
+      console.warn("Playback blocked:", err);
     });
   }
 
-  // Attach only after page loads to avoid race condition
-  window.addEventListener("load", () => {
-    ["click", "touchstart"].forEach(evt =>
-      document.body.addEventListener(evt, activateSound, { once: true })
-    );
-  });
+  // Ensure gesture triggers on Android reliably
+  document.body.addEventListener("click", activateAudio, { once: true });
+  document.body.addEventListener("touchstart", activateAudio, { once: true });
 </script>
+
 
 
 

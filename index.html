@@ -131,43 +131,61 @@
   </p>
 </div><br>
 
-<!-- Shannon Emails -->
+<!-- Updates -->
   
-<!-- Site light up  -->
+<style>
+  .stable-img {
+    width: 300px;
+    max-width: 100%;
+    min-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .stable-img {
+      float: none;
+      display: block;
+      margin: 0 auto 1rem auto;
+    }
+  }
+
+  .caption-block {
+    clear: both;
+    font-size: 0.65rem;
+    color: #ccc;
+  }
+</style>
+
+<!-- Site light up -->
 <strong><h3>LEGAL LETTERS HIT</h3></strong>
-<img src="https://i.imgur.com/btJWQDL.jpeg" 
-     alt="domain lights up ruah" 
-     style="width: 35%; height: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); float: left; margin-right: 1rem; margin-bottom: 0.5rem;" />
+<img src="https://i.imgur.com/btJWQDL.jpeg" alt="domain lights up ruah" class="stable-img" />
+<div class="caption-block">
+  <p>Site lights up and those downloads?<br></p>
+</div><br>
 
-<div style="clear: both; font-size: 0.65rem; color:;">
-  <p>Site lights up and those downloads?<br>
-  </p>
-</div>  <br>
-
-<!-- childish  -->
-
-<img src="https://i.imgur.com/HSqAj7R.jpeg" 
-     alt="Ruah's chosen legal representative, has not replied since Friday 13th with a cold refusal to negotiate" 
-     style="width: 35%; height: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); float: left; margin-right: 1rem; margin-bottom: 0.5rem;" />
-
-<div style="clear: both; font-size: 0.65rem; color:;">
-  <p>Only Ruah staff, board, ambassodors or legal know my full name.<br>
+<!-- childish -->
+<img src="https://i.imgur.com/HSqAj7R.jpeg" alt="Fake LinkedIn account used to view profile" class="stable-img" />
+<div class="caption-block">
+  <p>Only Ruah staff, board, ambassadors or legal know my full name.<br>
   This is to protect my children, not me..<br>
-They created a fake account with my real name (I blacked out) on linkedin and viewed my profile.<br>
-<p> How very childish!<br></p>
-</div>  <br>
+  They created a fake account with my real name (I blacked out) on LinkedIn and viewed my profile.<br>
+<p>  <strong>How very childish!</strong><br></p>
+</div><br>
 
-<!-- prokbun -->
-
-<img src="https://i.imgur.com/fQ1HrtT.png" 
-     alt="Ruah's chosen legal representative, has not replied since Friday 13th with a cold refusal to negotiate" 
-     style="width: 35%; height: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); float: left; margin-right: 1rem; margin-bottom: 0.5rem;" />
-
-<div style="clear: both; font-size: 0.65rem; color:;">
+<!-- porkbun -->
+<img src="https://i.imgur.com/fQ1HrtT.png" alt="Failed Porkbun login attempt" class="stable-img" />
+<div class="caption-block">
   <p>Access Denied! Nice Try.<br>
   Trying to access my domain account, tsk tsk<br>
-<p>2FA, notifications, strong password, Cloudflare and Github online friends.<br></p>
-<hr></div>  
+  2FA, notifications, strong password, Cloudflare and GitHub online friends.<br></p>
+  <hr>
+</div>
+
 
 <!-- Shannon heart -->
 
@@ -246,11 +264,9 @@ function spawnMultipleHearts(el) {
 
 
 <!-- Shannon 2 -->
-<img src="https://i.imgur.com/oylOmM3.png" 
-     alt="Ruah's chosen legal representative, has not replied since Friday 13th with a cold refusal to negotiate" 
-     style="width: 35%; height: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); float: left; margin-right: 1rem; margin-bottom: 0.5rem;" />
 
-<div style="clear: both; font-size: 0.65rem; color:;">
+<img src="https://i.imgur.com/oylOmM3.png" alt="Ruah's chosen legal representative, has not replied since Friday 13th with a cold refusal to negotiate" class="stable-img" />
+<div class="caption-block">
   <p>Ruah’s chosen legal representative has not replied since Friday the 13th.<br>
 This message — like the silence that followed — is unedited, original, and public.<br>
 Emails shown are organisational and previously used in official correspondence.<br>
@@ -429,19 +445,42 @@ It would be prefered if you please send your responces to Ms Mony and send all a
 <hr>
                                     <!-- utubz -->
 
-<div style="max-width: 853px; margin: 0 auto; padding: 1rem 0; display: flex; justify-content: center; align-items: center;">
-  <div style="position: relative; width: 40vw; height: 40vw; max-width: 100%; overflow: hidden;">
-    <iframe 
-      src="https://www.youtube.com/embed/mCPdrDO1Ml0?si=YiU80ixeSoXVOy2a" 
-      title="CORP_S08E24"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-    </iframe>
-  </div>
-</div>
+<style>
+  .video-container {
+    max-width: 150px;
+    margin: 1rem auto;
+    position: relative;
+    width: 30vw;
+    height: 20vw;
+  }
+
+  @media (min-width: 768px) {
+    .video-container {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+  }
+</style>
+
+<div class="video-container">
+  <iframe 
+    src="https://www.youtube.com/embed/mCPdrDO1Ml0?si=YiU80ixeSoXVOy2a" 
+    title="CORP_S08E24"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div><br><br>
+
 
 <hr>
                                            <!-- RUAH -->

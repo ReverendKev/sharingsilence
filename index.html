@@ -1922,7 +1922,7 @@ scJsHost+
   cursor: pointer;
   transition: opacity 1.2s ease;
 ">
-  <div>📡 Tap to Enter</div>
+  <div>📡 Tap to Enter ⚠️</div>
 </div>
 
 <!-- FAINT GLOW PULSE -->
@@ -1960,7 +1960,7 @@ scJsHost+
         pulse.style.opacity = "1";
       }, 1200);
     }).catch(err => {
-      overlay.innerHTML = "<div>⚠️ Tap again to unlock sound</div>";
+      overlay.innerHTML = "<div>⚠️</div>";
       console.warn("Audio play failed:", err);
     });
   }
@@ -2032,8 +2032,8 @@ scJsHost+
 <script>
 
   window.spawnMultipleHearts = function(wrapper) {
-    const heartVariants = ['💚', '💖', '💜', '💙', '🧡'];
-    for (let i = 0; i < 8; i++) {
+    const heartVariants = ['💚', '💖', '💸', '🐍'];
+    for (let i = 0; i < 3; i++) {
       const heart = document.createElement('div');
       heart.className = 'heart';
       heart.innerText = heartVariants[Math.floor(Math.random() * heartVariants.length)];

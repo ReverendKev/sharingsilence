@@ -1923,44 +1923,43 @@ scJsHost+
 
 <!-- Activation Script -->
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const audio = document.getElementById("bgSound");
-    const icon = document.getElementById("signalIcon");
-    let triggered = false;
+  const audio = document.getElementById("bgSound");
+  const icon = document.getElementById("signalIcon");
+  let triggered = false;
 
-    function startAudio() {
-      if (triggered) return;
-      triggered = true;
+  function activateSound() {
+    if (triggered) return;
+    triggered = true;
 
-      try {
-        audio.muted = true; // force muted first for autoplay compliance
-        audio.volume = 0;
-        audio.play().then(() => {
-          icon.style.display = "block";
+    // Try to play directly inside the gesture callback
+    audio.muted = true;
+    audio.volume = 0;
+    audio.play().then(() => {
+      icon.style.display = "block";
 
-          // Now fade in + unmute after playback starts
-          setTimeout(() => {
-            audio.muted = false;
-            let v = 0.01;
-            const fadeIn = setInterval(() => {
-              v += 0.01;
-              audio.volume = Math.min(v, 0.3);
-              if (v >= 0.3) clearInterval(fadeIn);
-            }, 100);
-          }, 500);
-        }).catch(err => {
-          console.warn("Audio playback failed:", err);
-        });
-      } catch (e) {
-        console.warn("Autoplay blocked:", e);
-      }
-    }
+      // After play succeeds, safely unmute + fade volume
+      setTimeout(() => {
+        audio.muted = false;
+        let v = 0.01;
+        const fade = setInterval(() => {
+          v += 0.01;
+          audio.volume = Math.min(v, 0.3);
+          if (v >= 0.3) clearInterval(fade);
+        }, 100);
+      }, 200);
+    }).catch(err => {
+      console.warn("Audio blocked:", err);
+    });
+  }
 
-    ["click", "scroll", "keydown", "touchstart"].forEach(evt =>
-      window.addEventListener(evt, startAudio, { once: true })
+  // Attach only after page loads to avoid race condition
+  window.addEventListener("load", () => {
+    ["click", "touchstart"].forEach(evt =>
+      document.body.addEventListener(evt, activateSound, { once: true })
     );
   });
 </script>
+
 
 
 

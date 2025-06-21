@@ -1616,12 +1616,18 @@ scJsHost+
 </div>
 
 <!-- Ambient Audio -->
+<!-- 📡 Signal Detected Indicator -->
+<div id="signalIcon" style="display: none; font-size: 1.0rem; margin-top: 1rem;">
+  <span style="animation: pulse 4s infinite;">📡</span>
+  <span style="font-size: 0.5rem;">We See You!</span>
+</div>
+
+<!-- Ambient Audio -->
 <audio id="bgSound" loop preload="auto">
-  <audio id="bgSound" loop preload="auto">
- <source src="https://dl.dropboxusercontent.com/scl/fi/pl56m9ts9yd6c5yxc29by/low-engine-hum-72529.mp3?rlkey=cjykcdsekkv8biy8ijtyaiqnl&st=fxhyjuje" type="audio/mpeg">
+  <source src="https://dl.dropboxusercontent.com/scl/fi/pl56m9ts9yd6c5yxc29by/low-engine-hum-72529.mp3?rlkey=cjykcdsekkv8biy8ijtyaiqnl&st=fxhyjuje" type="audio/mpeg">
 </audio>
 
-<!-- Pulsing Animation -->
+<!-- Pulse Animation -->
 <style>
   @keyframes pulse {
     0%   { opacity: 0.2; }
@@ -1631,7 +1637,6 @@ scJsHost+
 </style>
 
 <!-- Activation Script -->
-
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const audio = document.getElementById("bgSound");
@@ -1643,15 +1648,15 @@ scJsHost+
       if (triggered) return;
       triggered = true;
 
-      audio.volume = 0;
-      audio.muted = false; // ensure not muted
+      audio.volume = 0.001;
+      audio.muted = false;
 
       const promise = audio.play();
       if (promise !== undefined) {
         promise.then(() => {
           icon.style.display = "block";
 
-          let v = 0;
+          let v = 0.001;
           const fadeIn = setInterval(() => {
             v += 0.01;
             audio.volume = v;
@@ -1663,7 +1668,6 @@ scJsHost+
       }
     }
 
-    // User interaction required to start
     ["click", "scroll", "keydown", "mousemove"].forEach(evt =>
       window.addEventListener(evt, startAudio, { once: true })
     );

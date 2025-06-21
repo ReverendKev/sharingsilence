@@ -1358,16 +1358,16 @@ Following Sheila’s handover.
 ];
 
     const gallery = document.getElementById("gallery");
+images.forEach(([src, alt]) => {
+  const wrapper = document.createElement("div");
+  wrapper.className = "gallery-item";
+  wrapper.innerHTML = `
+    <img src="${src}" class="thumbnail" alt="${alt}" onclick="openLightbox('${src}', '${alt.replace(/'/g, "\\'")}')">
+    <div class="caption">${alt}</div>
+  `;
+  gallery.appendChild(wrapper);
+});
 
-    images.forEach(([src, alt]) => {
-      const wrapper = document.createElement("div");
-      wrapper.className = "gallery-item";
-      wrapper.innerHTML = 
-        <img src="${src}" class="thumbnail" alt="${alt}" onclick="openLightbox('${src}', '${alt.replace(/'/g, "\\'")}')">
-        <div class="caption">${alt}</div>
-      ;
-      gallery.appendChild(wrapper);
-    });
 
     function openLightbox(src, alt) {
       const lightboxImg = document.getElementById('lightbox-img');

@@ -1902,17 +1902,20 @@ scJsHost+
 
 
 <!-- 📡 Signal Detected Indicator -->
+
 <div id="signalIcon" style="display: none; font-size: 1rem; margin-top: 1rem; text-align: center;">
   <span style="animation: pulse 4s infinite;">📡</span>
   <span style="font-size: 0.7rem;">We See You</span>
 </div>
 
 <!-- Ambient Audio -->
-<audio id="bgSound" loop preload="auto" muted>
+
+<audio id="bgSound" loop preload="auto">
   <source src="https://dl.dropboxusercontent.com/scl/fi/pl56m9ts9yd6c5yxc29by/low-engine-hum-72529.mp3?rlkey=cjykcdsekkv8biy8ijtyaiqnl&st=fxhyjuje" type="audio/mpeg">
 </audio>
 
 <!-- Pulse Animation -->
+
 <style>
   @keyframes pulse {
     0%   { opacity: 0.2; }
@@ -1921,43 +1924,41 @@ scJsHost+
   }
 </style>
 
-<!-- Activation Script -->
+<!-- Direct Activation Script -->
+
 <script>
   const audio = document.getElementById("bgSound");
   const icon = document.getElementById("signalIcon");
-  let triggered = false;
 
-  function activateAudio() {
-    if (triggered) return;
-    triggered = true;
+  let played = false;
 
-    // Direct play on first gesture
-    audio.muted = true;
-    audio.volume = 0;
-    audio.play().then(() => {
-      icon.style.display = "block";
+  function unlockAudio() {
+    if (played) return;
+    played = true;
 
-      setTimeout(() => {
-        audio.muted = false;
-        let v = 0.01;
+    audio.volume = 0.001; // quiet start
+    const p = audio.play();
+    
+    if (p && p.then) {
+      p.then(() => {
+        icon.style.display = "block";
+        let vol = 0.01;
         const fade = setInterval(() => {
-          v += 0.01;
-          audio.volume = Math.min(v, 0.3);
-          if (v >= 0.3) clearInterval(fade);
+          vol += 0.01;
+          audio.volume = Math.min(vol, 0.3);
+          if (vol >= 0.3) clearInterval(fade);
         }, 100);
-      }, 100);
-    }).catch(err => {
-      console.warn("Playback blocked:", err);
-    });
+      }).catch((e) => {
+        console.warn("Playback blocked:", e);
+      });
+    }
   }
 
-  // Ensure gesture triggers on Android reliably
-  document.body.addEventListener("click", activateAudio, { once: true });
-  document.body.addEventListener("touchstart", activateAudio, { once: true });
+  // Direct binding without wrapping
+  document.body.addEventListener("touchstart", unlockAudio, { once: true });
+  document.body.addEventListener("click", unlockAudio, { once: true });
+  document.body.addEventListener("keydown", unlockAudio, { once: true });
 </script>
-
-
-
 
 
 

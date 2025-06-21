@@ -1902,22 +1902,17 @@ scJsHost+
 
 
 <!-- 📡 Signal Detected Indicator -->
-
-
-
 <div id="signalIcon" style="display: none; font-size: 1rem; margin-top: 1rem; text-align: center;">
   <span style="animation: pulse 4s infinite;">📡</span>
   <span style="font-size: 0.7rem;">We See You</span>
 </div>
 
 <!-- Ambient Audio -->
-
-<audio id="bgSound" loop preload="auto">
+<audio id="bgSound" loop preload="auto" muted>
   <source src="https://dl.dropboxusercontent.com/scl/fi/pl56m9ts9yd6c5yxc29by/low-engine-hum-72529.mp3?rlkey=cjykcdsekkv8biy8ijtyaiqnl&st=fxhyjuje" type="audio/mpeg">
 </audio>
 
 <!-- Pulse Animation -->
-
 <style>
   @keyframes pulse {
     0%   { opacity: 0.2; }
@@ -1927,7 +1922,6 @@ scJsHost+
 </style>
 
 <!-- Activation Script -->
-
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const audio = document.getElementById("bgSound");
@@ -1938,30 +1932,36 @@ scJsHost+
       if (triggered) return;
       triggered = true;
 
-      audio.volume = 0.001;
-      audio.muted = false;
-
-      const playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
+      try {
+        audio.muted = true; // force muted first for autoplay compliance
+        audio.volume = 0;
+        audio.play().then(() => {
           icon.style.display = "block";
-          let v = 0.001;
-          const fadeIn = setInterval(() => {
-            v += 0.01;
-            audio.volume = v;
-            if (v >= 0.3) clearInterval(fadeIn); // stop at 0.3 volume
-          }, 100);
+
+          // Now fade in + unmute after playback starts
+          setTimeout(() => {
+            audio.muted = false;
+            let v = 0.01;
+            const fadeIn = setInterval(() => {
+              v += 0.01;
+              audio.volume = Math.min(v, 0.3);
+              if (v >= 0.3) clearInterval(fadeIn);
+            }, 100);
+          }, 500);
         }).catch(err => {
           console.warn("Audio playback failed:", err);
         });
+      } catch (e) {
+        console.warn("Autoplay blocked:", e);
       }
     }
 
-    ["click", "scroll", "keydown", "mousemove"].forEach(evt =>
+    ["click", "scroll", "keydown", "touchstart"].forEach(evt =>
       window.addEventListener(evt, startAudio, { once: true })
     );
   });
 </script>
+
 
 
 

@@ -2,31 +2,6 @@
 <html lang="en">
 <head>
 
-<!-- HOMEPAGE ONLY -->
-
-<script>
-  const allowed = "https://sharingsilence.xyz";
-  const ref = document.referrer;
-
-  if (!ref || !ref.startsWith(allowed)) {
-    document.body.innerHTML = `
-      <div style="background:#000;color:#7FCF7F;font-family:monospace;text-align:center;padding:2rem;">
-        <h2>🧠 Unauthorized Access</h2>
-        <p>Referrer check failed. Metadata captured.</p>
-        <p style="color:#f55;">Redirecting...</p>
-      </div>
-    `;
-    setTimeout(() => {
-      window.location.href = "https://sharingsilence.xyz/trap";
-    }, 5000);
-  }
-</script>
-
-
-
-<!-- END -->
-
-
 <!-- MAIN BODY -->
 
   <meta charset="UTF-8" />

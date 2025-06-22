@@ -5,22 +5,40 @@
 <!-- HOMEPAGE ONLY -->
 
 <script>
-  const allowed = "https://sharingsilence.xyz";
-  const ref = document.referrer;
+  document.addEventListener("DOMContentLoaded", function () {
+    const allowedRef = "https://sharingsilence.xyz";
+    const urlParams = new URLSearchParams(window.location.search);
+    const isTrap = urlParams.get("trap");
+    const referrer = document.referrer;
 
-  if (!ref || !ref.startsWith(allowed)) {
-    document.body.innerHTML = `
-      <div style="background:#000;color:#7FCF7F;font-family:monospace;text-align:center;padding:2rem;">
-        <h2>🧠 Unauthorized Access</h2>
-        <p>Referrer check failed. Metadata captured.</p>
-        <p style="color:#f55;">Redirecting...</p>
-      </div>
-    `;
-    setTimeout(() => {
-      window.location.href = "https://sharingsilence.xyz/trap";
-    }, 5000);
-  }
+    // If explicitly accessed with ?trap=true, trigger trap
+    if (isTrap === "true") {
+      activateTrap("Manual trap trigger");
+    }
+
+    // If referrer is invalid or missing, trigger trap
+    if (!referrer || !referrer.startsWith(allowedRef)) {
+      activateTrap("Referrer check failed");
+    }
+
+    function activateTrap(reason) {
+      console.warn("TRAP ACTIVATED:", reason);
+
+      document.body.innerHTML = `
+        <div style="background:#000;color:#7FCF7F;font-family:monospace;text-align:center;padding:2rem;">
+          <h2>🧠 Unauthorized Access</h2>
+          <p>${reason}. Metadata captured.</p>
+          <p style="color:#f55;">Redirecting...</p>
+        </div>
+      `;
+
+      setTimeout(() => {
+        window.location.href = "https://sharingsilence.xyz/trap";
+      }, 5000);
+    }
+  });
 </script>
+
 
 
 
@@ -2901,6 +2919,12 @@ ChatGPT can make mistakes. Check importa
 <!-- END -->
 
 
+
+
+
+
+
+<!-- END -->
 
 </body>
 </html>

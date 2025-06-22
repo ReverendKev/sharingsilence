@@ -1,0 +1,40 @@
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const isTrap = urlParams.get("trap");
+
+    if (isTrap === "true") {
+      // Optional: log metadata
+      fetch("https://api.ipify.org?format=json")
+        .then(res => res.json())
+        .then(data => {
+          const log = {
+            ip: data.ip,
+            ua: navigator.userAgent,
+            path: window.location.pathname + window.location.search,
+            time: new Date().toISOString()
+          };
+
+          // Send to Google Apps Script endpoint
+          fetch("https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(log)
+          });
+
+          // Optional redirect or visual trap
+          document.body.innerHTML = `
+            <div style="color:#f55;font-family:monospace;padding:3rem;text-align:center;">
+              <h1>⚠️ Metadata Trap Triggered</h1>
+              <p>Your visit has been recorded.</p>
+              <p>Redirecting...</p>
+            </div>
+          `;
+
+          setTimeout(() => {
+            window.location.href = "/";
+          }, 3000);
+        });
+    }
+  });
+</script>

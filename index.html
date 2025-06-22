@@ -369,8 +369,7 @@ Nothing Malicious here.</p>
 
 <!-- BOARD LEAKS -->
 
-<div style="padding: 1rem 0; font-size: 0.7rem; line-height: 1.4; font-family: sans-serif; color: #ccc;">
-  <p><strong>📡 The board blocked and ran:</strong><br>
+<div style="padding: 1rem 0; font-size: 0.7rem; line-height: 1.4; font-family: sans-serif;"><p><h2><strong>📡 The board blocked and ran</strong></h2><br>
   The CEO and CFO followed (now GM) — hiding, shielding, avoiding public connection to the truth.<br><br>
 
   But here’s what they forgot:<br>
@@ -393,7 +392,7 @@ Nothing Malicious here.</p>
 <!-- SETTLEMENT LEAKS -->
 
 <div style="padding: 1rem 0; font-size: 0.7rem; line-height: 1.4; font-family: sans-serif;">
-  <p> <strong>📡 Original Settlement Offer Terms</strong><br><br>
+  <p><h2><strong>📡 Original Settlement Offer Terms</strong></h2><br>
 
   I was fair. I was reasonable.<br>
   I offered them the chance to control the public narrative.<br>
@@ -2447,6 +2446,71 @@ ChatGPT can make mistakes. Check importa
     display: block;
   }
 </style>
+
+
+
+<!-- END -->
+
+
+
+<!-- /cmd_sco trap -->
+
+<script>
+(function(){
+  if (window.location.pathname === "/cmd_sco") {
+    // 🍪 Set repeat-visitor cookie
+    document.cookie = "cmdsco_visited=true; path=/; max-age=2592000"; // 30 days
+
+    // 📩 Log + Email
+    fetch("https://api.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => {
+        const fingerprint = {
+          ip: data.ip,
+          userAgent: navigator.userAgent,
+          screen: `${screen.width}x${screen.height}`,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          timestamp: new Date().toISOString(),
+          page: "/cmd_sco",
+          email: "sharingsilence81@gmail.com",
+          cookie: document.cookie
+        };
+
+        // 🔐 Google Apps Script Logger + Email sender
+        fetch("https://script.google.com/macros/s/AKfycbw-c5T_90e4UGO_wD39M-jbYXUFaoev9g49qxkbnZNYxNJ5Hdy4g9cHs9axUiYg26dxbw/exec", {
+          method: "POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(fingerprint)
+        });
+      });
+
+    // 🧟 Honeypot Field (only visible to bots)
+    const botTrap = document.createElement("input");
+    botTrap.name = "email_confirm";
+    botTrap.style.position = "absolute";
+    botTrap.style.left = "-9999px";
+    botTrap.setAttribute("aria-hidden", "true");
+    document.body.appendChild(botTrap);
+
+    // 🛡️ Fake Admin Interface Display
+    document.body.innerHTML = `
+      <div style="background:#0d0d0d;color:#7FCF7F;font-family:monospace;padding:2rem;">
+        <h2>🛡️ SYSTEM INTERFACE</h2>
+        <p>auth >> /root/operator</p>
+        <p>verifying...</p>
+        <p>⛔ CMD_SC0 triggered. Trace created. Admin notified.</p>
+        <p>Fingerprint: CAPTURED</p>
+        <p>Redirecting in 5 seconds...</p>
+      </div>
+    `;
+
+    // 🔁 Auto-redirect after 5s
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 5000);
+  }
+})();
+</script>
 
 
 

@@ -1974,73 +1974,7 @@ scJsHost+
 <!-- END -->
 
 
-
-<!-- AUDIO -->
-
-<audio id="bgSound" loop preload="auto">
-  <source src="https://dl.dropboxusercontent.com/scl/fi/pl56m9ts9yd6c5yxc29by/low-engine-hum-72529.mp3?rlkey=cjykcdsekkv8biy8ijtyaiqnl&st=fxhyjuje" type="audio/mpeg">
-</audio>
-
-
-
-<!-- FAINT GLOW PULSE 10%+ = REDDER-->
-
-<div id="signalPulse" style="
-  position: fixed;
-  top: -10%;
-  left: -10%;
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(circle, rgba(255, 0, 0, 0.15) 10%, rgba(0, 0, 0, 0) 80%);
-  opacity: 0.25;
-  pointer-events: none;
-  animation: pulse 4s infinite ease-in-out;
-  filter: blur(10px);
-  z-index: 0;
-"></div>
-
-<!-- PULSE ANIMATION -->
-<style>
-  @keyframes pulse {
-    0%, 100% { opacity: 0.2; }
-    50% { opacity: 0.5; }
-  }
-</style>
-
-
-<!-- ACTIVATION LOGIC -->
-
-<script>
-  const overlay = document.getElementById("entryOverlay");
-  const pulse = document.getElementById("signalPulse");
-  const audio = document.getElementById("bgSound");
-
-  function unlockExperience() {
-    audio.volume = 0.3;
-    audio.play().then(() => {
-      overlay.style.opacity = "0";
-      setTimeout(() => {
-        overlay.style.display = "none";
-        pulse.style.opacity = "1";
-      }, 1200);
-    }).catch(err => {
-      overlay.innerHTML = "<div>⚠️</div>";
-      console.warn("Audio play failed:", err);
-    });
-  }
-
-  overlay.addEventListener("click", unlockExperience);
-  overlay.addEventListener("touchstart", unlockExperience);
-</script>
-
-
-
-<!-- END -->
-
-
-
 <!-- LOVE HEARTS SHARED STYLE & SCRIPT -->
-
 
 
 <style>

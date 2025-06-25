@@ -299,6 +299,9 @@ letter-spacing: 0.5px;
 75%  { transform: translate(-0.8vw, 1.5vw); }
 100% { transform: translate(0px, 0px); }
 }
+.text {
+text-shadow: 0 0 4px #000;
+}
 </style>
 
 <!-- TITLE -------------------------------------------------------->
@@ -1503,44 +1506,44 @@ border: 1px solid #333;
 const traceData = [
 //////////////////////////////////////////////////////////////////////////////////LINKS
 ["https://i.imgur.com/igbOGgm.jpeg", "Rabia views"],
-  ["https://i.imgur.com/10G2a15.jpeg", "Pham & Chong"],
-  ["https://i.imgur.com/kok1Ypz.jpeg", "Lesley"],
-  ["https://i.imgur.com/blfQF1p.jpeg", "Sneak 30 May"],
-  ["https://i.imgur.com/7PWJqf5.jpeg", "Sneak 14 June "],
-  ["https://i.imgur.com/qZDy0Kh.jpeg", "Searching"],
-  ["https://i.imgur.com/nqxeSZd.jpeg", "Carrd trail"],
-  ["https://i.imgur.com/cm1ArVp.jpeg", "Meridian"],
-  ["https://i.imgur.com/URlQNdk.jpeg", "Public"],
-  ["https://i.imgur.com/8qTCuQ5.jpeg", "Google Analytics"],
-  ["https://i.imgur.com/4WJXiWk.jpeg", "7am peak"],
-  ["https://i.imgur.com/uxRNdl6.jpeg", "Desktop"],
-  ["https://i.imgur.com/xakqSGJ.jpeg", "Perth to Albany"],
-  ["https://i.imgur.com/SO7yH7N.jpeg", "Traffic surge"],
-  ["https://i.imgur.com/R5bLNIq.png", "VPN usage"],
-  ["https://i.imgur.com/MPOt5OK.jpeg", "Noon surge"],
-  ["https://i.imgur.com/5A1XKZR.jpeg", "Carrd page"],
-  ["https://i.imgur.com/xM0x1eU.jpeg", "Cache"],
-  ["https://i.imgur.com/23ORi60.jpeg", "Refresh"],
-  ["https://i.imgur.com/VosPpNj.jpeg", "Carrd page"],
-  ["https://i.imgur.com/ex8Fyu7.jpeg", "Carrd trail"],
-  ["https://i.imgur.com/8lqWjlJ.jpeg", "Sheila blocked"],
-  ["https://i.imgur.com/GwrNzyM.jpeg", "Ongoing Carrd"],
-  ["https://i.imgur.com/2FBwX3e.jpeg", "Internal Ruah"],
-  ["https://i.imgur.com/D929PoP.jpeg", "Peer connection"],
-  ["https://i.imgur.com/b1AXoiq.jpeg", "LinkedIn"],
-  ["https://i.imgur.com/eYaPivY.jpeg", "Ranii"],
-  ["https://i.imgur.com/SXYp0xn.png", "Scrub"],
-  ["https://i.imgur.com/HfsoABY.png", "Scrub confirmed"],
-  ["https://i.imgur.com/ZXU4gdj.jpeg", "10:49am"],
-  ["https://i.imgur.com/ojUwbil.jpeg", "Duc blocks"],
-  ["https://i.imgur.com/KHRDmQc.jpeg", "Still shared 18 June"],
-  ["https://i.imgur.com/bK1RrrS.jpeg", "Rabia:optical gesture? [1]"],
-  ["https://i.imgur.com/bK1RrrS.jpeg", "Rabia: Humanitarian? [2]"],
-  ["https://i.imgur.com/kci6vYB.jpeg", "Rabia: l? [3]"],
-  ["https://i.imgur.com/MmOiBIT.jpeg", "Rabia: optical gesture? [4]"],
-  ["https://i.imgur.com/2FojjqR.jpeg", "Rabia: gesture? [5]"],
-  ["https://i.imgur.com/vRXYbT3.jpeg", "Rabia: Human? [6]"],
-  ["https://i.imgur.com/2x5RnB5.jpeg", "Rabia — optics over aid?"]
+["https://i.imgur.com/10G2a15.jpeg", "Pham & Chong"],
+["https://i.imgur.com/kok1Ypz.jpeg", "Lesley"],
+["https://i.imgur.com/blfQF1p.jpeg", "Sneak 30 May"],
+["https://i.imgur.com/7PWJqf5.jpeg", "Sneak 14 June "],
+["https://i.imgur.com/qZDy0Kh.jpeg", "Searching"],
+["https://i.imgur.com/nqxeSZd.jpeg", "Carrd trail"],
+["https://i.imgur.com/cm1ArVp.jpeg", "Meridian"],
+["https://i.imgur.com/URlQNdk.jpeg", "Public"],
+["https://i.imgur.com/8qTCuQ5.jpeg", "Google Analytics"],
+["https://i.imgur.com/4WJXiWk.jpeg", "7am peak"],
+["https://i.imgur.com/uxRNdl6.jpeg", "Desktop"],
+["https://i.imgur.com/xakqSGJ.jpeg", "Perth to Albany"],
+["https://i.imgur.com/SO7yH7N.jpeg", "Traffic surge"],
+["https://i.imgur.com/R5bLNIq.png", "VPN usage"],
+["https://i.imgur.com/MPOt5OK.jpeg", "Noon surge"],
+["https://i.imgur.com/5A1XKZR.jpeg", "Carrd page"],
+["https://i.imgur.com/xM0x1eU.jpeg", "Cache"],
+["https://i.imgur.com/23ORi60.jpeg", "Refresh"],
+["https://i.imgur.com/VosPpNj.jpeg", "Carrd page"],
+["https://i.imgur.com/ex8Fyu7.jpeg", "Carrd trail"],
+["https://i.imgur.com/8lqWjlJ.jpeg", "Sheila blocked"],
+["https://i.imgur.com/GwrNzyM.jpeg", "Ongoing Carrd"],
+["https://i.imgur.com/2FBwX3e.jpeg", "Internal Ruah"],
+["https://i.imgur.com/D929PoP.jpeg", "Peer connection"],
+["https://i.imgur.com/b1AXoiq.jpeg", "LinkedIn"],
+["https://i.imgur.com/eYaPivY.jpeg", "Ranii"],
+["https://i.imgur.com/SXYp0xn.png", "Scrub"],
+["https://i.imgur.com/HfsoABY.png", "Scrub confirmed"],
+["https://i.imgur.com/ZXU4gdj.jpeg", "10:49am"],
+["https://i.imgur.com/ojUwbil.jpeg", "Duc blocks"],
+["https://i.imgur.com/KHRDmQc.jpeg", "Still shared 18 June"],
+["https://i.imgur.com/bK1RrrS.jpeg", "Rabia:optical gesture? [1]"],
+["https://i.imgur.com/bK1RrrS.jpeg", "Rabia: Humanitarian? [2]"],
+["https://i.imgur.com/kci6vYB.jpeg", "Rabia: l? [3]"],
+["https://i.imgur.com/MmOiBIT.jpeg", "Rabia: optical gesture? [4]"],
+["https://i.imgur.com/2FojjqR.jpeg", "Rabia: gesture? [5]"],
+["https://i.imgur.com/vRXYbT3.jpeg", "Rabia: Human? [6]"],
+["https://i.imgur.com/2x5RnB5.jpeg", "Rabia — optics over aid?"]
 //////////////////////////////////////////////////////////////////////////////////LINKS
 ];
 const grid = document.querySelector('.glitch-thumb-grid');
@@ -1561,23 +1564,14 @@ function closeLightbox() {
 document.querySelector('.lightbox-overlay').style.display = 'none';
 }
 </script>
-
 <div class="glitch-floatbox">
-  <h2>✴ Internal Link Trail Detected</h2>
-
-  <p>Even after public links were severed, access from <code>sharingsilence.carrd.co</code> persisted. The Carrd link was saved — bookmarked or cached. Referrals to the <code>.xyz</code> domain came from inside Ruah systems. The link circulated after its removal — quietly, deliberately.</p>
-
-  <p>The path was erased. They walked it anyway.</p>
-
-  <p>Connection wasn’t an accident. It was a choice. Silence wasn’t ignorance — it was consent. They saw. And they stayed.</p>
-
-  <p>The network expands. Some watch. Some wait. But no one can say they weren’t warned.</p>
-
-  <p class="meta">[ ◼ Trace locked. Logged. Witnessed. ◼ ]</p>
+<h2>✴ Internal Link Trail Detected</h2>
+<p>Even after public links were severed, access from <code>sharingsilence.carrd.co</code> persisted. The Carrd link was saved — bookmarked or cached. Referrals to the <code>.xyz</code> domain came from inside Ruah systems. The link circulated after its removal — quietly, deliberately.</p>
+<p>The path was erased. They walked it anyway.</p>
+<p>Connection wasn’t an accident. It was a choice. Silence wasn’t ignorance — it was consent. They saw. And they stayed.</p>
+<p>The network expands. Some watch. Some wait. But no one can say they weren’t warned.</p>
+<p class="meta">[ ◼ Trace locked. Logged. Witnessed. ◼ ]</p>
 </div>
-
-
-
 
 <!-- END --------------------------------------------------------------------------->
 

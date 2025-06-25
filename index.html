@@ -1661,56 +1661,59 @@ gtag('config', 'G-P5RCP52LG5');
 <div id="entryOverlay"></div>
 <style>
 @keyframes pulse {
-0%, 100% { opacity: 0.3; transform: scale(1); }
-50% { opacity: 0.9; transform: scale(1.15); }
+  0%, 100% { opacity: 0.2; transform: scale(1); } /* Reduced opacity and scale */
+  50% { opacity: 0.6; transform: scale(1.1); } /* Less scale for less glowy effect */
 }
+
 #signalPulse {
-position: fixed;
-top: 0; left: 0;
-width: 100vw; height: 100vh;
-background: linear-gradient(
-to right,
-rgba(255, 0, 0, 0.35) 0%,
-rgba(0, 0, 255, 0.35) 100%
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: linear-gradient(
+    to right,
+    rgba(153, 0, 0, 0.35) 0%, /* Darker red by adjusting RGB */
+    rgba(0, 0, 255, 0.35) 100%
   );
-pointer-events: none;
-animation: pulse 6s infinite ease-in-out;
-z-index: 0;
-filter: blur(45px);
-opacity: 0;
+  pointer-events: none;
+  animation: pulse 6s infinite ease-in-out;
+  z-index: 0;
+  filter: blur(30px); /* Reduced blur */
+  opacity: 0;
 }
 
 #entryOverlay {
-position: fixed;
-top: 0; left: 0;
-width: 100vw; height: 100vh;
-z-index: 9999;
-cursor: pointer;
-background: transparent;
-transition: opacity 1.2s ease;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 9999;
+  cursor: pointer;
+  background: transparent;
+  transition: opacity 1.2s ease;
 }
 </style>
 <script>
 const overlay = document.getElementById("entryOverlay");
 const pulse = document.getElementById("signalPulse");
 const audio = document.getElementById("bgSound");
+
 function unlockExperience() {
-overlay.style.transition = "none";
-overlay.style.filter = "contrast(2) saturate(2)";
-audio.volume = 1.0;
-setTimeout(() => {
-overlay.style.opacity = "0";
-pulse.style.opacity = "1";
-}, 500);
-setTimeout(() => {
-overlay.style.display = "none";
-overlay.style.filter = "none";
-audio.volume = 0.3;
-}, 3000);
-audio.play().catch(err => {
-console.warn("AUDIO BLOCKED:", err);
-});
+  overlay.style.transition = "none";
+  overlay.style.filter = "contrast(2) saturate(2)";
+  audio.volume = 1.0;
+  setTimeout(() => {
+    overlay.style.opacity = "0";
+    pulse.style.opacity = "1";
+  }, 500);
+  setTimeout(() => {
+    overlay.style.display = "none";
+    overlay.style.filter = "none";
+    audio.volume = 0.3;
+  }, 3000);
+  audio.play().catch(err => {
+    console.warn("AUDIO BLOCKED:", err);
+  });
 }
+
 overlay.addEventListener("click", unlockExperience);
 overlay.addEventListener("touchstart", unlockExperience);
 </script>

@@ -299,6 +299,142 @@ letter-spacing: 0.5px;
 75%  { transform: translate(-0.8vw, 1.5vw); }
 100% { transform: translate(0px, 0px); }
 }
+@keyframes glitch-flicker {
+0%,100% {opacity:1;transform:none;filter:none;}
+10% {opacity:0.8;transform:skewX(-2deg);filter:hue-rotate(10deg);}
+20% {opacity:0.5;transform:translateX(-2px);}
+30% {opacity:1;transform:translateX(2px);}
+40% {opacity:0;}
+50% {opacity:1;transform:scale(1.02);}
+70% {opacity:0.3;filter:blur(1px);}
+90% {transform:skewY(1deg);}
+}
+.glitch-container {
+display:flex;
+justify-content:center;
+align-items:center;
+padding:4rem 1rem;
+background:#000;
+min-height:100vh;
+}
+.glitch-box {
+text-align:center;
+color:#39FF14;
+font-family:'Courier New',monospace;
+padding:2rem 1.5rem;
+border:1px solid rgba(57,255,20,0.2);
+border-radius:1rem;
+background:rgba(0,0,0,0.5);
+box-shadow:0 0 20px rgba(57,255,20,0.15),0 0 30px rgba(255,49,49,0.1),inset 0 0 10px rgba(57,255,20,0.05);
+animation:glitch-flicker 10s infinite;
+}
+.glitch-box h2 {
+font-size:1.8rem;
+letter-spacing:0.1em;
+animation:glitch-flicker 6s infinite;
+}
+.glitch-box h3 {
+font-size:1.2rem;
+color:#fff;
+opacity:0.8;
+margin-top:0.5rem;
+}
+.glitch-box small {
+display:block;
+margin-top:1.2rem;
+font-size:0.8rem;
+color:#FF3131;
+opacity:0.6;
+letter-spacing:0.08em;
+}
+#crt-shell {
+width:100%;
+max-width:312px;
+margin:2rem auto 1rem auto;
+padding:0.4rem;
+background:#220011;
+border:3px solid #110011;
+border-radius:0.7rem;
+box-shadow:0 0 8px #000;
+aspect-ratio:4/3;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:all 0.5s ease;
+}
+#crt-shell.meltdown {
+animation:crtMeltdown 1.2s steps(3,end);
+}
+#crt-screen {
+background:#000;
+padding:0.7rem 0.9rem;
+border-radius:0.75rem;
+box-shadow:inset 0 0 14px #003,0 0 6px #39ff1433;
+transition:all 1s ease;
+font-family:'Courier New',monospace;
+text-align:center;
+color:#cc3344;
+position:relative;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+}
+#crt-screen h2 {
+font-size:1.2rem;
+margin:0;
+}
+#crt-screen h3 {
+font-size:1rem;
+margin:0.4rem 0 0 0;
+}
+#crt-screen small {
+font-size:0.75rem;
+margin-top:0.6rem;
+letter-spacing:0.05em;
+opacity:0.8;
+}
+#crt-screen::before {
+content:'';
+position:absolute;
+top:0;left:0;right:0;bottom:0;
+border-radius:inherit;
+box-shadow:0 0 20px #39ff1415,0 0 12px #0033aa33 inset;
+opacity:0.3;
+z-index:-1;
+}
+#crt-screen.off {
+color:#000;
+box-shadow:none;
+background:#000;
+}
+#crt-screen.meltdown {
+animation:screenMeltdown 1s steps(3,end);
+}
+#crt-screen.meltdown::before {
+animation:glowCollapse 1s ease forwards;
+}
+@keyframes crtMeltdown {
+0%{transform:scale(1) rotate(0deg);box-shadow:0 0 8px #000;}
+20%{transform:scale(1.02) rotate(-1deg);box-shadow:0 0 12px #ff0040;}
+50%{transform:scale(0.98) rotate(1deg);box-shadow:0 0 16px #00f;}
+80%{transform:scale(1.01) rotate(-2deg);box-shadow:0 0 6px #222;}
+100%{transform:scale(1) rotate(0deg);box-shadow:none;}
+}
+@keyframes screenMeltdown {
+0%{opacity:1;filter:none;}
+25%{opacity:0.6;filter:blur(1px);}
+50%{opacity:1;filter:grayscale(1);}
+75%{opacity:0.3;filter:brightness(2);}
+100%{opacity:0;}
+}
+@keyframes glowCollapse {
+0%{opacity:0.3;}
+50%{opacity:0.7;}
+100%{opacity:0;}
+}
 </style>
 
 <!-- TITLE --------------------------------------------------------------------->
@@ -310,6 +446,18 @@ letter-spacing: 0.5px;
 <h2>A Memoir</h2>
 <h1>#RuahRuinsLives</h1>
 <h2>#SharingSilence</h2>
+</div>
+
+<!-- END ----------------------------------------------------------------------->
+
+<!-- CRT ----------------------------------------------------------------------->
+
+<div id="crt-shell">
+<div id="crt-screen">
+<h2 id="glitch-h2">an immersive experience</h2>
+<h3 id="glitch-h3">of an autistic mind</h3>
+<small id="glitch-small">a neurological ghost</small>
+</div>
 </div>
 
 <!-- END ----------------------------------------------------------------------->
@@ -1852,6 +2000,10 @@ background: transparent;
 transition: opacity 1.2s ease;
 }
 </style>
+
+<!-- END --------------------------------------------------------------------------->
+<!-- CRT --------------------------------------------------------------------------->
+
 <script>
 const overlay = document.getElementById("entryOverlay");
 const pulse = document.getElementById("signalPulse");
@@ -1876,5 +2028,48 @@ console.warn("AUDIO BLOCKED:", err);
 overlay.addEventListener("click", unlockExperience);
 overlay.addEventListener("touchstart", unlockExperience);
 </script>
+<script>
+const shell=document.getElementById('crt-shell')
+const screen=document.getElementById('crt-screen')
+const h2=document.getElementById('glitch-h2')
+const h3=document.getElementById('glitch-h3')
+const sm=document.getElementById('glitch-small')
+const h2var=["an mmmersive expereence","an immersive experience","an immersivf experience"]
+const h3var=["of an wutistiq mind","of an autiftic mind","of ax autistic mind"]
+const smvar=["i neurological ghost","a yyurological ghost","a neurolfgical ghost"]
+let hasGlitched=false
+function isInViewport(elem){
+const rect=elem.getBoundingClientRect()
+return rect.top>=0&&rect.top<=window.innerHeight/1.6
+}
+function glitchNow(){
+if(!hasGlitched&&isInViewport(screen)){
+hasGlitched=true
+shell.classList.add('meltdown')
+screen.classList.add('meltdown')
+setTimeout(()=>{
+h2.innerText=h2var[Math.floor(Math.random()*h2var.length)]
+h3.innerText=h3var[Math.floor(Math.random()*h3var.length)]
+sm.innerText=smvar[Math.floor(Math.random()*smvar.length)]
+},300)
+setTimeout(()=>{
+screen.classList.remove('meltdown')
+shell.classList.remove('meltdown')
+screen.classList.add('off')
+},2000)
+}
+if(!isInViewport(screen)){
+hasGlitched=false
+screen.classList.remove('off')
+h2.innerText='an immersive experience'
+h3.innerText='of an autistic mind'
+sm.innerText='a neurological ghost'
+}
+}
+window.addEventListener('scroll',glitchNow)
+</script>
+
+<!-- END --------------------------------------------------------------------------->
+
 </body>
 </head>

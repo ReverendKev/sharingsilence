@@ -360,80 +360,70 @@ aspect-ratio:4/3;
 display:flex;
 align-items:center;
 justify-content:center;
-transition:all 0.5s ease;
-}
-#crt-shell.meltdown {
-animation:crtMeltdown 1.2s steps(3,end);
 }
 #crt-screen {
-background:#000;
+width:100%;
+height:100%;
+box-sizing:border-box;
 padding:0.7rem 0.9rem;
+background:#000;
 border-radius:0.75rem;
-box-shadow:inset 0 0 14px #003,0 0 6px #39ff1433;
-transition:all 1s ease;
+box-shadow:inset 0 0 14px #003, 0 0 6px #39ff1433;
 font-family:'Courier New',monospace;
 text-align:center;
 color:#cc3344;
 position:relative;
-width:100%;
-height:100%;
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
+overflow:hidden;
 }
-#crt-screen h2 {
-font-size:1.2rem;
-margin:0;
-}
-#crt-screen h3 {
-font-size:1rem;
-margin:0.4rem 0 0 0;
-}
+#crt-screen h1,
+#crt-screen h2,
+#crt-screen h3,
 #crt-screen small {
-font-size:0.75rem;
-margin-top:0.6rem;
+margin:0.3rem 0;
+}
+#glitch-h2 {
+font-size:1.55rem;
+color:#cc3344;
+white-space:nowrap;
+letter-spacing:-0.01em;
+transform:scaleX(0.98);
+}
+#glitch-h3 {
+font-size:1.2rem;
+color:#fff;
+opacity:0.85;
+}
+
+#glitch-small {
+font-size:0.9rem;
 letter-spacing:0.05em;
-opacity:0.8;
+opacity:0.7;
+color:#FF3131;
 }
-#crt-screen::before {
-content:'';
-position:absolute;
-top:0;left:0;right:0;bottom:0;
-border-radius:inherit;
-box-shadow:0 0 20px #39ff1415,0 0 12px #0033aa33 inset;
-opacity:0.3;
-z-index:-1;
+.crt-top {
+font-size:1.2rem;
+color:#347da8;
+text-shadow:0 0 4px #FF3131;
+animation:glitch-flicker 4s infinite;
+white-space:nowrap;
 }
-#crt-screen.off {
-color:#000;
-box-shadow:none;
-background:#000;
+.crt-bottom {
+font-size:1.4rem;
+color:#347da8;
+text-shadow:0 0 6px #FF3131;
+animation:glitch-flicker 4s infinite;
+white-space:nowrap;
 }
-#crt-screen.meltdown {
-animation:screenMeltdown 1s steps(3,end);
-}
-#crt-screen.meltdown::before {
-animation:glowCollapse 1s ease forwards;
-}
-@keyframes crtMeltdown {
-0%{transform:scale(1) rotate(0deg);box-shadow:0 0 8px #000;}
-20%{transform:scale(1.02) rotate(-1deg);box-shadow:0 0 12px #ff0040;}
-50%{transform:scale(0.98) rotate(1deg);box-shadow:0 0 16px #00f;}
-80%{transform:scale(1.01) rotate(-2deg);box-shadow:0 0 6px #222;}
-100%{transform:scale(1) rotate(0deg);box-shadow:none;}
-}
-@keyframes screenMeltdown {
-0%{opacity:1;filter:none;}
-25%{opacity:0.6;filter:blur(1px);}
-50%{opacity:1;filter:grayscale(1);}
-75%{opacity:0.3;filter:brightness(2);}
-100%{opacity:0;}
-}
-@keyframes glowCollapse {
-0%{opacity:0.3;}
-50%{opacity:0.7;}
-100%{opacity:0;}
+@keyframes glitch-flicker {
+0%,100%{opacity:1;}
+45%{opacity:0.85;}
+55%{opacity:1;}
+65%{opacity:0.9;}
+75%{opacity:1;}
 }
 </style>
 
@@ -454,9 +444,11 @@ animation:glowCollapse 1s ease forwards;
 
 <div id="crt-shell">
 <div id="crt-screen">
+<h1 class="crt-top">Sound + Brightness = Max</h1>
 <h2 id="glitch-h2">an immersive experience</h2>
 <h3 id="glitch-h3">of an autistic mind</h3>
 <small id="glitch-small">a neurological ghost</small>
+<h1 class="crt-bottom">phone = best experience</h1>
 </div>
 </div>
 

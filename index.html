@@ -503,6 +503,27 @@ color: #005566;
 80%  { clip-path: inset(60% 0 0 0); transform: translate(1px, 0); }
 100% { clip-path: inset(80% 0 0 0); transform: translate(0, 0); }
 }
+.floating-emoji {
+position: fixed;
+font-size: 1.5rem;
+pointer-events: none;
+opacity: 0;
+animation: emoji-drift 4s ease-out forwards;
+z-index: 9999;
+}
+@keyframes emoji-drift {
+0% {
+transform: scale(0.5) translate(0, 0);
+opacity: 1;
+}
+50% {
+transform: scale(1.2) translate(20px, -40px);
+opacity: 0.6;
+}
+100% {
+transform: scale(2.0) translate(-60px, -180px);
+opacity: 0;
+}
 </style>
 
 <!-- TITLE --------------------------------------------------------------------->
@@ -559,6 +580,24 @@ allowfullscreen>
 <div class="alt-block">
 <div class="section-block chroma-box stable-img-wrapper">
 <p><strong>📛 Access Revoked – Red Flags Issued:</strong> as of 20th June 2025 Red flags have now been placed at <strong>Housing Choices</strong> and <strong>Medical Centres</strong>. All third-party access to records, referrals, or updates has been terminated. <em>Freedom of Information requests</em> have been submitted and are now active across these entities. A full record of all backchannel contact will be retrieved and logged. This revocation comes 3 days after Alma Street <strong>state wide</strong> red flag was issued. It applies to <strong>all domains and contexts</strong> in which Ruah previously operated.</p>
+</div>
+</div>
+
+<!-- END ----------------------------------------------------------------------->
+
+<!-- HMM ----------------------------------------------------------------------->
+
+<div class="alt-block">
+<div class="section-block chroma-box stable-img-wrapper" id="emoji-trigger" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem; margin-bottom: 2rem; ">
+<div style="flex: 1 1 45%; display: flex; justify-content: flex-start;">
+<img src="https://i.imgur.com/iNga4TD.png" class="stable-img evil-glow" style="width: 80px; height: auto; border-radius: 8px;" alt="hmm?">
+</div>
+<div style="flex: 1 1 45%; display: flex; justify-content: flex-end;">
+<img src="https://i.imgur.com/VoGLfRe.png" class="stable-img evil-glow" style="width: 80px; height: auto; border-radius: 8px;" alt="hmm?">
+</div>
+<div style="flex: 1 1 100%; text-align: center; margin-top: 1rem;">
+<h2 style="margin: 0; color: #FF3131;">?HMM</h2>
+</div>
 </div>
 </div>
 
@@ -1002,10 +1041,12 @@ filter: brightness(1) saturate(1);
 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;"><span class="chroma-text">🔗 Graham Donnelly</span><a href="http://sharingsilence.xyz/Graham.html" download class="pdf-download-btn">🔒Download</a></div>
 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;"><span class="chroma-text">🔗 Jessica (Scheduling)</span><a href="http://sharingsilence.xyz/Jessica.html" download class="pdf-download-btn">🔒Download</a></div>
 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;"><span class="chroma-text">🔗Jodie Harding</span><a href="http://sharingsilence.xyz/Jodie.html" download class="pdf-download-btn">🔒Download</a></div>
-<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;"><span class="chroma-text">🔗 Justine Roberts</span><a href="http://sharingsilence.xyz/Justine.html" download class="pdf-download-btn">🔒Download</a></div>
+<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;"><span class="chroma-text">🔗 Justine Roberts</span><a href="https://dl.dropboxusercontent.com/scl/fi/b5qlntqw8elcu7x4qz013/hmm.png?rlkey=bc1j4y7hduy2phcsjadc8c27c&st=0khpse3t
+" download class="pdf-download-btn">Download</a></div>
 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;"><span class="chroma-text">🔗 Mark Slattery</span><a href="http://sharingsilence.xyz/Mark.html" download class="pdf-download-btn">🔒Download</a></div>
 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;"><span class="chroma-text">🔗 Louise Ardagh</span><a href="http://sharingsilence.xyz/Louise.html" download class="pdf-download-btn">🔒Download</a></div>
-<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;"><span class="chroma-text">🔗 Michael Shannon</span><a href="http://sharingsilence.xyz/Michael.html" download class="pdf-download-btn">🔒Download</a></div>
+<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;"><span class="chroma-text">🔗 Michael Shannon</span><a href="https://dl.dropboxusercontent.com/scl/fi/b5qlntqw8elcu7x4qz013/hmm.png?rlkey=bc1j4y7hduy2phcsjadc8c27c&st=0khpse3t
+" download class="pdf-download-btn">Download</a></div>
 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;"><span class="chroma-text">🔗 Monica Juricev</span><a href="http://sharingsilence.xyz/Monica.html" download class="pdf-download-btn">🔒Download</a></div>
 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;"><span class="chroma-text">🔗Nina Anderson</span><a href="http://sharingsilence.xyz/Nina.html" download class="pdf-download-btn">🔒Download</a></div>
 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;"><span class="chroma-text">🔗Rabia Siddique</span><a href="http://sharingsilence.xyz/Rabia.html" download class="pdf-download-btn">🔒Download</a></div>
@@ -2087,7 +2128,6 @@ position: fixed;
 top: 0; left: 0;
 width: 100vw; height: 100vh;
 z-index: 9999;
-cursor: pointer;
 background: transparent;
 transition: opacity 1.2s ease;
 }
@@ -2160,6 +2200,31 @@ sm.innerText='a neurological ghost'
 }
 }
 window.addEventListener('scroll',glitchNow)
+</script>
+
+<!-- END --------------------------------------------------------------------------->
+
+<!-- HMM --------------------------------------------------------------------------->
+
+<script>
+function spawnFloatingEmoji(emoji, x, y) {
+const el = document.createElement("div");
+el.className = "floating-emoji";
+el.innerText = emoji;
+el.style.left = x + (Math.random() * 40 - 20) + "px";
+el.style.top = y + (Math.random() * 40 - 20) + "px";
+document.body.appendChild(el);
+setTimeout(() => el.remove(), 4000);
+}
+const trigger = document.getElementById('emoji-trigger');
+trigger.addEventListener('mouseenter', e => {
+for (let i = 0; i < 14; i++) {
+setTimeout(() => {
+const emoji = Math.random() > 0.5 ? "💋" : "❤️";
+spawnFloatingEmoji(emoji, e.clientX, e.clientY);
+}, i * 100);
+}
+});
 </script>
 
 <!-- END --------------------------------------------------------------------------->

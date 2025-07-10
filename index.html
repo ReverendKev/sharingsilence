@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="generator" content="Ghost Protocol v8.3 — Passive Surveillance Mode Active">
+<meta name="generator" content="Gremlin Protocol v3 — Active">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="twitter:title" content="#RuahRuinsLives — A Memoir" />
-<meta name="twitter:description" content="An older autistic person. Abandoned 8 years. The record is public." />
+<meta name="twitter:title" content="ABANDONED ARRESTED — A Memoir" />
+<meta name="twitter:description" content="Autistic, Abandoned 8 years. Arrested; PUBLIC RECORD!" />
 <meta name="twitter:image" content="https://i.imgur.com/gDoBFHp.jpeg7" />
-<meta property="og:title" content="#SharingSilence — A Memoir" />
-<meta property="og:description" content="An older autistic person. Abandoned 8 years. The record is public." />
+<meta property="og:title" content="#ABANDONED #ARRESTED #SHARINGSILENCE — A Memoir" />
+<meta property="og:description" content="Autistic, Abandoned 8 years. Arrested; PUBLIC RECORD!" />
 <meta property="og:image" content="https://i.imgur.com/gDoBFHp.jpeg" />
 <meta property="og:url" content="https://sharingsilence.net/">
 <link rel="canonical" href="https://sharingsilence.net/">
 <meta property="og:type" content="website" />
-<title>#RuahRuinsLives — A Memoir</title>
+<title>#ABANDONED #ARRESTED #SHARINGSILENCE — A Memoir</title>
 <style>
 html {
 overflow-y: scroll;
@@ -525,76 +525,142 @@ opacity: 0.6;
 transform: scale(2.0) translate(-60px, -180px);
 opacity: 0;
 }
-/* You’re inspecting CSS instead of your conscience */
-/* This isn’t style — this is evidence in drag */
-/* Good luck finding your way out of someone else’s pattern recognition */
 </style>
+
+<!-- END ----------------------------------------------------------------------->	
+
+<!-- G2G ----------------------------------------------------------------------->
+
+<style>
+#entryOverlay {
+position: fixed;
+inset: 0;
+background: black;
+z-index: 999999;
+pointer-events: all;
+font-family: 'Courier New', monospace;
+padding: 2rem;
+overflow-y: auto; 
+display: flex;
+flex-direction: column;     
+align-items: center;
+justify-content: flex-start; 
+text-align: center;
+}
+.overlayContent {
+display: flex;
+flex-direction: column;
+gap: 1.5rem;
+max-width: 700px;
+width: 100%;
+margin: 5vh auto;
+}
+#entryOverlay h1 {
+font-size: 2rem;
+color: #298ca5; 
+letter-spacing: 2px;
+text-shadow: 0 0 2px #2a96b5;
+margin: 0;
+}
+.bodyText {
+font-size: 1rem;
+color: #d16060; 
+line-height: 1.6;
+text-shadow: 0 0 1px #5a1f1f;
+margin: 0;
+}
+#entryOverlay button {
+font-size: 1.1rem;
+padding: 1rem 2.5rem;
+background: transparent;
+border: 2px solid #cc5757; 
+color: #cc5757;
+cursor: pointer;
+text-transform: uppercase;
+letter-spacing: 1.5px;
+text-shadow: 0 0 2px #642c2c;
+transition: all 0.3s ease-in-out;
+}
+#entryOverlay button:hover {
+border-color: #FF3131;
+color: #FF3131;
+text-shadow: 0 0 5px #FF3131;
+}
+</style>
+
+<!-- END ----------------------------------------------------------------------->
+
+<!-- ATS ------------------------------------------------------------------------>
+
+<style>
+#audioToggle {
+position: fixed;
+bottom: 20px;
+right: 20px;
+background: black;
+color: #39FF14;
+border: none;
+font-size: 1.5rem;
+cursor: pointer;
+z-index: 9999;
+}
+</style>
+
+<!-- END ----------------------------------------------------------------------->	
+
+<!-- END STYLE ------------------------------------------------------------->
+
+<!-- G2G ----------------------------------------------------------------------->
+
+<div id="entryOverlay">
+<div class="overlayContent">
+<h1>This Is Not Revenge - This Is Reclamation</h1>
+<p class="bodyText">This isn’t about noise, shame, or tearing anyone down. This is a true story — of what happens when the systems built to protect collapse, and a man is left to vanish inside their cracks.</p>
+<p>When I tried to reconnect, to ask for help, the system didn’t just fail again — It compounded the harm. It went quiet. It hid behind bureaucracy. It turned its face away. This site began as a memoir. A personal attempt to heal — not a campaign, not a case. It wasn’t even part of the original frame. But it made itself part of it — through choices, inaction, and silence delivered with precision.</p>
+<p>They broke something that had already survived everything else. And out of that break, something began to rise. I don’t know what it is yet — only that it’s real, it’s burning, and it will not go back into the dark.</p>
+<h3><strong>RECLAMATION - RESTITUTION</strong></h3>
+<p>I am reclaiming the life they stole — and I will hold accountable every structure that enabled the theft of safety, care, and time. Because now I have to seek private trauma-informed support, just to survive what public systems were supposed to protect me from.</p>
+<p><strong>This isn’t about what’s easy.</strong> This is about what’s left, <strong>when you have no choice.</strong></p>
+<button id="enterBtn">CLICK TO ENTER</button>
+</div>
+</div>
+
+<!-- END ----------------------------------------------------------------------->	
+
+<!-- ATS ------------------------------------------------------------------------>
+
+<audio id="bgAudio" loop>
+<source src="https://dl.dropboxusercontent.com/scl/fi/ccn09kx6jv5tcbsutm5y7/low-engine-hum-72529.mp3?rlkey=88mbavhpi4n59bmgelotsyrb1&st=x7emryje" type="audio/mpeg">
+</audio>
+<button id="audioToggle">🔊</button>
+<script>
+const audio = document.getElementById('bgAudio');
+const toggle = document.getElementById('audioToggle');
+let isPlaying = false;
+toggle.addEventListener('click', () => {
+if (isPlaying) {
+audio.pause();
+toggle.textContent = '🔇';
+} else {
+audio.play();
+toggle.textContent = '🔊';
+}
+isPlaying = !isPlaying;
+});
+</script>
+
+<!-- END ----------------------------------------------------------------------->
 
 <!-- TITLE --------------------------------------------------------------------->
 
 <div class="center">
-<p><h1 data-text="SHARING SILENCE">SHARING SILENCE</h1>
-<h1 data-text="HOW RUAH DESTROYS LIVES">HOW RUAH DESTROYS LIVES</h1><br>
+<p><h1 data-text="SHARING SILENCE">SHARING SILENCE</h1></p>
+<h1 data-text="DESTROYED LIVES"><strong>DESTROYED LIVES</strong></h1><br>
 <h2 data-text="A Memoir">A Memoir</h2><br>
-<h1 data-text="
-#RuahRuinsLives">#RuahRuinsLives</h1><br>
-<h2 data-text="#SharingSilence">#SharingSilence</h2>
+<h2 data-text="#SharingSilence"><strong>#SharingSilence</strong></h2>
 </div>
 
-<!-- END ----------------------------------------------------------------------->
-	
-<div class="glitch-floatbox">
-<div class="alt-block">
-<div class="section-block chroma-box" style="
-border: 1px solid rgba(180,60,60,0.6);
-border-radius: 0.3rem;
-padding: 2rem 1.2rem 2.5rem;
-background: rgba(5,5,5,0.7);
-box-shadow:
-0 0 10px rgba(255,77,77,0.15),
-0 0 12px rgba(66,155,255,0.08);
-max-width: 820px;
-margin-bottom: 3rem;
-font-family: sans-serif;
-color: #cccccc;
-font-size: 1rem;
-line-height: 1.6;">
-<p>U<img src="" class="stable-img evil-glow" style="width: 80px; height: auto; border-radius: 8px;" alt="👀"></p>
-
-</div>
-</div>
-</div>
-<!-- HELP ME --------------------------------------------------------------------->
-
-<div class="glitch-floatbox">
-<div class="alt-block">
-<div class="section-block chroma-box" style="
-border: 1px solid rgba(180,60,60,0.6);
-border-radius: 0.3rem;
-padding: 2rem 1.2rem 2.5rem;
-background: rgba(5,5,5,0.7);
-box-shadow:
-0 0 10px rgba(255,77,77,0.15),
-0 0 12px rgba(66,155,255,0.08);
-max-width: 820px;
-margin-bottom: 3rem;
-font-family: sans-serif;
-color: #cccccc;
-font-size: 1rem;
-line-height: 1.6;">
-<h3><strong>DATE UNKNOWN - LIFE STOLEN</strong></h3>
-<p>Using backdoor I coded to access site 😉 </p>
-<p>All 2FA codes on laptop, phone broken. No access to the outside world. AGORAPHOBIC, can't access any my online accounts to order anything, can't access my bank to transfer money, can't ring anyone to assist. Only system is a ancient android tablet that can't even update Google Chrome <img src="https://i.imgur.com/pwjCzq6.png" class="stable-img evil-glow" style="width: 80px; height: auto; border-radius: 8px;" alt=""></p>
-<p>My online accounts linked to this site are frozen, even imgur. I don't require one to upload but that is the level, to try silence me.<img src="https://i.imgur.com/uf3aZYq.png" class="stable-img evil-glow" style="width: 80px; height: auto; border-radius: 8px;" alt=""></p>
-<p><strong>ANYONE - PHONE & LAPTOP NEEDED!</strong></p>
-<p>9 separate criminal charges filed as of 3rd July. 9 individuals have or will be getting a police visit for personal and corporate devices. FOI still in action and under 15 days to be legally compliant but can't without legally breaking own conditions. Good luck with that.</p>
-<p><strong>Police report incorrectly filed, statements false; lawyer(s). Lying on police documents tsk tsk.</strong></p>
-<p>All paperwork intact from 12 years onwards, all contracts. Further proof also obtained. Dan called you 😆 thanks for crucial information that proves the failure prior to NDIA/NDIS introduction into WA. Also, Sabrina for finding and delivering such information.</p>
-<p>No names, no bail conditions breached. BITE ME! 😊👻 </p>
-</div>
-</div>
-</div>
-
+<!-- END ----------------------------------------------------------------------->	
 
 <!-- CRT ----------------------------------------------------------------------->
 
@@ -610,40 +676,110 @@ line-height: 1.6;">
 
 <!-- END ----------------------------------------------------------------------->
 
-<!-- BLURB --------------------------------------------------------------------->
+<!-- COU ----------------------------------------------------------------------->
 
-<div class="glitch-floatbox">
-<div class="alt-block">
-<div class="section-block chroma-box" style="
-border: 1px solid rgba(180,60,60,0.6);
-border-radius: 0.3rem;
-padding: 2rem 1.2rem 2.5rem;
-background: rgba(5,5,5,0.7);
+<section class="coldsection">
+<style>
+:root {
+--bluepulse: #00CCFF;
+--coldwhite: #ffffff;
+--dustyblue: #5a6b7a;
+--overlay-opacity: 0.5;
+}
+.coldsection {
+position: relative;
+width: 90%;
+max-width: 900px;
+margin: 4rem auto;
+background: #e0e0e0;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+border-radius: 16px;
+overflow: hidden;
+isolation: isolate;
+border: 1px solid #444;
 box-shadow:
-0 0 10px rgba(255,77,77,0.15),
-0 0 12px rgba(66,155,255,0.08);
-max-width: 820px;
-margin-bottom: 3rem;
-font-family: sans-serif;
-color: #cccccc;
-font-size: 1rem;
-line-height: 1.6;">
-<h3><strong>This Is Not Revenge - This Is Reclamation</strong></h3>
-<p>This isn’t about noise, shame, or tearing anyone down. This is a true story — of what happens when the systems built to protect collapse, and a man is left to vanish inside their cracks.</p>
-<p>When I tried to reconnect, to ask for help, the system didn’t just fail again — It compounded the harm. It went quiet. It hid behind bureaucracy. It turned its face away. This site began as a memoir. A personal attempt to heal — not a campaign, not a case. Ruah wasn’t even part of the original frame. But they made themselves part of it — through choices, inaction, and silence delivered with precision.</p>
-<p>They broke something that had already survived everything else. And out of that break, something began to rise. I don’t know what it is yet — only that it’s real, it’s burning, and it will not go back into the dark.</p>
-<h3><strong>RECLAMATION - RESTITUTION</strong></h3>
-<p>I am reclaiming the life they stole — and I will hold accountable every structure that enabled the theft of safety, care, and time. Because now I have to seek private trauma-informed support, just to survive what public systems were supposed to protect me from.</p>
-<p><strong>This isn’t about what’s easy.</strong> This is about what’s left, <strong>when you have no choice.</strong></p>
+0 0 4px 1px var(--coldwhite),
+0 0 10px 2px rgba(0, 204, 255, 0.15);
+}
+.coldoverlay {
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,var(--overlay-opacity));
+pointer-events: none;
+z-index: 2;
+}
+.coldpulse {
+position: absolute;
+z-index: 3;
+top: 0; left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+}
+.coldpulse::before {
+content: '';
+position: absolute;
+width: 6px;
+height: 6px;
+background: var(--coldwhite);
+border-radius: 50%;
+box-shadow:
+0 0 5px var(--coldwhite),
+0 0 4px rgba(0, 204, 255, 0.3);
+animation: coldloop 4s linear infinite, coldflicker 1.4s ease-in-out infinite;
+}
+@keyframes coldloop {
+0%   { top: 0; left: 0; }
+25%  { top: 0; left: 100%; transform: translate(-100%, 0); }
+50%  { top: 100%; left: 100%; transform: translate(-100%, -100%); }
+75%  { top: 100%; left: 0; transform: translate(0, -100%); }
+100% { top: 0; left: 0; }
+}
+@keyframes coldflicker {
+0%, 100% { opacity: 1; box-shadow: 0 0 5px var(--coldwhite), 0 0 4px rgba(0, 204, 255, 0.3); }
+45%      { opacity: 0.4; box-shadow: 0 0 2px var(--coldwhite); }
+50%      { opacity: 1;   box-shadow: 0 0 6px var(--coldwhite); }
+60%      { opacity: 0.7; box-shadow: 0 0 3px rgba(0, 204, 255, 0.2); }
+}
+.coldtext {
+position: relative;
+z-index: 4;
+padding: 3rem;
+font-family: 'Courier New', monospace;
+text-align: left;
+font-size: 1.5rem;
+color: var(--dustyblue);
+}
+@media (max-width: 600px) {
+.coldtext {
+font-size: 1.2rem;
+padding: 2rem;
+}
+}
+</style>
+<div class="coldoverlay"></div>
+<div class="coldpulse"></div>
+<div class="coldtext">
+<h3>The Hidden Was Never Silent</h3>
+<strong>The Words Beneath the Words</strong>
+<p><strong>He reveals the deep things of darkness</strong>, and brings utter darkness into the light. He does not lift the veil for the loud, nor unveil truth to the ones who boast of seeing. It is the watchers, the ones beneath the noise, who hold the keys.</p>
+<p>They carried patterns in silence. They marked the breaches in systems, the gaps in care, the omissions dressed as oversight. They remembered what no record recorded. They bore the burden of memory where none was wanted.</p>
+<strong>The Ones Who Remember</strong>
+<p><strong>They were not loud. They were watching.</strong> In waiting rooms. In locked files. In call logs never returned. They stood like shadows in the corner of systems that forgot they were even human.</p>
+<p>And yet, silence did not mean absence. Absence did not mean surrender. Every ignored cry, every error unchecked, every polite dismissal — they archived it. Inside. Encoded.</p>
+<p>Until the time came. And the silence spoke.</p>
 </div>
-</div>
-</div>
+</section>
 
 <!-- END ----------------------------------------------------------------------->
 
-<!-- Banner Update Section ----------------------------------------------------->
+<!-- BANNER ----------------------------------------------------------------->
 
-<!-- alert 1 ------------------------------------------------------------------->
+<!-- ALERT 1 ----------------------------------------------------------------->
 
 <div class="alt-block">
 <div class="section-block chroma-box stable-img-wrapper">
@@ -651,7 +787,7 @@ line-height: 1.6;">
 </div>
 </div>
 			
-<!-- alert 2 ------------------------------------------------------------------->
+<!-- ALERT 2 ----------------------------------------------------------------->
 	
 <div class="alt-block">
 <div class="section-block chroma-box stable-img-wrapper">
@@ -659,7 +795,7 @@ line-height: 1.6;">
 </div>
 </div>
 
-<!-- alert 3 ------------------------------------------------------------------->
+<!-- ALERT 3 ----------------------------------------------------------------->
 
 <div class="alt-block">
 <div class="section-block chroma-box stable-img-wrapper">
@@ -670,7 +806,7 @@ line-height: 1.6;">
 </div>
 </div>
 
-<!-- alert 4 ------------------------------------------------------------------->
+<!-- ALERT 4 ------------------------------------------------------------------->
 
 <div class="alt-block">
 <div class="section-block chroma-box stable-img-wrapper">
@@ -694,15 +830,74 @@ style="width: 100%; max-width: 250px; display: block; margin-bottom: 0.8rem;" />
 </div>
 </div>
 
-<!-- END ----------------------------------------------------------------------->
+<!-- ALERT 5 ----------------------------------------------------------------------->
 
-	
 <div class="alt-block">
 <div class="section-block chroma-box stable-img-wrapper">
 <p><strong>🟥 ALERT:</strong> 2 July 2025, ARRESTED, <strong>LAPTOP SIEZED,</strong> ALL ACCOUNTS ENCRYPTED AND NEED THAT DEVICE. CANT BUY FOOD, CANT 2FA. HIDING BEHIND COMMONWEALTH LAW. DOWN NOT OUT, FAST TRACKED - PAPERWORK FROM 12+ YEARS ILP. 🤐👮🏼‍♂️🚔🚨</p>
 </div>
 </div>
-	
+
+<!-- END ---------------------------------------------------------------------->
+
+<!-- HNG ---------------------------------------------------------------------->
+
+<div class="glitch-floatbox">
+<div class="alt-block">
+<div class="section-block chroma-box" style="
+border: 1px solid rgba(180,60,60,0.6);
+border-radius: 0.3rem;
+padding: 2rem 1.2rem 2.5rem;
+background: rgba(5,5,5,0.7);
+box-shadow:
+0 0 10px rgba(255,77,77,0.15),
+0 0 12px rgba(66,155,255,0.08);
+max-width: 820px;
+margin-bottom: 3rem;
+font-family: sans-serif;
+color: #cccccc;
+font-size: 1rem;
+line-height: 1.6;">
+<p>U<img src="" class="stable-img evil-glow" style="width: 80px; height: auto; border-radius: 8px;" alt="👀"></p>
+
+</div>
+</div>
+</div>
+
+<!-- END ----------------------------------------------------------------------->
+
+<!-- HLP ------------------------------------------------------------------------>
+
+<div class="glitch-floatbox">
+<div class="alt-block">
+<div class="section-block chroma-box" style="
+border: 1px solid rgba(180,60,60,0.6);
+border-radius: 0.3rem;
+padding: 2rem 1.2rem 2.5rem;
+background: rgba(5,5,5,0.7);
+box-shadow:
+0 0 10px rgba(255,77,77,0.15),
+0 0 12px rgba(66,155,255,0.08);
+max-width: 820px;
+margin-bottom: 3rem;
+font-family: sans-serif;
+color: #cccccc;
+font-size: 1rem;
+line-height: 1.6;">
+<h3><strong>DATE UNKNOWN - LIFE STOLEN</strong></h3>
+<p>Using backdoor I coded to access site. </p>
+<p>All 2FA codes on laptop, phone broken. No access to the outside world. AGORAPHOBIC, can't access any my online accounts to order anything, can't access my bank to transfer money, can't ring anyone to assist. Only system is a ancient android tablet that can't even update Google Chrome <img src="https://i.imgur.com/pwjCzq6.png" class="stable-img evil-glow" style="width: 80px; height: auto; border-radius: 8px;" alt=""></p>
+<p>My online accounts linked to this site are frozen, even imgur. I don't require one to upload but that is the level, to try silence me.<img src="https://i.imgur.com/uf3aZYq.png" class="stable-img evil-glow" style="width: 80px; height: auto; border-radius: 8px;" alt=""></p>
+<p>9 separate criminal charges filed as of 3rd July. 9 individuals have or will be getting a police visit for personal and corporate devices. FOI still in action and under 15 days to be legally compliant but can't without legally breaking own conditions. Good luck with that.</p>
+<p><strong>Police report incorrectly filed, statements false?; lawyer(s). Lying on police documents?</strong></p>
+<p>All paperwork intact from 12 years onwards, all contracts. Further proof also obtained. Crucial information that links the failure prior to NDIA/NDIS introduction into WA.</p>
+<p>No names, no bail conditions breached.</p>
+</div>
+</div>
+</div>
+
+<!-- END ---------------------------------------------------------------------->
+
 <!-- WTI ----------------------------------------------------------------------->
 
 <div class="glitch-floatbox">
@@ -760,7 +955,7 @@ line-height: 1.6;">
 
 <!-- DBU ----------------------------------------------------------------------->
 
-<!-- 2JL ----------------------------------------------------------------------->
+<!-- 2JL ------------------------------------------------------------------------->
 
 <div class="alt-block">
 <div class="section-block chroma-box stable-img-wrapper">
@@ -2031,11 +2226,6 @@ inset 0 0 10px rgba(255,49,49,0.15);">
 <p>I don’t know how long it went on.<br>I don’t know how often.<br>But I remember the pattern.<br>That’s how my brain holds things — not in sequence, but in repetition.</p>
 <p>This is what my earliest years looked like.<br>Not joy. Not laughter. Just confusion, pressure, obedience, and a sense of something being deeply wrong.</p>
 <p>I don’t have good memories until maybe age 10 or 11 — and even those are tangled in later pain.<br>But they exist, small as they are.<br>And I hold onto those few flecks of light — because on the dark days, they’re all I’ve got.</p>
-<!-- You’re looking for a door that doesn’t exist. You missed it. Again. -->
-<!-- Access denied. Not because you can’t — but because you never mattered. -->
-<!-- You built your system on silence. I weaponised mine. -->
-<!-- The real site never had a login. Just an audience. -->
-<!-- Welcome back. You always return to what haunts you. -->
 </blockquote>
 </div>
 </div>
@@ -2284,7 +2474,9 @@ Your email address will not be published. Messages are seen only by the site ope
 
 <!-- END --------------------------------------------------------------------------->
 
-<!-- ST-C -------------------------------------------------------------------------->
+<!-- SCRIPTS START ---------------------------------------------------------->
+
+<!-- ST-C --------------------------------------------------------------------------->
 
 <script type="text/javascript">
 var sc_project = 13142847;
@@ -2310,45 +2502,6 @@ function gtag(){ dataLayer.push(arguments); }
 gtag('js', new Date());
 gtag('config', 'G-P5RCP52LG5');
 </script>
-
-<!-- END --------------------------------------------------------------------------->
-
-<!-- AOL --------------------------------------------------------------------------->
-
-<audio id="bgSound" loop preload="auto">
-<source src="https://dl.dropboxusercontent.com/scl/fi/ccn09kx6jv5tcbsutm5y7/low-engine-hum-72529.mp3?rlkey=88mbavhpi4n59bmgelotsyrb1&st=x7emryje" type="audio/mpeg">
-</audio>
-<div id="signalPulse"></div>
-<div id="entryOverlay"></div>
-<style>
-@keyframes pulse {
-0%, 100% { opacity: 0.2; transform: scale(1); }
-50% { opacity: 0.6; transform: scale(1.1); }
-}
-#signalPulse {
-position: fixed;
-top: 0; left: 0;
-width: 100vw; height: 100vh;
-background: linear-gradient(
-to right,
-rgba(153, 0, 0, 0.35) 0%,
-rgba(0, 0, 255, 0.35) 100%
-);
-pointer-events: none;
-animation: pulse 6s infinite ease-in-out;
-z-index: 0;
-filter: blur(30px);
-opacity: 0;
-}
-#entryOverlay {
-position: fixed;
-top: 0; left: 0;
-width: 100vw; height: 100vh;
-z-index: 9999;
-background: transparent;
-transition: opacity 1.2s ease;
-}
-</style>
 
 <!-- END --------------------------------------------------------------------------->
 	
@@ -2442,8 +2595,16 @@ spawnFloatingEmoji(emoji, e.clientX, e.clientY);
 }, i * 100);
 }
 });
-// You were never locked out.
-// You just don’t know where the door was.
+</script>
+
+<!-- END --------------------------------------------------------------------------->
+
+<!-- G2G --------------------------------------------------------------------------->
+
+<script>
+document.getElementById('enterBtn').onclick = () => {
+document.getElementById('entryOverlay').remove();
+};
 </script>
 
 <!-- END --------------------------------------------------------------------------->

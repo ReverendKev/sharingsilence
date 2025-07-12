@@ -699,22 +699,37 @@ isPlaying = !isPlaying;
 
 <!-- INDEX -------------------------------------------------------------------->
 
-<div class="glitch-floatbox">
-<div class="alt-block">
-<div class="section-block chroma-box" style="
-border: 1px solid rgba(180,60,60,0.6);
-border-radius: 0.3rem;
-padding: 2rem 1.2rem 2.5rem;
-background: rgba(5,5,5,0.7);
-box-shadow:
-0 0 10px rgba(255,77,77,0.15),
-0 0 12px rgba(66,155,255,0.08);
-max-width: 820px;
-margin-bottom: 3rem;
-font-family: sans-serif;
-color: #cccccc;
+<div class="triangle-gallery" style="
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 1.2rem;
+margin: 3rem auto;
+max-width: 360px;
+padding: 1rem;
+background: rgba(10,10,10,0.6);
+border-radius: 0.4rem;
+border: 1px solid rgba(57,255,20,0.3);
+animation: toxicFlicker 7s infinite steps(1);
+">
+<div style="
+font-family: monospace;
 font-size: 1rem;
-line-height: 1.6;">
+color: #39FF14;
+background: rgba(0,0,0,0.7);
+padding: 0.5rem 1rem;
+rgba(57,255,20,0.4);
+background: rgba(10,10,10,0.6);
+border-radius: 0.3rem;
+text-align: center;
+letter-spacing: 0.8px;
+box-shadow:
+0 0 8px #39FF14,
+0 0 12px #39FF14,
+0 0 16px rgba(57,255,20,0.8),
+0 0 24px rgba(57,255,20,0.5);
+animation: toxicFlicker 7s infinite steps(1);
+">
 <h3><strong>Index:</strong></h3>
 <p><small>click to navigate</small></p>
 <ul class="index-list">
@@ -722,7 +737,6 @@ line-height: 1.6;">
 <li><a href="https://sharingsilence.net/legal" target="_blank"><strong>Legal; a timeline of events.</strong></a></li>
 <li><a href="https://sharingsilence.net/tbc" target="_blank"><small>To be continued…</small></a></li>
 </ul>
-</div>
 </div>
 </div>
 

@@ -65,159 +65,6 @@ small {
   text-shadow: 0 0 1px #ffffff22, 0 0 2px #88ccff11;
   opacity: 0.85;
 }
-    @keyframes edge-flicker {
-      0%   { box-shadow: 0 0 4px #ffffff11, 0 0 8px #88ccff11; }
-      100% { box-shadow: 0 0 8px #ffffff22, 0 0 12px #88ccff33; }
-    }
-
-    @keyframes header-flicker {
-      0%   { text-shadow: 0 0 2px #88ccff66; }
-      100% { text-shadow: 0 0 4px #88ccffaa; }
-    }
-
-    @keyframes em-flicker {
-      0%   { text-shadow: 0 0 1px #ffffff44, 0 0 1px #ff313133; }
-      100% { text-shadow: 0 0 2px #ffffff88, 0 0 3px #ff313155; }
-    }
-    @keyframes bold-flicker {
-      0%   { text-shadow: 0 0 1px #39ff1411; }
-      100% { text-shadow: 0 0 3px #39ff1444; }
-    }
-      .content {
-      max-width: 900px;
-      margin: auto;
-    }
-    .glitch-thumb-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-      gap: 1.5rem;
-      justify-items: center;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .glitch-thumb {
-      width: 60px;
-      height: 60px;
-      background-image: url('https://i.imgur.com/cApPqm7.png');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      border-radius: 0.5rem;
-      box-shadow: 0 0 10px rgba(255,255,255,0.2), 0 0 14px rgba(100,200,255,0.35);
-      cursor: pointer;
-      overflow: hidden;
-      animation: diagonal-fade 6s infinite ease-in-out;
-      border: 1px solid #333;
-    }
-.glitch-thumb span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  padding: 0.2rem;
-  background: rgba(0, 0, 0, 0.65);
-  border-radius: 0.25rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-.glitch-thumb span[title]:hover::after {
-  content: attr(title);
-  position: absolute;
-  bottom: 110%;
-  background: rgba(0,0,0,0.8);
-  color: #fff;
-  padding: 0.2rem 0.4rem;
-  font-size: 0.65rem;
-  border-radius: 0.25rem;
-  white-space: nowrap;
-}
-.glitch-thumb:hover {
-  transform: scale(1.2);
-  transition: transform 0.2s ease;
-  z-index: 2;
-}
-.glitch-thumb span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 0.55rem;
-  line-height: 1.1;
-  text-align: center;
-  padding: 0.2rem 0.3rem;
-  background: rgba(0, 0, 0, 0.65);
-  border-radius: 0.25rem;
-  font-family: monospace;
-  color: #ffffff;
-  word-wrap: break-word;
-  white-space: normal;
-  max-width: 90%;
-  max-height: 90%;
-  overflow: hidden;
-}
-    @keyframes diagonal-fade {
-      0%   { opacity: 0.6; transform: scale(1) translate(-5px, -5px); }
-      50%  { opacity: 1; transform: scale(1.03) translate(5px, 5px); }
-      100% { opacity: 0.6; transform: scale(1) translate(-5px, -5px); }
-    }
-    .lightbox-overlay {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(10, 10, 10, 0.95);
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 1rem;
-    }
-    .lightbox-overlay img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 8px;
-      border: 2px solid #aaa;
-      box-shadow: 0 0 14px #66ccff;
-    }
-    #lightbox-caption {
-      color: #aaa;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      font-family: monospace;
-    }
-.glitch-thumb {
-  transition: transform 0.3s ease;
-}
-.glitch-thumb:hover {
-  transform: scale(1.08);
-  z-index: 2;
-}
-.lightbox-overlay.active {
-  display: flex;
-  animation: overlay-flicker 4s infinite alternate;
-}
-@keyframes overlay-flicker {
-  0%   { background: rgba(10,10,10,0.92); }
-  50%  { background: rgba(20,20,25,0.96); }
-  100% { background: rgba(10,10,10,0.94); }
-}
-blockquote {
-  border-left: 4px solid #88ccff33;
-  padding-left: 1rem;
-  margin-left: 0;
-  font-style: italic;
-  color: #cccccc;
-  text-shadow: 0 0 1px #ffffff22;
-  animation: blockquote-glow 6s ease-in-out infinite alternate;
-}
-@keyframes blockquote-glow {
-  0%   { text-shadow: 0 0 2px #ffffff11; }
-  100% { text-shadow: 0 0 4px #88ccff55, 0 0 6px #ffffff33; }
-}
-.lightbox-overlay {
-  cursor: zoom-out;
-}
 a {
   color: #4e8ec6; 
   text-decoration: underline;
@@ -279,7 +126,7 @@ li:hover {
 <h2>RE: Isolation, Autism, Neglect, and Systemic Failure</h2>
 
 <p>I am autistic. My autism is not a personality trait—it’s a neurological condition that impacts how I communicate, relate to others, and manage daily life. I function at a higher intellectual level—an IQ of 140—but my ability to express and communicate that intelligence is severely limited. Emotionally and socially, I struggle, and under stress, I often go non-verbal, overwhelmed by frustration, confusion, or fear. My communication might become limited to noises or single words, and forming full sentences becomes impossible.</p>
-<p>I’ve spent a lifetime masking, surviving, and being ignored. What people fail to see is that there’s a world of intelligence in my mind, but I can’t get it to come out the way I want or in a way others can understand. This inability to articulate myself is not because I lack the capacity, but because my brain works differently—leading to a constant struggle to convey what’s in my head.</p.
+<p>I’ve spent a lifetime masking, surviving, and being ignored. What people fail to see is that there’s a world of intelligence in my mind, but I can’t get it to come out the way I want or in a way others can understand. This inability to articulate myself is not because I lack the capacity, but because my brain works differently—leading to a constant struggle to convey what’s in my head.</p>
 <p><b>I do not like repeating myself. I don’t respond well to compliments or sympathy.</b> These things can be deeply frustrating for me, as they often make me feel misunderstood or ignored in ways I can’t always communicate.</p>
 <p>My history includes significant trauma:</p>
 <ul>
@@ -363,9 +210,9 @@ li:hover {
 
 <h2>Present Situation</h2>
 <p>I haven’t seen anyone from Ruah in about 8 years.</p>
-It’s been around 5 years since I reported the NDIS theft.</p>
-I asked my housing officer multiple times where my support worker was. I was told they’d look into it. No one ever followed up.</p>
-Access Housing has permission to communicate with Ruah through my ILP documentation, which I renew frequently. So why has nothing happened?</p>
+<p>It’s been around 5 years since I reported the NDIS theft.</p>
+<p>I asked my housing officer multiple times where my support worker was. I was told they’d look into it. No one ever followed up.</p>
+<p>Access Housing has permission to communicate with Ruah through my ILP documentation, which I renew frequently. So why has nothing happened?</p>
 <p>Recently:</p>
 <ul>
 <li>I felt unsafe due to neighbours. I don’t know how to report this properly, and no one listens anyway.</li>
@@ -511,7 +358,7 @@ As someone who once stood at a crossroads and chose a career that exists to prot
 <p>This is the point where you either become the person you claim to be — the person your job title suggests you are — or you prove that I really was just another name on a list.</p>
 
 <p>Hello, I am Kev, and I need your help.</p>
-<p><small>please<?small></p>
+<p><small>please</small></p>
       </div>
       
 
@@ -520,13 +367,13 @@ As someone who once stood at a crossroads and chose a career that exists to prot
 <img src="https://i.imgur.com/Apov9pW.png" alt="Follow on X" style="width:30px;height:30px;border-radius:50%;vertical-align:middle; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.65'" onmouseout="this.style.opacity='1'">
 </a>
 <a href="https://www.instagram.com/sharingsilence.co/" target="_blank" style="text-decoration: none; margin-left: 12px;">
-<img src="https://i.imgur.com/J8Ts0iU.png" alt="YouTube" style="width:30px;height:30px;border-radius:5px;vertical-align:middle; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.65'" onmouseout="this.style.opacity='1'">
+<img src="https://i.imgur.com/J8Ts0iU.png" alt="instagram" style="width:30px;height:30px;border-radius:5px;vertical-align:middle; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.65'" onmouseout="this.style.opacity='1'">
 </a>
 <a href="https://www.linkedin.com/in/rev-k-m-d-b19953b6/" target="_blank" style="text-decoration: none; margin-left: 12px;">
 <img src="https://i.imgur.com/TQKVWte.png" alt="LinkedIn" style="width:30px;height:30px;border-radius:5px;vertical-align:middle; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.65'" onmouseout="this.style.opacity='1'">
 </a>
 <a href="https://www.facebook.com/revkmd" target="_blank" style="text-decoration: none; margin-left: 12px;">
-<img src="https://i.imgur.com/cobvS3H.png" alt="YouTube" style="width:30px;height:30px;border-radius:5px;vertical-align:middle; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.65'" onmouseout="this.style.opacity='1'">
+<img src="https://i.imgur.com/cobvS3H.png" alt="Facebook" style="width:30px;height:30px;border-radius:5px;vertical-align:middle; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.65'" onmouseout="this.style.opacity='1'">
 </a>
 <a href="https://www.youtube.com/@SharingSilence81" target="_blank" style="text-decoration: none; margin-left: 12px;">
 <img src="https://i.imgur.com/r2YzaU3.png" alt="YouTube" style="width:30px;height:30px;border-radius:5px;vertical-align:middle; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.65'" onmouseout="this.style.opacity='1'">

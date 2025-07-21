@@ -259,12 +259,14 @@ text-shadow:
 0 0 10px #ffffffcc,
 0 0 14px #ffffff99;
 }
+
+
 .top-banner {
   position: fixed;
   top: 0;
   width: 100%;
   background-color: #000;
-  border-bottom: 1px solid #C0C0C0; /* silver strip */
+  border-bottom: 1px solid #C0C0C0;
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -273,13 +275,15 @@ text-shadow:
 }
 
 .top-banner a {
-  color: #C0C0C0;
-  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif; /* replace with your custom font if needed */
+  color: #C0C0C0; 
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
   font-size: 0.9rem;
   letter-spacing: 0.05em;
   text-decoration: none;
   text-transform: lowercase;
   position: relative;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .top-banner a::after {
@@ -294,13 +298,14 @@ text-shadow:
 }
 
 .top-banner a:hover::after {
-  background: #39FF14; /* neon green or pick a soft glow tone */
+  background: #B0C4DE; 
 }
 
 .top-banner a:hover {
-  color: #fff;
-  text-shadow: 0 0 4px #00bfff80; /* soft electric blue glow */
+  color: #FFFFFF;
+  text-shadow: 0 0 6px rgba(173, 216, 230, 0.6); 
 }
+
 </style>
 
 </head>  
@@ -1336,14 +1341,6 @@ Unauthorised use, misrepresentation, or alteration may breach copyright or ethic
 Fair use applies. Credited where due.  
 Metadata logging and automated monitoring are active for evidentiary integrity.</small></center> 
 
-<!-- GOOGLE ANAL -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P5RCP52LG5"></script>  <script>  
-window.dataLayer = window.dataLayer || [];  
-function gtag(){ dataLayer.push(arguments); }  
-gtag('js', new Date());  
-gtag('config', 'G-P5RCP52LG5');  
-</script>
 
 </body>  
 </html>

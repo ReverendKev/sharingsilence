@@ -292,14 +292,20 @@ navData.forEach(([url, caption]) => {
 });
 </script>
 
-<form action="https://formspree.io/f/xvgrrlan" method="POST">
-  <label for="email">Your Email (optional)</label><br>
-  <input type="email" name="email" id="email" placeholder="your@email.com"><br>
-  <label for="message">Message</label><br>
-  <textarea name="message" id="message" rows="6" required placeholder="Write your message here..."></textarea><br>
-  <button type="submit">Send Message</button>
-  <p style="font-size: 0.75em; color: #666;">Your email won't be published. Only the operator sees your message.</p>
-</form>
+
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: left; padding: 2em;">
+  <form action="https://formspree.io/f/xvgrrlan" method="POST" style="max-width: 400px; width: 100%;">
+    <label for="email">Your Email (optional)</label><br>
+    <input type="email" name="email" id="email" placeholder="your@email.com" style="width: 100%; margin-bottom: 1em;"><br>
+    
+    <label for="message">Message</label><br>
+    <textarea name="message" id="message" rows="6" required placeholder="Write your message here..." style="width: 100%; margin-bottom: 1em;"></textarea><br>
+    
+    <button type="submit" style="width: 100%;">Send Message</button>
+    <p style="font-size: 0.75em; color: #666; margin-top: 0.5em;">Your email won't be published. Only the operator sees your message.</p>
+  </form>
+</div>
+
 
 <div class="footer-icons">
   <a href="https://x.com/AHuman88539392" target="_blank"><img src="https://i.imgur.com/Apov9pW.png" alt="X"></a>

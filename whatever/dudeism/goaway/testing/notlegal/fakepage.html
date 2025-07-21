@@ -255,33 +255,48 @@ a:hover {
     0 0 10px #ffffffcc,
     0 0 14px #ffffff99;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
 .top-banner {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   background-color: #000;
-  border-bottom: 1px solid #C0C0C0; 
+  border-bottom: 1px solid #C0C0C0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-  padding: 0.4rem 0.8rem;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.7rem 1rem;
   z-index: 9999;
 }
 .top-banner a {
-  color: #C0C0C0; 
+  color: #C0C0C0;
   font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
   font-weight: bold;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   letter-spacing: 0.05em;
-  text-decoration: none;
   text-transform: uppercase;
+  text-decoration: none;
   position: relative;
   transition: color 0.3s ease, text-shadow 0.3s ease;
+  padding: 0.3rem 0.2rem;
+  line-height: 1.2;
 }
 .top-banner a:hover {
   color: #FFFFFF;
-  text-shadow: 0 0 6px rgba(173, 216, 230, 0.6); 
+  text-shadow: 0 0 6px rgba(173, 216, 230, 0.6);
 }
 .top-banner a::after {
   content: '';
@@ -297,15 +312,19 @@ a:hover {
   background: #B0C4DE;
 }
 body {
-  padding-top: 2.4rem;
+  padding-top: 3rem;
 }
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .top-banner {
- gap: 0.6rem;
-padding: 0.4rem 0.5rem;
-  }
- .top-banner a {
-font-size: 0.7rem;
+ gap: 1rem;
+ padding: 0.8rem 0.5rem;
+}
+  .top-banner a {
+   font-size: 0.75rem;
+padding: 0.4rem 0.2rem;
+}
+ body {
+padding-top: 3.5rem;
 }
 </style>
 
@@ -396,6 +415,7 @@ Survivor evidence only — not therapy, not defamation, not a legal claim.
 Unauthorised use, misrepresentation, or alteration may breach copyright or ethical standards.  
 Fair use applies. Credited where due.  
 Metadata logging and automated monitoring are active for evidentiary integrity.</small></center> 
+
 
 </body>  
 </html>

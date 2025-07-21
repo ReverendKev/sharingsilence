@@ -115,6 +115,70 @@ li:hover {
   text-shadow: 0 0 2px #88aabb;
   transition: all 0.2s ease-in-out;
 }
+    *, *::before, *::after {
+  box-sizing: inherit;
+}
+.top-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #000;
+  border-bottom: 1px solid #C0C0C0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.7rem 1rem;
+  z-index: 9999;
+}
+.top-banner a {
+  color: #C0C0C0;
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  padding: 0.3rem 0.2rem;
+  line-height: 1.2;
+}
+.top-banner a:hover {
+  color: #FFFFFF;
+  text-shadow: 0 0 6px rgba(173, 216, 230, 0.6);
+}
+.top-banner a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.2rem;
+  height: 2px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+.top-banner a:hover::after {
+  background: #B0C4DE;
+}
+body {
+  padding-top: 3rem;
+}
+@media (max-width: 480px) {
+  .top-banner {
+ gap: 1rem;
+ padding: 0.8rem 0.5rem;
+}
+  .top-banner a {
+   font-size: 0.75rem;
+padding: 0.4rem 0.2rem;
+}
+ body {
+padding-top: 3.5rem;
+}
   </style>
 </head>
 <body>

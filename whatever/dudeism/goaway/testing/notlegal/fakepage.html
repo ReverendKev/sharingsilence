@@ -17,30 +17,40 @@
 
 <!-- STYLE -->
 
-<style>  
-:root {  
-  --bg-image: url('https://i.imgur.com/VIgToGR.png');  
-  --font-main: 'Segoe UI', 'Helvetica Neue', sans-serif;  
-  --text-light: #dddddd;  
-  --text-white: #f5f5f5;  
-  --blue-header: #88ccff;  
-}  
-html, body {  
-  margin: 0;  
-  padding: 0;  
-  font-family: var(--font-main);  
-  background: var(--bg-image) no-repeat center center fixed;  
-  background-size: cover;  
-  color: var(--text-light);  
-  text-shadow: 0 0 2px #ffffff44, 0 0 1px #88ccff22;  
-}  
-body {  
-  padding: 2rem;  
-  box-sizing: border-box;  
-  min-height: 100vh;  
-  border: 2px solid transparent;  
-  animation: edge-flicker 2.5s infinite alternate;  
-}  
+<style>
+:root {
+  --bg-image: url('https://i.imgur.com/VIgToGR.png');
+  --font-main: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --text-light: #dddddd;
+  --text-white: #f5f5f5;
+  --blue-header: #88ccff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: var(--font-main);
+  background: var(--bg-image) no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text-light);
+  text-shadow: 0 0 2px #ffffff44, 0 0 1px #88ccff22;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 2rem;
+  padding-top: 3.5rem;
+  min-height: 100vh;
+  border: 2px solid transparent;
+  animation: edge-flicker 2.5s infinite alternate;
+}
+
 h1 {
   font-size: 1.76rem;
   font-weight: 700;
@@ -121,43 +131,45 @@ blockquote {
   0%   { box-shadow: 0 0 4px #ffffff11, 0 0 8px #88ccff11; }
   100% { box-shadow: 0 0 8px #ffffff22, 0 0 12px #88ccff33; }
 }
-@keyframes header-flicker {  
-  0%   { text-shadow: 0 0 2px #88ccff66; }  
-  100% { text-shadow: 0 0 4px #88ccffaa; }  
+@keyframes header-flicker {
+  0%   { text-shadow: 0 0 2px #88ccff66; }
+  100% { text-shadow: 0 0 4px #88ccffaa; }
 }
-@keyframes em-flicker {  
-  0%   { text-shadow: 0 0 1px #ffffff44, 0 0 1px #ff313133; }  
-  100% { text-shadow: 0 0 2px #ffffff88, 0 0 3px #ff313155; }  
+@keyframes em-flicker {
+  0%   { text-shadow: 0 0 1px #ffffff44, 0 0 1px #ff313133; }
+  100% { text-shadow: 0 0 2px #ffffff88, 0 0 3px #ff313155; }
 }
-@keyframes bold-flicker {  
-  0%   { text-shadow: 0 0 1px #39ff1411; }  
-  100% { text-shadow: 0 0 3px #39ff1444; }  
+@keyframes bold-flicker {
+  0%   { text-shadow: 0 0 1px #39ff1411; }
+  100% { text-shadow: 0 0 3px #39ff1444; }
 }
-.content {  
-  max-width: 900px;  
-  margin: auto;  
-}  
-.glitch-thumb-grid {  
-  display: grid;  
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));  
-  gap: 1.5rem;  
-  justify-items: center;  
-  max-width: 1000px;  
-  margin: 0 auto;  
-}  
-.glitch-thumb {  
-  width: 60px;  
-  height: 60px;  
-  background-image: url('https://i.imgur.com/cApPqm7.png');  
-  background-size: cover;  
-  background-position: center;  
-  position: relative;  
-  border-radius: 0.5rem;  
-  box-shadow: 0 0 10px rgba(255,255,255,0.2), 0 0 14px rgba(100,200,255,0.35);  
-  cursor: pointer;  
-  overflow: hidden;  
-  animation: diagonal-fade 6s infinite ease-in-out;  
+.content {
+  max-width: 900px;
+  margin: auto;
+  padding: 0 1rem;
+}
+.glitch-thumb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.glitch-thumb {
+  width: 60px;
+  height: 60px;
+  background-image: url('https://i.imgur.com/cApPqm7.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2), 0 0 14px rgba(100,200,255,0.35);
+  cursor: pointer;
+  overflow: hidden;
+  animation: diagonal-fade 6s infinite ease-in-out;
   border: 1px solid #333;
+  transition: transform 0.3s ease;
 }
 .glitch-thumb span[title]:hover::after {
   content: attr(title);
@@ -172,7 +184,6 @@ blockquote {
 }
 .glitch-thumb:hover {
   transform: scale(1.2);
-  transition: transform 0.2s ease;
   z-index: 2;
 }
 .glitch-thumb span {
@@ -212,6 +223,7 @@ blockquote {
   align-items: center;
   flex-direction: column;
   padding: 1rem;
+  cursor: zoom-out;
 }
 .lightbox-overlay img {
   max-width: 90%;
@@ -226,9 +238,6 @@ blockquote {
   font-size: 0.72rem;
   font-family: monospace;
 }
-.glitch-thumb {
-  transition: transform 0.3s ease;
-}
 .lightbox-overlay.active {
   display: flex;
   animation: overlay-flicker 4s infinite alternate;
@@ -237,9 +246,6 @@ blockquote {
   0%   { background: rgba(10,10,10,0.92); }
   50%  { background: rgba(20,20,25,0.96); }
   100% { background: rgba(10,10,10,0.94); }
-}
-.lightbox-overlay {
-  cursor: zoom-out;
 }
 a {
   color: #4e8ec6;
@@ -254,16 +260,6 @@ a:hover {
     0 0 6px #ffffff,
     0 0 10px #ffffffcc,
     0 0 14px #ffffff99;
-}
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-*, *::before, *::after {
-  box-sizing: inherit;
 }
 .top-banner {
   position: fixed;
@@ -285,13 +281,13 @@ html, body {
   color: #C0C0C0;
   font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-decoration: none;
   position: relative;
   transition: color 0.3s ease, text-shadow 0.3s ease;
-  padding: 0.3rem 0.2rem;
+  padding: 0.4rem 0.2rem;
   line-height: 1.2;
 }
 .top-banner a:hover {
@@ -311,23 +307,20 @@ html, body {
 .top-banner a:hover::after {
   background: #B0C4DE;
 }
-body {
-  padding-top: 3rem;
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .content {
+    padding: 0 1.25rem;
+  }
 }
 @media (max-width: 480px) {
   .top-banner {
- gap: 1rem;
- padding: 0.8rem 0.5rem;
-}
-  .top-banner a {
-   font-size: 0.75rem;
-padding: 0.4rem 0.2rem;
-}
- body {
-padding-top: 3.5rem;
+    gap: 1rem;
+    padding: 0.8rem 0.5rem;
+  }
 }
 </style>
-
 </head>  
 <body>  
 
@@ -339,7 +332,6 @@ padding-top: 3.5rem;
   <a href="https://sharingsilence.net/legal">LEGAL</a>
   <a href="https://sharingsilence.net/memoir">MEMOIR</a>
   <a href="https://sharingsilence.net/docs">DOCS</a>
-  
 </div>
 
   <div class="content">  
@@ -348,7 +340,7 @@ padding-top: 3.5rem;
   
 <h1>GOOGLE DOCUMENTS</h1>
 
-<p>For easier or offlineviewing.</p>
+<p>For easier or offline viewing.</p>
 
 <h2>LIST OF DOCUMENTS</h2>
 <ul>
